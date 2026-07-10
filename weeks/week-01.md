@@ -40,13 +40,17 @@ No new material. You design a URL shortener from scratch, write it up, and then 
 
 ## Reading for the week
 
+The full, verified link list lives in [resources.md](../resources.md). The essentials for this week:
+
 All free:
-- The interactive latency table: colin-scott.github.io/personal_website/research/interactive_latency.html
-- *High Performance Browser Networking* by Ilya Grigorik, free at hpbn.co. Chapters 1 and 2 only, and only in week 1.
-- The "What happens when you type google.com" GitHub repo (search it, you'll find it immediately)
+- Interactive latency table: https://colin-scott.github.io/personal_website/research/interactive_latency.html
+- Jeff Dean's latency numbers gist: https://gist.github.com/jboner/2841832
+- *High Performance Browser Networking* by Ilya Grigorik, ch. 1-2 (free full text): https://hpbn.co/
+- "What happens when you type google.com": https://github.com/alex/what-happens-when
+- Stripe API docs, the best public example of API contract thinking (idempotency, pagination), for Day 5: https://stripe.com/docs/api/idempotent_requests
 
 One paid book, and it's the only one I'll push you to buy this month:
-- Martin Kleppmann, *Designing Data-Intensive Applications*. This week you read chapter 1 and nothing else. We live in this book during weeks 2 through 5. It is genuinely the best technical book of the last decade and it will still be useful to you in ten years.
+- Martin Kleppmann, *Designing Data-Intensive Applications* ([book site, free ch.1 preview](https://dataintensive.net/)). This week you read chapter 1 and nothing else. We live in this book during weeks 2 through 5. It is genuinely the best technical book of the last decade and it will still be useful to you in ten years.
 
 ## What beginners get wrong this week
 

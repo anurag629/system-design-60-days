@@ -9,6 +9,22 @@ Nothing today assumes prior knowledge. If a term is new, it's explained.
 
 ## Block 1 — Read (50 min)
 
+### Today's links (all free)
+
+**Core, do these:**
+- Interactive latency table, set the year to 2026: https://colin-scott.github.io/personal_website/research/interactive_latency.html
+- Jeff Dean's original "Latency Numbers Every Programmer Should Know": https://gist.github.com/jboner/2841832
+- DDIA, chapter 1. Book site with free chapter 1 preview: https://dataintensive.net/
+
+**If a term today was new:**
+- *High Performance Browser Networking*, ch. 1 (free, full text): https://hpbn.co/primer-on-latency-and-bandwidth/
+- The classic "what happens when you type a URL" walkthrough (you'll build on this Day 3): https://github.com/alex/what-happens-when
+
+**One video, only after the lab, optional:**
+- Hussein Nasser on latency and the network stack: https://www.youtube.com/@hnasr
+
+Full curated list, mapped to every week: [resources.md](../resources.md).
+
 ### First, the mental model (read this part slowly, 10 min)
 
 When your program needs a piece of data, it can live in one of a few places. From fastest to slowest:
@@ -54,7 +70,7 @@ Round trip California to Europe                 =  150 ms
 
 ### Then read (30 min)
 
-Kleppmann, *Designing Data-Intensive Applications*, chapter 1. If you don't have the book yet, buy it, and for today read the free preview or Chapter 1 excerpts (search "DDIA chapter 1 reliable scalable maintainable").
+Kleppmann, *Designing Data-Intensive Applications*, chapter 1 ([book site with free ch.1 preview](https://dataintensive.net/)). If you don't have the book yet, the free preview covers exactly what you need for today.
 
 You are reading for exactly one section: the part about **percentiles**. Don't worry about the rest yet, it'll make more sense in week 2.
 
