@@ -52,6 +52,7 @@ Postgres (Neon or local), Redis (Upstash or local), Node/TypeScript or Python, D
 
 ## Files
 
+- `resources.md` — free resources, mapped to the weeks that need them
 - `weeks/` — full detail for each week, written the Sunday before
 - `days/` — the day's material and exercises
 - `labs/` — your code
