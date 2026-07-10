@@ -53,15 +53,20 @@ def report(label, samples_ns, unit="ns"):
     return p50
 
 
-def timed(fn, iterations):
+def timed(fn, iterations, warmup=WARMUP):
     """Run fn() `iterations` times, return a list of per-call nanoseconds.
 
     time.perf_counter_ns() is a MONOTONIC clock: it never jumps backwards when
     the system clock is adjusted, and it has nanosecond resolution. Never use
     time.time() for benchmarking. It can literally go backwards.
+
+    `warmup` is tunable because it is not free. For a memory read costing 100ns,
+    ten warmup iterations cost a microsecond and nobody notices. For a TCP
+    connection to Brazil costing 430ms, ten warmup iterations cost 4.3 seconds
+    of real time in which nothing whatsoever happens. Pass warmup=2 there.
     """
     samples = []
-    for _ in range(WARMUP):
+    for _ in range(warmup):
         fn()  # Warmup. The first calls pay for imports, page faults, JIT-ish
         # caching in the OS, and an unestablished network connection.
         # Timing them would measure startup, not steady state.
@@ -115,8 +120,12 @@ def measure_ram():
     #
     # Then the line below subtracts the baseline and gives you the real number.
     # -------------------------------------------------------------------------
+    
     total = 0
-    measured_ns = 0.0  # <-- replace this
+    start = time.perf_counter_ns()
+    for i in indices:
+        total += mv[i]
+    measured_ns = (time.perf_counter_ns() - start) / N
 
     if measured_ns == 0.0:
         print("  (did you fill in TODO 1?)")
@@ -175,7 +184,7 @@ def _open_uncached():
         os.posix_fadvise(fd, 0, 0, os.POSIX_FADV_DONTNEED)
     return fd
 
-
+    
 def measure_ssd():
     """Expect roughly 20-150 µs per random 4 KB read on an NVMe SSD."""
     print("\n[2] SSD  (random 4 KB reads, page cache disabled)")
@@ -199,7 +208,10 @@ def measure_ssd():
         # a ~30,000ns disk read, that's a rounding error. Knowing WHEN you can
         # ignore overhead is as useful as knowing how to subtract it.
         # ---------------------------------------------------------------------
-        samples = []  # <-- replace this
+        def one_read():
+            offset = random.randrange(max_offset)
+            os.pread(fd, BLOCK, offset)
+        samples = timed(one_read, 2000)
 
         if not samples:
             print("  (no samples — did you fill in TODO 2?)")
@@ -255,11 +267,11 @@ def measure_localhost():
     sock.setsockopt(socket.IPPROTO_TCP, socket.TCP_NODELAY, 1)
 
     try:
-        # TODO 3 --------------------------------------------------------------
-        # Write `ping()`: sock.sendall(b"x") then sock.recv(1).
-        # Run it through `timed(ping, 5000)` and report in microseconds.
-        # ---------------------------------------------------------------------
-        samples = []  # <-- replace this
+        def ping():
+            sock.sendall(b"x")
+            sock.recv(1)
+
+        samples = timed(ping, 5000)
 
         if not samples:
             print("  (no samples — did you fill in TODO 3?)")
@@ -274,49 +286,78 @@ def measure_localhost():
 # 4. Real network: how long does distance actually cost?
 # ---------------------------------------------------------------------------
 
-# Pick hosts at different distances from you. Replace these with somewhere near
-# you and somewhere far. The point is the CONTRAST, not the specific hosts.
+# Choosing hosts is the hardest part of this measurement, and the first list I
+# wrote was wrong. Most famous websites sit behind a CDN, which means your packet
+# stops at a cache in a data center near you and never travels to the country on
+# the label. www.mit.edu answers from Akamai. www.unimelb.edu.au answers from a
+# CDN edge. Timing them tells you how far away the nearest CDN node is, which is
+# a real thing to know, but it is not what we are trying to learn today.
+#
+# AWS regional endpoints do not hide behind a CDN. ec2.sa-east-1.amazonaws.com
+# genuinely answers from Sao Paulo. That makes them honest rulers for distance.
+#
+# Add a host near you and one on the far side of the planet. The CONTRAST is the
+# measurement. The specific hosts don't matter.
 HOSTS = [
-    ("google.com", 443, "probably very close (anycast, likely your own city)"),
-    ("www.iitb.ac.in", 443, "Mumbai, India"),
-    ("www.mit.edu", 443, "Boston, USA"),
-    ("www.unimelb.edu.au", 443, "Melbourne, Australia"),
+    ("ec2.ap-south-1.amazonaws.com", 443, "Mumbai, India"),
+    ("ec2.ap-southeast-2.amazonaws.com", 443, "Sydney, Australia"),
+    ("ec2.eu-west-1.amazonaws.com", 443, "Dublin, Ireland"),
+    ("ec2.us-east-1.amazonaws.com", 443, "Virginia, USA"),
+    ("ec2.sa-east-1.amazonaws.com", 443, "Sao Paulo, Brazil"),
 ]
+
+NET_SAMPLES = 12  # Each one is a real round trip. Be polite, and be patient.
+NET_WARMUP = 2  # See the note in timed(). Warmup across an ocean is expensive.
+NET_TIMEOUT = 3  # A dead host costs this many seconds PER ATTEMPT. Keep it low.
 
 
 def measure_internet():
-    """Expect single-digit ms for nearby, 100-300 ms for the far side of Earth.
+    """Expect tens of ms for a nearby region, 300ms+ for the far side of Earth.
 
     We time how long a TCP connection takes to establish. That handshake is
     almost exactly one round trip: we send SYN, they reply SYN-ACK. So the
     connect time is a clean measurement of the distance, with very little
     server-side work mixed in.
 
+    This section is slow, and the slowness IS the lesson. Every sample is a
+    packet crossing an ocean and coming back. Nothing you can write makes that
+    faster. Your CPU sits idle for essentially the entire run.
+
     Watch the p99 against the p50. On a real network they diverge, because
     packets queue behind other packets in routers you'll never see. This is the
     long tail from your reading, appearing in your own data.
     """
     print("\n[4] Internet  (TCP connect time ≈ one round trip)")
+    print(f"    {len(HOSTS)} hosts x {NET_SAMPLES + NET_WARMUP} connections, "
+          f"one at a time. This takes a while, on purpose.\n")
     results = {}
     for host, port, note in HOSTS:
-        # TODO 4 --------------------------------------------------------------
-        # Write `connect()`:
-        #     s = socket.create_connection((host, port), timeout=5)
-        #     s.close()
+        # Resolve DNS ONCE, up front, outside the timed loop.
         #
-        # Run `timed(connect, 20)`. Twenty is plenty; be polite to other
-        # people's servers. Wrap it in try/except socket.error and skip hosts
-        # that don't respond.
-        #
-        # Report in milliseconds.
-        # ---------------------------------------------------------------------
-        samples = []  # <-- replace this
-
-        if not samples:
-            print(f"  {host:<24} (skipped — fill in TODO 4)")
+        # socket.create_connection((host, port)) quietly does a DNS lookup on
+        # every single call. Our first version paid for that 30 times per host.
+        # Worse, it meant we were timing "DNS lookup + TCP handshake" and
+        # calling the total a round trip. Two different things, silently added
+        # together. Resolving first means we time exactly one thing.
+        try:
+            ip = socket.getaddrinfo(host, port, socket.AF_INET,
+                                    socket.SOCK_STREAM)[0][4][0]
+        except socket.gaierror:
+            print(f"  {host:<36} (DNS failed, skipping)")
             continue
-        p50 = report(f"{host}  [{note}]", samples, "ms")
-        results[host] = p50 * 1_000_000  # ns
+
+        def connect():
+            s = socket.create_connection((ip, port), timeout=NET_TIMEOUT)
+            s.close()
+
+        try:
+            samples = timed(connect, NET_SAMPLES, warmup=NET_WARMUP)
+        except (socket.error, OSError) as e:
+            print(f"  {host:<36} (no response: {e})")
+            continue
+
+        p50 = report(f"{note:<20} {ip:<16}", samples, "ms")
+        results[note] = p50 * 1_000_000  # ns
     return results
 
 
