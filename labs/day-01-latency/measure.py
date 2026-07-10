@@ -148,13 +148,39 @@ BLOCK = 4096  # 4 KB, the size of one page. Disks like to work in these.
 
 
 def _make_file():
+    """Write the test file WITHOUT letting it into the OS page cache.
+
+    This is subtler than it looks, and the first version of this lab got it
+    wrong. Disabling the cache when you READ is not enough. If you just wrote
+    512 MB, those pages are sitting in RAM already, and your "disk read" finds
+    them there and returns in about a microsecond. The read-side F_NOCACHE only
+    stops NEW pages from being cached. It does not evict the ones you put there
+    thirty seconds ago.
+
+    So we set F_NOCACHE on the WRITE handle too, and fsync to force the data
+    down to the physical device before we close it.
+
+    Measured difference on the machine this was written on:
+        write through cache:   p50 =  1.08 us   <- this is RAM, and it is a lie
+        write with F_NOCACHE:  p50 = 22.75 us   <- this is the SSD
+
+    Twenty-one times off, with no error and no warning. Benchmarks do not fail
+    loudly. They fail by returning a number you are happy with.
+    """
     if os.path.exists(FILENAME) and os.path.getsize(FILENAME) == FILE_SIZE:
         return
     print(f"  creating {FILE_SIZE // (1024*1024)} MB test file, one moment...")
-    chunk = os.urandom(1024 * 1024)
-    with open(FILENAME, "wb") as f:
+    fd = os.open(FILENAME, os.O_WRONLY | os.O_CREAT | os.O_TRUNC)
+    try:
+        if sys.platform == "darwin":
+            import fcntl
+            fcntl.fcntl(fd, 48, 1)  # F_NOCACHE
+        chunk = os.urandom(1024 * 1024)
         for _ in range(FILE_SIZE // len(chunk)):
-            f.write(chunk)
+            os.write(fd, chunk)
+        os.fsync(fd)  # Do not return until the bytes are actually on the disk.
+    finally:
+        os.close(fd)
 
 
 def _open_uncached():
@@ -217,9 +243,14 @@ def measure_ssd():
             print("  (no samples — did you fill in TODO 2?)")
             return None
         p50 = report("SSD random 4 KB read", samples, "us")
-        if percentile(samples, 50) < 1000:
-            print("  !! Under 1 µs. You are measuring the page cache, not the disk.")
-            print("     Re-read the comment in _open_uncached().")
+        # Sanity check. A real NVMe random read costs 20-150 us. Anything under
+        # 5 us means you are reading from RAM and calling it a disk. The first
+        # version of this file set the threshold at 1 us, which was too generous
+        # to catch a p50 of 1.8 us. A tripwire set below the failure it is
+        # watching for is worse than no tripwire, because it reassures you.
+        if percentile(samples, 50) < 5_000:
+            print("  !! Under 5 us. You are measuring the page cache, not the disk.")
+            print("     Delete bigfile.bin and rerun. See _make_file().")
         return p50 * 1000  # return ns
     finally:
         os.close(fd)
