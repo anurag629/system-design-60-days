@@ -1,0 +1,12 @@
+# Lab artifacts
+bigfile.bin
+*.bin
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# macOS
+.DS_Store
