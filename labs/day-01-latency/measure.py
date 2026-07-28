@@ -240,7 +240,7 @@ def measure_ssd():
         samples = timed(one_read, 2000)
 
         if not samples:
-            print("  (no samples — did you fill in TODO 2?)")
+            print("  (no samples, did you fill in TODO 2?)")
             return None
         p50 = report("SSD random 4 KB read", samples, "us")
         # Sanity check. A real NVMe random read costs 20-150 us. Anything under
@@ -305,7 +305,7 @@ def measure_localhost():
         samples = timed(ping, 5000)
 
         if not samples:
-            print("  (no samples — did you fill in TODO 3?)")
+            print("  (no samples, did you fill in TODO 3?)")
             return None
         p50 = report("localhost TCP round trip", samples, "us")
         return p50 * 1000  # ns
