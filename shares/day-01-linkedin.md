@@ -1,4 +1,4 @@
-# Day 1 — LinkedIn draft
+# Day 1, LinkedIn draft
 
 Post this roughly as-is, or rewrite in your own voice. Do not add hashtag soup.
 Attach a screenshot of your terminal output. The ratios block at the bottom of
@@ -14,8 +14,8 @@ Instead I found out my laptop's network is faster than its disk.
     SSD random 4 KB read     84.7 µs
     localhost TCP round trip 19.5 µs
 
-That's a full TCP round trip, through the kernel, with two context switches,
-beating a single read off an NVMe drive by more than four times.
+That's a full TCP round trip, through the kernel, with two context switches. It
+beats a single read off an NVMe drive by more than four times.
 
 Everyone teaches the hierarchy as RAM, then disk, then network, each about 100x
 slower than the last. That's not what my machine does. The "network is slow"

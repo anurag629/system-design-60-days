@@ -1,11 +1,11 @@
-# Week 1 — Ground truth
+# Week 1: ground truth
 
-**Dates:** Fri 2026-07-10 → Thu 2026-07-16
-**Level:** starting from zero. No prior system design assumed.
+This week runs Fri 2026-07-10 to Thu 2026-07-16.
+You start from zero. No prior system design assumed.
 
 ## What system design actually is
 
-Before anything else, let's kill a myth. System design is not a body of trivia about Kafka and load balancers. It's the practice of answering one question over and over: **given what this thing has to do, and given what computers are actually capable of, what's the simplest arrangement of parts that works?**
+Before anything else, one myth to kill. System design is not a body of trivia about Kafka and load balancers. It's the practice of answering one question over and over: **given what this thing has to do, and given what computers are actually capable of, what's the simplest arrangement of parts that works?**
 
 That question has two halves. The second half, "what computers are actually capable of," is where beginners are weakest, and it's where we start. If you don't know that reading from memory is roughly a hundred times faster than reading from disk, you have no basis for deciding whether to add a cache. You'd just be repeating something you read.
 
@@ -17,30 +17,30 @@ Someone describes an app. Within five minutes, on paper, you can say roughly how
 
 ## Days
 
-### Day 1 (Fri) — How slow is slow?
+### Day 1 (Fri): how slow is slow?
 The storage hierarchy: CPU cache, RAM, SSD, network. Each tier is roughly 100x slower than the one above it. You'll measure this yourself with about 40 lines of Python.
 
-### Day 2 (Sat) — Estimation on a napkin
+### Day 2 (Sat): estimation on a napkin
 Turning "500 million users" into "how many servers." Powers of ten, seconds in a day, bytes in a record. Lots of repetition until the arithmetic stops being scary.
 
-### Day 3 (Sun) — What happens when you type a URL
+### Day 3 (Sun): what happens when you type a URL
 DNS, TCP handshake, TLS, HTTP request, response. The classic interview question, but you'll actually watch it happen with real tools instead of reciting it.
 
-### Day 4 (Mon) — Latency vs throughput, and the queue
+### Day 4 (Mon): latency vs throughput, and the queue
 Why a system at 90% capacity feels fine and a system at 99% capacity falls over. The single most useful mental model in all of performance work, and it's just a graph.
 
-### Day 5 (Tue) — Designing an API
+### Day 5 (Tue): designing an API
 What a good endpoint looks like. Pagination, and why the obvious way to paginate breaks at scale. You'll build both ways and watch one of them die.
 
-### Day 6 (Wed) — More than one server
+### Day 6 (Wed): more than one server
 Load balancers, health checks, what "stateless" means and why everyone insists on it. You'll run three copies of an app behind a load balancer and kill one while it's serving traffic.
 
-### Day 7 (Thu) — Your first real design
+### Day 7 (Thu): your first real design
 No new material. You design a URL shortener from scratch, write it up, and then we compare it against what you would have written on Monday.
 
 ## Reading for the week
 
-The full, verified link list lives in [resources.md](../resources.md). The essentials for this week:
+The essentials for this week:
 
 All free:
 - Interactive latency table: https://colin-scott.github.io/personal_website/research/interactive_latency.html

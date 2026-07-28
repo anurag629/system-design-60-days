@@ -1,37 +1,35 @@
-# Day 1 — Friday 2026-07-10
+# Day 1, Friday 2026-07-10
 ## How slow is slow?
 
-**Today's one idea:** a computer is a stack of storage tiers, and each tier down is roughly 100 times slower than the one above it. Almost every performance decision in system design is you noticing that some data is on the wrong tier.
+Today's one idea: a computer is a stack of storage tiers, and each tier down is roughly 100 times slower than the one above it. Almost every performance decision in system design is you noticing that some data is on the wrong tier.
 
 Nothing today assumes prior knowledge. If a term is new, it's explained.
 
 ---
 
-## Block 1 — Read (50 min)
+## Block 1: read (50 min)
 
-### Today's links
+### What to read and watch today
 
-Read these three, nothing else:
-- [The interactive latency table](https://colin-scott.github.io/personal_website/research/interactive_latency.html), set to 2026. You measure against it in the lab.
-- [Jeff Dean's latency numbers](https://gist.github.com/jboner/2841832). The list everyone quotes and almost nobody checks.
-- [DDIA chapter 1](https://dataintensive.net/), free preview. Read it for the percentiles section. The rest can wait.
+Read these three, and stop there. The list is short on purpose.
+- [The interactive latency table](https://colin-scott.github.io/personal_website/research/interactive_latency.html), set to 2026. You measure against it in the lab, so open it first.
+- [Jeff Dean's latency numbers](https://gist.github.com/jboner/2841832). The list everyone quotes and almost nobody checks against their own machine.
+- [DDIA chapter 1](https://dataintensive.net/), the free preview. Read it for the percentiles section. The rest of the chapter can wait for week 2.
 
-Watch one, after the lab:
-- [Latency numbers, a 1000x slowdown](https://www.youtube.com/watch?v=4JSN0VpEv2I), Hussein Nasser, about 20 minutes. He walks the same table you just built. It lands differently once the numbers are your own.
-
-Full list, mapped to every week, is in [resources.md](../resources.md).
+Watch one thing, and only after the lab:
+- [Latency numbers, a 1000x slowdown](https://www.youtube.com/watch?v=4JSN0VpEv2I) by Hussein Nasser, about 20 minutes. He walks the same table you just built, and it reads differently once the numbers are your own.
 
 ### First, the mental model (read this part slowly, 10 min)
 
 When your program needs a piece of data, it can live in one of a few places. From fastest to slowest:
 
-**CPU cache.** A tiny amount of memory physically on the processor. Around 1 nanosecond to reach. A nanosecond is a billionth of a second. Light travels about one foot in a nanosecond. Your CPU cache holds maybe a few megabytes.
+The CPU cache is a tiny amount of memory physically on the processor. Around 1 nanosecond to reach. A nanosecond is a billionth of a second. Light travels about one foot in a nanosecond. Your CPU cache holds maybe a few megabytes.
 
-**RAM, also called main memory.** Around 100 nanoseconds. So a hundred times slower than cache. Your laptop probably has 16 to 64 gigabytes. When people say "in memory," this is what they mean. When your program is running, its variables live here.
+Next is RAM, also called main memory. Around 100 nanoseconds, so a hundred times slower than cache. Your laptop probably has 16 to 64 gigabytes. When people say "in memory," this is what they mean. When your program is running, its variables live here.
 
-**SSD, the disk.** Around 16 *micro*seconds for a small random read. A microsecond is a millionth of a second, so a thousand nanoseconds. That makes an SSD read roughly 150 times slower than RAM. Your laptop has maybe 500 gigabytes to 2 terabytes of it. The important property is that data here survives a reboot.
+Then the SSD, the disk. Around 16 *micro*seconds for a small random read. A microsecond is a millionth of a second, so a thousand nanoseconds. That makes an SSD read roughly 150 times slower than RAM. Your laptop has maybe 500 gigabytes to 2 terabytes of it. The important property is that data here survives a reboot.
 
-**The network.** Sending a request to a server in the same building and getting an answer back takes around 500 microseconds. To a server on another continent, about 150 *milli*seconds. A millisecond is a thousandth of a second. That cross-continent trip is roughly a million times slower than reaching into RAM.
+Last, the network. Sending a request to a server in the same building and getting an answer back takes around 500 microseconds. To a server on another continent, about 150 *milli*seconds. A millisecond is a thousandth of a second. That cross-continent trip is roughly a million times slower than reaching into RAM.
 
 Now look at those four tiers again and notice the pattern. Each step down buys you more space and costs you about two orders of magnitude of speed. That trade is the reason caches exist, the reason databases have indexes, the reason CDNs exist, and the reason people put servers in many countries. All of it is the same move: *this data is on a slow tier and it's being read a lot, so let's keep a copy on a faster tier.*
 
@@ -62,7 +60,7 @@ Round trip inside one datacenter    500,000 ns  =  500 µs
 Round trip California to Europe                 =  150 ms
 ```
 
-**The single most important observation:** network round trips barely improved over thirty years, while CPU and memory got much faster. Physics doesn't care about your budget. The speed of light through fiber is fixed. This is why "just put it in another region" is so often the wrong answer, and it's why you'll hear experienced engineers obsess over *how many* network round trips a request makes rather than how fast each one is.
+The single most important observation: network round trips barely improved over thirty years, while CPU and memory got much faster. Physics doesn't care about your budget. The speed of light through fiber is fixed. This is why "just put it in another region" is so often the wrong answer, and it's why you'll hear experienced engineers obsess over *how many* network round trips a request makes rather than how fast each one is.
 
 ### Then read (30 min)
 
@@ -74,19 +72,19 @@ The idea, in case the book's version is dense: if you measure how long a thousan
 
 Averages lie. If 99 requests take 10ms and one takes 10 seconds, the average is about 110ms, which describes *nobody's* actual experience. The p99 tells you about your unhappiest customers, and those are usually the ones with the most data, meaning your most valuable ones.
 
-**Hold this question while you read:** if a single web page makes 10 calls to a backend service, and that service has a p99 of 100ms, what fraction of page loads will contain at least one slow call? Try to reason it out. The answer is at the bottom and it surprises almost everyone.
+Hold this question while you read: if a single web page makes 10 calls to a backend service, and that service has a p99 of 100ms, what fraction of page loads will contain at least one slow call? Try to reason it out. The answer is at the bottom and it surprises almost everyone.
 
 ---
 
-## Block 2 — Drill (40 min)
+## Block 2: drill (40 min)
 
 Paper and pen. No laptop, no calculator. The point is to get comfortable being approximately right, fast.
 
 ### Two shortcuts you should memorize right now
 
-**Seconds in a day = 86,400.** Round it to **100,000**. You will never regret this. It makes the division trivial and you're within 15%, which is well inside "right answer" territory for estimation.
+Seconds in a day = 86,400. Round it to **100,000**. You will never regret this. It makes the division trivial and you're within 15%, which is well inside "right answer" territory for estimation.
 
-**Powers of ten.** Thousand is 10³ and we call it K. Million is 10⁶, M. Billion is 10⁹, B. For bytes: kilobyte KB, megabyte MB (10⁶), gigabyte GB (10⁹), terabyte TB (10¹²), petabyte PB (10¹⁵).
+Powers of ten. Thousand is 10³ and we call it K. Million is 10⁶, M. Billion is 10⁹, B. For bytes: kilobyte KB, megabyte MB (10⁶), gigabyte GB (10⁹), terabyte TB (10¹²), petabyte PB (10¹⁵).
 
 ### Worked example, so you see the shape of it
 
@@ -116,7 +114,7 @@ Write your answers in `notes/day-01-drills.md` first. Then check the bottom of t
 
 ---
 
-## Block 3 — Build (100 min)
+## Block 3: build (100 min)
 
 You're going to measure the storage hierarchy on your own machine. Python, because we're measuring things that take microseconds and milliseconds, and Python's overhead of ~50ns per operation doesn't meaningfully pollute those. (It *would* pollute a CPU cache measurement, which is exactly why we're skipping that tier today. Honesty about what your tools can and can't measure is part of the craft.)
 
@@ -124,10 +122,10 @@ I've put a starter file at `labs/day-01-latency/measure.py` with the fiddly part
 
 ### What you're measuring
 
-1. **RAM random read.** Jump to random positions in a 200 MB array, read 8 bytes. Expect something in the low hundreds of nanoseconds per read.
-2. **SSD random read.** Jump to random positions in a 1 GB file on disk, read 4 KB. Expect tens of microseconds. There's a trick here: the operating system caches recently-read file data in RAM (the "page cache"), so a naive second read measures RAM and you'd never know. The starter file disables that caching for you and explains how in a comment. Read the comment.
-3. **Localhost network round trip.** Ping an HTTP server running on your own machine. No real network involved, so this measures the cost of the operating system's networking machinery, not distance. Expect tens to low hundreds of microseconds.
-4. **Real network round trip.** Ping a server far away. Use `https://www.google.com` and something deliberately distant. Expect tens to hundreds of milliseconds.
+1. RAM random read. Jump to random positions in a 200 MB array, read 8 bytes. Expect something in the low hundreds of nanoseconds per read.
+2. SSD random read. Jump to random positions in a 1 GB file on disk, read 4 KB. Expect tens of microseconds. There's a trick here: the operating system caches recently-read file data in RAM (the "page cache"), so a naive second read measures RAM and you'd never know. The starter file disables that caching for you and explains how in a comment. Read the comment.
+3. Localhost network round trip. Ping an HTTP server running on your own machine. No real network involved, so this measures the cost of the operating system's networking machinery, not distance. Expect tens to low hundreds of microseconds.
+4. Real network round trip. Ping a server far away. Use `https://www.google.com` and something deliberately distant. Expect tens to hundreds of milliseconds.
 
 ### The deliverable
 
@@ -137,18 +135,18 @@ I've put a starter file at `labs/day-01-latency/measure.py` with the fiddly part
 |---|---|---|---|
 
 And below it, two paragraphs:
-- **The ratios.** How many RAM reads fit in one SSD read? How many SSD reads fit in one cross-country round trip? These ratios are what you'll actually carry with you. Write them out as sentences: "One trip to Europe costs as much as ___ SSD reads."
-- **The surprise.** One measurement that didn't match the canonical table. State what you expected, what you got, and your best guess at why. You don't need to be right. You need to have a theory.
+- The ratios. How many RAM reads fit in one SSD read? How many SSD reads fit in one cross-country round trip? These ratios are what you'll actually carry with you. Write them out as sentences: "One trip to Europe costs as much as ___ SSD reads."
+- The surprise. One measurement that didn't match the canonical table. State what you expected, what you got, and your best guess at why. You don't need to be right. You need to have a theory.
 
 ### Mistakes you will probably make, in the order you'll make them
 
-**Not warming up.** The first time you run anything, Python is still importing, the file isn't open yet, the network connection isn't established. Always throw away the first 10 iterations before you start timing. The starter file does this, but understand *why*.
+Not warming up. The first time you run anything, Python is still importing, the file isn't open yet, the network connection isn't established. Always throw away the first 10 iterations before you start timing. The starter file does this, but understand *why*.
 
-**Timing one operation.** A single measurement of something that takes 100 nanoseconds is meaningless, because your clock isn't that precise and your OS might interrupt you mid-measurement. Time 100,000 operations and divide. The starter file does this too.
+Timing one operation. A single measurement of something that takes 100 nanoseconds is meaningless, because your clock isn't that precise and your OS might interrupt you mid-measurement. Time 100,000 operations and divide. The starter file does this too.
 
-**Reporting the average.** You just read about percentiles. Don't average your samples. Report p50 and p99, and notice how far apart they are, especially for the network. That gap *is* the lesson from this morning's reading, showing up in your own data within hours of learning it. That's a good feeling. Chase it.
+Reporting the average. You just read about percentiles. Don't average your samples. Report p50 and p99, and notice how far apart they are, especially for the network. That gap *is* the lesson from this morning's reading. It shows up in your own data within hours of learning it. That's a good feeling. Chase it.
 
-**Measuring the page cache and calling it disk.** If your SSD number comes out around 100 nanoseconds, you did not measure your SSD. You measured RAM. Go read the comment in the starter file again.
+Measuring the page cache and calling it disk. If your SSD number comes out around 100 nanoseconds, you did not measure your SSD. You measured RAM. Go read the comment in the starter file again.
 
 ### If you finish early
 
@@ -156,7 +154,7 @@ Run the network measurement 500 times and plot a histogram of the results. You'l
 
 ---
 
-## Block 4 — Write (30 min)
+## Block 4: write (30 min)
 
 Thirty minutes. Draft, light edit, publish. Do not spend an hour making it perfect. Nobody is grading you and the compounding comes from consistency.
 
@@ -196,7 +194,7 @@ If you did the histogram stretch goal, attach it. A real chart from your own mac
 4. The surprise, and your theory for it. Say "I think" if you're not sure. Uncertainty reads as honest.
 5. The consequence: one design decision this changes for you. Then the 60-day frame.
 
-**Voice rules.** No 🧵 emoji. No "Let that sink in." No "Here's what I learned 👇". Just say the thing. Every tweet should contain a number.
+Voice rules. No 🧵 emoji. No "Let that sink in." No "Here's what I learned 👇". Just say the thing. Every tweet should contain a number.
 
 ---
 
@@ -204,9 +202,9 @@ If you did the histogram stretch goal, attach it. A real chart from your own mac
 
 Send me three things:
 
-1. **What you completed, and what you skipped.** Skipping is fine and expected. Lying about it wastes both our time, because I build tomorrow from this.
-2. **The number that surprised you.** From the lab.
-3. **One thing you still can't explain to yourself.** This is the most valuable of the three. It tells me where to aim tomorrow.
+1. What you completed, and what you skipped. Skipping is fine and expected. Lying about it wastes both our time, because I build tomorrow from this.
+2. The number that surprised you, from the lab.
+3. One thing you still can't explain to yourself. This is the most valuable of the three. It tells me where to aim tomorrow.
 
 ---
 
@@ -231,7 +229,7 @@ The biggest change is **not** "make the server faster." Cutting the server's 200
 
 This is the lesson that makes today worth it. Beginners optimize the code. The round trips were 1,000ms of the 1,200ms, and no amount of code optimization touches them.
 
-**And the percentile question from the reading:** if one call has a 1% chance of being slow, the chance that a page making 10 independent calls has *at least one* slow call is 1 − (0.99)¹⁰ ≈ **9.6%.**
+The percentile question from the reading works out the same way. If one call has a 1% chance of being slow, the chance that a page making 10 independent calls has *at least one* slow call is 1 − (0.99)¹⁰ ≈ **9.6%.**
 
 So a service everyone describes as "p99 = 100ms, we're fine" produces a slow experience for nearly one in ten page loads. This is why large companies obsess over p99.9 and p99.99 on internal services. The tail doesn't stay in the tail. Fan-out drags it into the middle.
 

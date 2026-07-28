@@ -1,4 +1,4 @@
-# Day 1 results — the storage hierarchy on my machine
+# Day 1 results: the storage hierarchy on my machine
 
 Measured 2026-07-10. Apple Silicon laptop, macOS, Python 3, `measure.py`.
 
@@ -6,14 +6,14 @@ Measured 2026-07-10. Apple Silicon laptop, macOS, Python 3, `measure.py`.
 
 | What | Canonical (2026) | Measured (p50) | Measured (p99) | Ratio to my RAM |
 |---|---|---|---|---|
-| RAM random read | 100 ns | **177 ns** | — | 1x |
+| RAM random read | 100 ns | **177 ns** | n/a | 1x |
 | SSD random 4 KB read | 16 µs | **84.7 µs** | 134 µs | 478x |
-| Localhost TCP round trip | — | **19.5 µs** | 59.1 µs | 110x |
-| RTT to Mumbai | — | **54.2 ms** | 73.0 ms | 306,069x |
-| RTT to Dublin | — | **188.3 ms** | 229.9 ms | 1,063,499x |
-| RTT to Sydney | — | **198.6 ms** | 285.0 ms | 1,121,960x |
-| RTT to Virginia | — | **295.6 ms** | 312.2 ms | 1,669,751x |
-| RTT to São Paulo | — | **417.9 ms** | 627.0 ms | 2,360,722x |
+| Localhost TCP round trip | n/a | **19.5 µs** | 59.1 µs | 110x |
+| RTT to Mumbai | n/a | **54.2 ms** | 73.0 ms | 306,069x |
+| RTT to Dublin | n/a | **188.3 ms** | 229.9 ms | 1,063,499x |
+| RTT to Sydney | n/a | **198.6 ms** | 285.0 ms | 1,121,960x |
+| RTT to Virginia | n/a | **295.6 ms** | 312.2 ms | 1,669,751x |
+| RTT to São Paulo | n/a | **417.9 ms** | 627.0 ms | 2,360,722x |
 
 Network hosts are AWS regional endpoints, which answer from the region on the
 label. Famous university sites do not; they sit behind CDNs and answer from a
@@ -45,7 +45,7 @@ localhost TCP RTT       19.5 µs   <- 4.3x faster than the disk
 A full TCP round trip through the kernel, with two context switches and a
 scheduler wakeup, beat a single 4 KB read off the SSD by more than 4x.
 
-**My theory:** the "network is slow" intuition is really "distance is slow."
+My theory is that the "network is slow" intuition is really "distance is slow."
 Loopback has no distance. What's left is the operating system's networking code,
 and that's just CPU work, so it lands in the tens of microseconds. The SSD, in
 contrast, is a physical device sitting on a PCIe bus. I forced every read to
@@ -54,13 +54,13 @@ with no parallelism, which is the worst possible way to use an NVMe drive. NVMe
 gets its famous throughput from having dozens of requests in flight at once.
 I gave it one.
 
-**What this changes:** "read it from a Redis box across the datacenter" is not
-automatically worse than "read it from local disk." A same-datacenter round trip
-is around 500 µs, which is still ~6x my SSD read, so disk wins there. But the
-gap is one order of magnitude, not three, and it collapses entirely if the disk
-read is uncached and the network hop is short. The hierarchy is a guideline, not
-a law, and the boundaries between tiers are much blurrier than the tidy table
-suggests.
+What this changes is my instinct about local versus remote. "Read it from a Redis
+box across the datacenter" is not automatically worse than "read it from local
+disk." A same-datacenter round trip is around 500 µs, which is still ~6x my SSD
+read, so disk wins there. But the gap is one order of magnitude, not three, and it
+collapses entirely if the disk read is uncached and the network hop is short. The
+hierarchy is a guideline, not a law, and the boundaries between tiers are much
+blurrier than the tidy table suggests.
 
 ## Surprise 2: the worst tail latency was on localhost
 
@@ -76,10 +76,10 @@ suggests.
 A packet that never left the machine was three times less predictable than one
 that crossed the Atlantic and came back.
 
-**My theory:** it isn't the network, because there isn't one. It's the scheduler.
-Every loopback round trip needs the OS to wake up the echo-server thread, and if
-a core is busy the wakeup waits. Most of the time it's instant. Occasionally you
-land behind a scheduling quantum and pay tens of microseconds.
+My theory is that it isn't the network, because there isn't one. It's the
+scheduler. Every loopback round trip needs the OS to wake up the echo-server
+thread, and if a core is busy the wakeup waits. Most of the time it's instant.
+Occasionally you land behind a scheduling quantum and pay tens of microseconds.
 
 Meanwhile Virginia's p99/p50 was 1.06x, almost perfectly consistent. Once a
 packet is committed to a long fiber path, the variance of the routers along the
@@ -114,7 +114,7 @@ short trip and a small fraction of a long one.
 
 177 ns measured against a canonical 100 ns.
 
-**My theory: TLB misses.** The buffer is 200 MB, which is 51,200 pages of 4 KB
+My theory is TLB misses. The buffer is 200 MB, which is 51,200 pages of 4 KB
 each. The TLB, the small cache that translates memory addresses, holds maybe
 2,000 to 3,000 entries. I'm jumping to random pages, so nearly every access
 misses the TLB and the CPU has to walk the page table to find out where the data

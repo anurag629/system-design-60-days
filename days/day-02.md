@@ -1,7 +1,7 @@
-# Day 2 — Saturday 2026-07-11
+# Day 2, Saturday 2026-07-11
 ## Estimation, and the moment reality disagrees with you
 
-**Today's one idea:** an estimate you never check is a guess. You'll estimate six
+Today's one idea: an estimate you never check is a guess. You'll estimate six
 things on paper, then measure all six, and the gap will teach you more than
 either number alone.
 
@@ -10,19 +10,18 @@ costs: bytes, writes, and durability. Tomorrow's designs get built out of those.
 
 ---
 
-## Block 1 — Read (50 min)
+## Block 1: read (50 min)
 
-### Today's links
+### What to read and watch today
 
 Read these three:
-- [Google's back-of-the-envelope pro-tip](https://highscalability.com/google-pro-tip-use-back-of-the-envelope-calculations-to-choo/). Short, and it's where this whole habit started.
-- [AWS S3 pricing](https://aws.amazon.com/s3/pricing/). Real dollars per GB. Most engineers can't quote it, which is exactly why their designs can't be argued with.
-- [Use The Index, Luke! chapter 1](https://use-the-index-luke.com/sql/anatomy). You'll want it the moment the lab makes a lookup 14,000x faster.
+- [Google's back of the envelope pro-tip](https://highscalability.com/google-pro-tip-use-back-of-the-envelope-calculations-to-choo/). Short, and it is where this whole habit comes from.
+- [AWS S3 pricing](https://aws.amazon.com/s3/pricing/). Real dollars per gigabyte. Most engineers cannot quote this, which is exactly why their designs cannot be argued with.
+- [Use The Index, Luke! chapter 1](https://use-the-index-luke.com/sql/anatomy). You will want it the moment the lab makes a lookup 14,000 times faster.
 
-Watch one, after the lab:
-- [Back-of-the-envelope estimation](https://www.youtube.com/watch?v=WZjSFNPS9Lo), about 20 minutes. Do your six predictions on paper first. Then watch how someone else sizes a system, and notice where your instincts differ.
-
-Full list, mapped to every week, is in [resources.md](../resources.md).
+Watch these two, after the lab:
+- [Back of the envelope estimation](https://www.youtube.com/watch?v=WZjSFNPS9Lo), about 30 minutes. Do your six predictions on paper first, then watch someone else size a system and notice where your instinct differs.
+- [Write-ahead logs, the secret to fast writes](https://www.youtube.com/watch?v=s3hKYMOpp3E) by Ben Dicken, 11 minutes. This is the payoff of today's lab, the reason one batched commit beats a thousand, shown in pictures.
 
 ### Powers of two, and why storage estimates go wrong (10 min)
 
@@ -72,14 +71,14 @@ and for AWS RDS. Look up the actual cost of storing a terabyte for a month, and
 the cost of a database instance with 64 GB of RAM. Write both numbers down. Most
 engineers cannot tell you either, and it makes their designs unfalsifiable.
 
-**Hold this question while you read:** yesterday you estimated 4 TB of new
+Hold this question while you read. Yesterday you estimated 4 TB of new
 messages per day. What does storing one year of that actually cost, in dollars,
 on S3? Now on RDS? The ratio between those two numbers is why tiered storage
 exists.
 
 ---
 
-## Block 2 — Drill (40 min)
+## Block 2: drill (40 min)
 
 Paper. No laptop. Then write your answers in `notes/day-02-estimates.md`.
 
@@ -138,9 +137,9 @@ data accumulates. It isn't 4 TB you're paying for.)
 
 ---
 
-## Block 3 — Build (100 min)
+## Block 3: build (100 min)
 
-**Lab: `labs/day-02-estimation/estimate.py`**
+Today's lab is `labs/day-02-estimation/estimate.py`.
 
 Same shape as yesterday. Scaffolding is written, four TODOs are yours. It uses
 SQLite, which ships inside Python, so there is nothing to install and no server
@@ -152,18 +151,18 @@ far off you were.
 
 ### What it measures
 
-1. **Bytes per row on disk.** You'll find out that a 216-byte row does not take
+1. Bytes per row on disk. You'll find out that a 216-byte row does not take
    216 bytes, and the reason is the single most important fact about how
    databases store things. Week 2 builds on it.
 
-2. **Bulk insert speed**, one transaction wrapping all 1M rows.
+2. Bulk insert speed, one transaction wrapping all 1M rows.
 
-3. **Durable insert speed**, one transaction per row, so the database calls
+3. Durable insert speed, one transaction per row, so the database calls
    `fsync()` and waits for the SSD to confirm the write physically landed. This
    number will be dramatically, almost insultingly worse than #2. That gap is why
    every high-throughput system on earth batches its writes.
 
-4. **Index cost**, in both bytes and lookup time.
+4. Index cost, in both bytes and lookup time.
 
 ### Fill in the TODOs
 
@@ -209,7 +208,7 @@ surprised has stopped estimating and started reciting.**
 
 ---
 
-## Block 4 — Write (30 min)
+## Block 4: write (30 min)
 
 Your angle today is **prediction versus reality**, and it's a strong one because
 almost nobody publishes their wrong guesses.

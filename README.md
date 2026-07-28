@@ -30,21 +30,21 @@ I adjust the next day based on that. If you're crushing it, I make it harder. If
 
 ## The eight weeks
 
-**Week 1 — Ground truth.** Latency numbers, back-of-envelope estimation, HTTP/TCP/TLS, DNS, API design, load balancing. You end the week able to estimate any system's shape in 5 minutes on a napkin.
+Week 1 is ground truth. Latency numbers, back of the envelope estimation, HTTP/TCP/TLS, DNS, API design, load balancing. You end the week able to estimate any system's shape in 5 minutes on a napkin.
 
-**Week 2 — Storage.** B-trees vs LSM trees, indexes, transactions and isolation levels, replication, partitioning, the actual cost of a JOIN. Postgres under load, with real EXPLAIN plans.
+Week 2 is storage. B-trees vs LSM trees, indexes, transactions and isolation levels, replication, partitioning, the actual cost of a JOIN. Postgres under load, with real EXPLAIN plans.
 
-**Week 3 — Caching and the CDN.** Cache invalidation, thundering herds, hot keys, Redis internals, CDN behavior, cache coherence. This is where most production systems actually fall over.
+Week 3 is caching and the CDN. Cache invalidation, thundering herds, hot keys, Redis internals, CDN behavior, cache coherence. This is where most production systems actually fall over.
 
-**Week 4 — Async.** Queues, log-structured streaming, Kafka's design, exactly-once as a lie, idempotency keys, outbox pattern, backpressure. You build a pipeline that survives you killing workers at random.
+Week 4 is async. Queues, log-structured streaming, Kafka's design, exactly-once as a lie, idempotency keys, outbox pattern, backpressure. You build a pipeline that survives you killing workers at random.
 
-**Week 5 — Distributed systems, properly.** CAP as it actually reads, consensus and Raft, logical clocks, quorums, failure detection, the papers (Dynamo, Bigtable, Spanner). Hardest week. Budget the frustration.
+Week 5 is distributed systems, properly. CAP as it actually reads, consensus and Raft, logical clocks, quorums, failure detection, the papers (Dynamo, Bigtable, Spanner). Hardest week. Budget the frustration.
 
-**Week 6 — AI systems.** LLM inference serving, KV cache and batching, vector search, RAG architecture, agent orchestration, semantic caching, token-based rate limiting, model gateways and fallback. Everything you learned so far, aimed at a GPU.
+Week 6 is AI systems. LLM inference serving, KV cache and batching, vector search, RAG architecture, agent orchestration, semantic caching, token-based rate limiting, model gateways and fallback. Everything you learned so far, aimed at a GPU.
 
-**Week 7 — Production.** Observability, SLOs and error budgets, rate limiting, multi-tenancy, security boundaries, cost modeling, capacity planning. The stuff that separates a design from a system.
+Week 7 is production. Observability, SLOs and error budgets, rate limiting, multi-tenancy, security boundaries, cost modeling, capacity planning. The stuff that separates a design from a system.
 
-**Week 8 — Synthesis.** Timed mock designs, one full capstone, and a written architecture doc you'd be happy to hand a staff engineer.
+Week 8 is synthesis. Timed mock designs, one full capstone, and a written architecture doc you'd be happy to hand a staff engineer.
 
 ## The stack you'll build on
 
@@ -52,10 +52,9 @@ Postgres (Neon or local), Redis (Upstash or local), Node/TypeScript or Python, D
 
 ## Files
 
-- `resources.md` — free resources, mapped to the weeks that need them
-- `weeks/` — full detail for each week, written the Sunday before
-- `days/` — the day's material and exercises
-- `labs/` — your code
-- `notes/` — your reading notes
-- `shares/` — your LinkedIn and Twitter drafts
-- `progress.md` — the log
+- `weeks/`: full detail for each week, written the Sunday before
+- `days/`: the day's material and exercises
+- `labs/`: your code
+- `notes/`: your reading notes
+- `shares/`: your LinkedIn and Twitter drafts
+- `progress.md`: the log

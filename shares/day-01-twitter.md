@@ -1,6 +1,6 @@
-# Day 1 — Twitter/X thread
+# Day 1, Twitter/X thread
 
-Five tweets. Every one has a number in it. No 🧵 emoji, no "let that sink in."
+Five tweets. Every one has a number in it. No thread emoji, no "let that sink in."
 Attach the terminal screenshot to tweet 3.
 
 ---
