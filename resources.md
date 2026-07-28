@@ -9,8 +9,9 @@ already measured, or to give you vocabulary for a thing you already built.
 
 Rule of thumb: **no more than one video per day, and only after the lab.**
 
-Each day file (`days/day-NN.md`) has a "Today's links" block with just the two or
-three things you need that day. This page is the full map.
+Each day file (`days/day-NN.md`) has a "Today's links" block with what you need
+that day: two to four things to read, and one video to watch after the lab. This
+page is the full map, for when you want to go deeper on a week.
 
 ---
 

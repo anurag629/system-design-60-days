@@ -9,21 +9,17 @@ Nothing today assumes prior knowledge. If a term is new, it's explained.
 
 ## Block 1 — Read (50 min)
 
-### Today's links (all free)
+### Today's links
 
-**Core, do these:**
-- Interactive latency table, set the year to 2026: https://colin-scott.github.io/personal_website/research/interactive_latency.html
-- Jeff Dean's original "Latency Numbers Every Programmer Should Know": https://gist.github.com/jboner/2841832
-- DDIA, chapter 1. Book site with free chapter 1 preview: https://dataintensive.net/
+Read these three, nothing else:
+- [The interactive latency table](https://colin-scott.github.io/personal_website/research/interactive_latency.html), set to 2026. You measure against it in the lab.
+- [Jeff Dean's latency numbers](https://gist.github.com/jboner/2841832). The list everyone quotes and almost nobody checks.
+- [DDIA chapter 1](https://dataintensive.net/), free preview. Read it for the percentiles section. The rest can wait.
 
-**If a term today was new:**
-- *High Performance Browser Networking*, ch. 1 (free, full text): https://hpbn.co/primer-on-latency-and-bandwidth/
-- The classic "what happens when you type a URL" walkthrough (you'll build on this Day 3): https://github.com/alex/what-happens-when
+Watch one, after the lab:
+- [Latency numbers, a 1000x slowdown](https://www.youtube.com/watch?v=4JSN0VpEv2I), Hussein Nasser, about 20 minutes. He walks the same table you just built. It lands differently once the numbers are your own.
 
-**One video, only after the lab, optional:**
-- Hussein Nasser on latency and the network stack: https://www.youtube.com/@hnasr
-
-Full curated list, mapped to every week: [resources.md](../resources.md).
+Full list, mapped to every week, is in [resources.md](../resources.md).
 
 ### First, the mental model (read this part slowly, 10 min)
 

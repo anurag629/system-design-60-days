@@ -12,26 +12,17 @@ costs: bytes, writes, and durability. Tomorrow's designs get built out of those.
 
 ## Block 1 — Read (50 min)
 
-### Today's links (all free)
+### Today's links
 
-**Core, do these:**
-- "Google pro-tip: back-of-the-envelope calculations" — the origin of this whole habit, and short: https://highscalability.com/google-pro-tip-use-back-of-the-envelope-calculations-to-choo/
-- The System Design Primer, "Back-of-the-envelope" + "Appendix" sections (free, the powers-of-two and latency tables live here): https://github.com/donnemartin/system-design-primer#back-of-the-envelope-calculations
-- AWS S3 pricing, the real numbers you'll reason with: https://aws.amazon.com/s3/pricing/
-- AWS RDS pricing, to see the gap vs S3: https://aws.amazon.com/rds/pricing/
-- Google SRE book, "Service Level Objectives" (the nines, done properly): https://sre.google/sre-book/service-level-objectives/
+Read these three:
+- [Google's back-of-the-envelope pro-tip](https://highscalability.com/google-pro-tip-use-back-of-the-envelope-calculations-to-choo/). Short, and it's where this whole habit started.
+- [AWS S3 pricing](https://aws.amazon.com/s3/pricing/). Real dollars per GB. Most engineers can't quote it, which is exactly why their designs can't be argued with.
+- [Use The Index, Luke! chapter 1](https://use-the-index-luke.com/sql/anatomy). You'll want it the moment the lab makes a lookup 14,000x faster.
 
-**For the lab (indexes and the query planner):**
-- Use The Index, Luke! ch. 1, "Anatomy of an index" (free book): https://use-the-index-luke.com/sql/anatomy
-- SQLite EXPLAIN QUERY PLAN docs, so you can read what the lab prints: https://www.sqlite.org/eqp.html
+Watch one, after the lab:
+- [Back-of-the-envelope estimation](https://www.youtube.com/watch?v=WZjSFNPS9Lo), about 20 minutes. Do your six predictions on paper first. Then watch how someone else sizes a system, and notice where your instincts differ.
 
-**Rusty SQL? optional warmup for week 2:**
-- pgexercises, free SQL practice on a real dataset: https://pgexercises.com/
-
-**One video, only after the lab, optional:**
-- Arpit Bhayani on database internals (his "Asli Engineering" channel): https://www.youtube.com/@AsliEngineering
-
-Full curated list, mapped to every week: [resources.md](../resources.md).
+Full list, mapped to every week, is in [resources.md](../resources.md).
 
 ### Powers of two, and why storage estimates go wrong (10 min)
 
