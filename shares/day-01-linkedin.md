@@ -1,3 +1,10 @@
+---
+title: "Day 1 LinkedIn draft"
+parent: "Day 1: how slow is slow?"
+grand_parent: "Week 1: ground truth"
+nav_order: 2
+---
+
 # Day 1, LinkedIn draft
 
 Post this roughly as-is, or rewrite in your own voice. Do not add hashtag soup.

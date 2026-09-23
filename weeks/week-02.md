@@ -1,3 +1,8 @@
+---
+title: "Week 2: storage"
+nav_order: 4
+---
+
 # Week 2: storage, or where does the data actually sit? 💾
 
 Days 8 to 14, Tue 2026-09-29 to Mon 2026-10-05.

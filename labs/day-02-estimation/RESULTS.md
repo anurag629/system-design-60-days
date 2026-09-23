@@ -1,3 +1,10 @@
+---
+title: "Day 2 lab results"
+parent: "Day 2: estimation vs reality"
+grand_parent: "Week 1: ground truth"
+nav_order: 1
+---
+
 # Day 2 results: prediction vs reality
 
 Measured 2026-09-23. Apple Silicon laptop, macOS, Python 3, `estimate.py`.

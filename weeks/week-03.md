@@ -1,3 +1,8 @@
+---
+title: "Week 3: caching and the CDN"
+nav_order: 5
+---
+
 # Week 3: caching and the CDN, or how to be fast by being lazy 🚀
 
 Days 15 to 21, Tue 2026-10-06 to Mon 2026-10-12.

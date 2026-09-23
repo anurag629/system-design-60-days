@@ -1,0 +1,39 @@
+title: System design in 60 days
+description: 60 days of system design, 4 hours a day. Notes, drills, and labs built from scratch.
+remote_theme: just-the-docs/just-the-docs@v0.12.0
+
+plugins:
+  - jekyll-remote-theme
+  - jekyll-relative-links
+  - jekyll-optional-front-matter
+  - jekyll-titles-from-headings
+  - jekyll-seo-tag
+
+relative_links:
+  enabled: true
+  collections: false
+
+search_enabled: true
+heading_anchors: true
+back_to_top: true
+back_to_top_text: "Back to top"
+
+aux_links:
+  "View on GitHub":
+    - "https://github.com/anurag629/system-design-60-days"
+aux_links_new_tab: true
+
+footer_content: "Built one day at a time. Source on <a href=\"https://github.com/anurag629/system-design-60-days\">GitHub</a>."
+
+# Every page gets the page layout, which adds the previous / next buttons.
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: page
+
+exclude:
+  - README.md
+  - .gitignore
+  - "**/__pycache__"
+  - "labs/**/*.db*"

@@ -1,3 +1,10 @@
+---
+title: "Day 1: how slow is slow?"
+parent: "Week 1: ground truth"
+nav_order: 1
+has_children: true
+---
+
 # Day 1, Friday 2026-07-10
 ## How slow is slow?
 
@@ -118,7 +125,7 @@ Write your answers in `notes/day-01-drills.md` first. Then check the bottom of t
 
 You're going to measure the storage hierarchy on your own machine. Python, because we're measuring things that take microseconds and milliseconds, and Python's overhead of ~50ns per operation doesn't meaningfully pollute those. (It *would* pollute a CPU cache measurement, which is exactly why we're skipping that tier today. Honesty about what your tools can and can't measure is part of the craft.)
 
-I've put a starter file at `labs/day-01-latency/measure.py` with the fiddly parts already written. Your job is the four `TODO` blocks.
+I've put a starter file at [`labs/day-01-latency/measure.py`](https://github.com/anurag629/system-design-60-days/blob/main/labs/day-01-latency/measure.py) with the fiddly parts already written. Your job is the four `TODO` blocks.
 
 ### What you're measuring
 
@@ -129,7 +136,7 @@ I've put a starter file at `labs/day-01-latency/measure.py` with the fiddly part
 
 ### The deliverable
 
-`labs/day-01-latency/RESULTS.md`, containing a table with three columns:
+[`labs/day-01-latency/RESULTS.md`](../labs/day-01-latency/RESULTS.md), containing a table with three columns:
 
 | What | Canonical value | My measurement | Ratio to RAM |
 |---|---|---|---|
@@ -212,7 +219,7 @@ Send me three things:
 
 Only open this after you've written your own. Seriously.
 
-<details>
+<details markdown="1">
 <summary>Click to expand</summary>
 
 **D1.** 500M × 40 = 20 billion messages/day. 20 × 10⁹ / 10⁵ seconds = **200,000 messages per second.**

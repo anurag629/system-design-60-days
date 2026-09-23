@@ -1,3 +1,9 @@
+---
+title: "Week 1: ground truth"
+nav_order: 3
+has_children: true
+---
+
 # Week 1: ground truth
 
 Day 1 ran on Fri 2026-07-10. After a break, the rest of the week runs Wed 2026-09-23 to Mon 2026-09-28.
@@ -17,10 +23,10 @@ Someone describes an app. Within five minutes, on paper, you can say roughly how
 
 ## Days
 
-### Day 1 (Fri Jul 10): how slow is slow?
+### [Day 1 (Fri Jul 10): how slow is slow?](../days/day-01.md)
 The storage hierarchy: CPU cache, RAM, SSD, network. Each tier is roughly 100x slower than the one above it. You'll measure this yourself with about 40 lines of Python.
 
-### Day 2 (Wed Sep 23): estimation on a napkin
+### [Day 2 (Wed Sep 23): estimation on a napkin](../days/day-02.md)
 Turning "500 million users" into "how many servers." Powers of ten, seconds in a day, bytes in a record. Lots of repetition until the arithmetic stops being scary.
 
 ### Day 3 (Thu Sep 24): what happens when you type a URL

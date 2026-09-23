@@ -1,3 +1,10 @@
+---
+title: "Day 1 Twitter draft"
+parent: "Day 1: how slow is slow?"
+grand_parent: "Week 1: ground truth"
+nav_order: 3
+---
+
 # Day 1, Twitter/X thread
 
 Five tweets. Every one has a number in it. No thread emoji, no "let that sink in."

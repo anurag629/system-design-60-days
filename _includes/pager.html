@@ -1,0 +1,23 @@
+{%- comment -%}
+Previous / next buttons. The reading order lives in _data/sequence.yml.
+Pages that are not in that list (lab results, drafts, notes) get no buttons.
+{%- endcomment -%}
+{%- assign seq = site.data.sequence -%}
+{%- assign idx = nil -%}
+{%- for item in seq -%}
+  {%- if item.url == page.url -%}{%- assign idx = forloop.index0 -%}{%- endif -%}
+{%- endfor -%}
+{%- if idx != nil -%}
+  {%- assign prev_i = idx | minus: 1 -%}
+  {%- assign next_i = idx | plus: 1 -%}
+<nav class="pager" aria-label="Previous and next page">
+  {%- if idx > 0 -%}
+    {%- assign prev = seq[prev_i] -%}
+  <a class="pager-link pager-prev" href="{{ prev.url | relative_url }}"><small>← Previous</small>{{ prev.title }}</a>
+  {%- else -%}<span></span>{%- endif -%}
+  {%- if next_i < seq.size -%}
+    {%- assign next = seq[next_i] -%}
+  <a class="pager-link pager-next" href="{{ next.url | relative_url }}"><small>Next →</small>{{ next.title }}</a>
+  {%- endif -%}
+</nav>
+{%- endif -%}

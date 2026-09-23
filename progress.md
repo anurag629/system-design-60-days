@@ -1,3 +1,8 @@
+---
+title: "Progress log"
+nav_order: 2
+---
+
 # Progress log
 
 Format: one entry per day. Fill it in at the end of the Write block.

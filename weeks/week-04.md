@@ -1,3 +1,8 @@
+---
+title: "Week 4: async, queues and the log"
+nav_order: 6
+---
+
 # Week 4: async, queues and the log 📨
 
 Days 22 to 28, Tue 2026-10-13 to Mon 2026-10-19.

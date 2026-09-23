@@ -1,3 +1,10 @@
+---
+title: "Day 1 lab results"
+parent: "Day 1: how slow is slow?"
+grand_parent: "Week 1: ground truth"
+nav_order: 1
+---
+
 # Day 1 results: the storage hierarchy on my machine
 
 Measured 2026-07-10. Apple Silicon laptop, macOS, Python 3, `measure.py`.

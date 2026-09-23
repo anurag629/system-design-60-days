@@ -1,3 +1,10 @@
+---
+title: "Day 2 estimates"
+parent: "Day 2: estimation vs reality"
+grand_parent: "Week 1: ground truth"
+nav_order: 2
+---
+
 # Day 2 estimates
 
 Written on paper first, copied here before running the lab.

@@ -1,3 +1,8 @@
+---
+title: "Week 8: putting it all together"
+nav_order: 10
+---
+
 # Week 8: putting it all together 🎯
 
 Days 50 to 60, Tue 2026-11-10 to Fri 2026-11-20.

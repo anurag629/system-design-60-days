@@ -1,3 +1,8 @@
+---
+title: "Week 6: AI systems"
+nav_order: 8
+---
+
 # Week 6: AI systems, the fun one 🤖
 
 Days 36 to 42, Tue 2026-10-27 to Mon 2026-11-02.

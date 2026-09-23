@@ -1,5 +1,7 @@
 # System design in 60 days
 
+Read it as a site: https://anurag629.github.io/system-design-60-days/
+
 Start: 2026-07-10 · Restarted at day 2 on 2026-09-23 · End: 2026-11-20 · 4 hours/day · ~240 hours total
 
 ## The bet

@@ -1,3 +1,10 @@
+---
+title: "Day 2: estimation vs reality"
+parent: "Week 1: ground truth"
+nav_order: 2
+has_children: true
+---
+
 # Day 2, Wednesday 2026-09-23
 ## Estimation, and the moment reality disagrees with you 📏
 
@@ -93,7 +100,7 @@ On Day 1 you estimated a messaging app creates about 4 TB of new messages per da
 
 ## Block 2: drill (40 min) ✍️
 
-Paper first, no laptop. Then copy your answers into `notes/day-02-estimates.md` (the template is already there) and into the prediction table in `progress.md`.
+Paper first, no laptop. Then copy your answers into [`notes/day-02-estimates.md`](../notes/day-02-estimates.md) (the template is already there) and into the prediction table in [`progress.md`](../progress.md).
 
 The first six are the ones today's lab checks. Do not skip this, and do not peek at the lab output first. The whole exercise depends on you committing to a number before you find out. Estimating after you've seen the answer is like doing a DRS review after watching the replay. Not allowed.
 
@@ -138,7 +145,7 @@ P10. Day 1's messaging app: 4 TB/day. On S3 at about $0.023 per GB-month, what d
 
 ## Block 3: build (100 min) 🔧
 
-Today's lab is `labs/day-02-estimation/estimate.py`.
+Today's lab is [`labs/day-02-estimation/estimate.py`](https://github.com/anurag629/system-design-60-days/blob/main/labs/day-02-estimation/estimate.py).
 
 It works the same way as Day 1. The scaffolding is written and four TODOs are yours. It uses SQLite, which comes with Python, so there's nothing to pip install. Once the TODOs are in, it runs in under 30 seconds.
 
@@ -189,7 +196,7 @@ The index will make the lookup faster by some factor. Predict the factor before 
 
 ### Deliverable
 
-`labs/day-02-estimation/RESULTS.md` has a skeleton waiting for you. Paste the scoreboard the script prints. Then write one sentence for each of the six predictions: were you high or low, by how much, and why do you now think that happened?
+[`labs/day-02-estimation/RESULTS.md`](../labs/day-02-estimation/RESULTS.md) has a skeleton waiting for you. Paste the scoreboard the script prints. Then write one sentence for each of the six predictions: were you high or low, by how much, and why do you now think that happened?
 
 Being wrong is the point. On Day 1 you were 2x off on D3 and it carried straight into D4. That isn't failure. That's calibration. An estimator who is never surprised has stopped estimating and started reciting.
 
@@ -223,7 +230,7 @@ Day 3 is what actually happens when you type a URL. We'll use `tcpdump` to watch
 
 Open these only after writing yours. P1 through P6 aren't here on purpose, because the lab tells you those. That's the whole exercise.
 
-<details>
+<details markdown="1">
 <summary>P7 through P10</summary>
 
 P7. 500 hours/min × 60 × 24 = 720,000 hours of video per day. × 1 GB = 720 TB per day. × 365 ≈ 263 PB per year. That's roughly YouTube's order of magnitude, and it's why nobody stores video in a database.

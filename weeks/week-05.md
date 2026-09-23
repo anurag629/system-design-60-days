@@ -1,3 +1,8 @@
+---
+title: "Week 5: distributed systems"
+nav_order: 7
+---
+
 # Week 5: distributed systems, the real deal 🌍
 
 Days 29 to 35, Tue 2026-10-20 to Mon 2026-10-26.

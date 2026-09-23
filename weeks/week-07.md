@@ -1,3 +1,8 @@
+---
+title: "Week 7: production"
+nav_order: 9
+---
+
 # Week 7: production, or what happens after you ship 🛠️
 
 Days 43 to 49, Tue 2026-11-03 to Mon 2026-11-09.
