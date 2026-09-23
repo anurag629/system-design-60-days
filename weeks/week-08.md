@@ -1,6 +1,6 @@
 # Week 8: putting it all together 🎯
 
-Days 50 to 60.
+Days 50 to 60, Tue 2026-11-10 to Fri 2026-11-20.
 
 This is it, the last stretch. Seven weeks of building small broken systems and measuring them has quietly turned into something. You do not "know facts about system design" any more. You have judgement. This week you prove it to yourself.
 

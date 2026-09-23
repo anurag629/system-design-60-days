@@ -1,14 +1,14 @@
 # Week 5: distributed systems, the real deal 🌍
 
-Days 29 to 35.
+Days 29 to 35, Tue 2026-10-20 to Mon 2026-10-26.
 
-This is the hard week. I am telling you now so you do not panic on Wednesday when your brain hurts. Everybody's brain hurts this week. If it did not, the week would be lying to you.
+This is the hard week. I am telling you now so you do not panic midweek when your brain hurts. Everybody's brain hurts this week. If it did not, the week would be lying to you.
 
 Here is why it is hard. Everything you learned so far assumed one computer that mostly works. This week we admit the truth: real systems run on many computers connected by an unreliable network, the machines fail at random, the clocks disagree, and messages arrive late, twice, or never. And somehow, on top of that mess, we still have to promise users that their money is not lost and their message got through. The tools we build to keep that promise are some of the most beautiful ideas in computing.
 
 You will read actual research papers this week. Do not be scared of the word "paper". The ones I picked are famous precisely because they are readable. Dynamo, Bigtable, Spanner and Raft are written by working engineers for working engineers, not for mathematicians.
 
-## What you will be able to do by Sunday
+## What you will be able to do by the end of the week
 
 You can state CAP correctly, which most people cannot, and explain why it is a choice you make per-operation and not a label you stick on a database. You can explain how a quorum works with R plus W greater than N. You can describe, in your own words, how Raft picks a leader and keeps everyone's log in agreement. You understand why Google built atomic clocks into their data centres, and why that is both brilliant and slightly insane.
 

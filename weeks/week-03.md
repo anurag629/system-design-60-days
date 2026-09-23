@@ -1,6 +1,6 @@
 # Week 3: caching and the CDN, or how to be fast by being lazy 🚀
 
-Days 15 to 21.
+Days 15 to 21, Tue 2026-10-06 to Mon 2026-10-12.
 
 Caching is the most loved and most feared idea in system design. Loved because it is the single easiest way to make a slow thing fast. Feared because, as the old joke goes, there are only two hard problems in computer science: cache invalidation, naming things, and off-by-one errors. 😅
 
@@ -8,7 +8,7 @@ Here is the whole idea in one line. Some data is expensive to compute or fetch, 
 
 The catch, and the reason this week is dangerous, is that a copy can go stale, and a cache that fails badly does not just get slow. It can take down the healthy database sitting behind it. Most of the big outages you read about have a cache somewhere in the story.
 
-## What you will be able to do by Sunday
+## What you will be able to do by the end of the week
 
 You can explain cache-aside, read-through, write-through and write-back and say which one you would pick for a given feature. You know what a thundering herd is and three ways to stop one. You can look at a cache hit rate of 90% and immediately tell me that dropping it to 80% does not add 10% load to the database, it doubles the load. That one insight has saved many a Diwali sale. 🪔
 

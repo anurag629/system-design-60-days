@@ -1,6 +1,6 @@
 # Week 4: async, queues and the log 📨
 
-Days 22 to 28.
+Days 22 to 28, Tue 2026-10-13 to Mon 2026-10-19.
 
 So far everything you built was synchronous. Request comes in, you do the work, you send the answer, the caller waits. Simple and honest. But some work is too slow, too spiky, or too important to lose, and for that you need to break the chain. The caller drops the job in a queue and walks away. Someone else picks it up later. This one move, doing work later instead of now, is behind a huge amount of real-world architecture.
 
@@ -8,7 +8,7 @@ Think about placing a Swiggy order. 🍔 The moment you tap "Pay", a dozen thing
 
 The star of the week is the log. Not the "print debug statement" kind. The append-only log, the deceptively simple idea that you only ever add to the end and never edit the middle. Kafka is built on it. Databases use it internally, you met it in week 2 as the write-ahead log. Once the log clicks, a lot of distributed systems suddenly make sense.
 
-## What you will be able to do by Sunday
+## What you will be able to do by the end of the week
 
 You can explain why a queue decouples a fast producer from a slow consumer, and what happens when the consumer cannot keep up. You know why "exactly-once delivery" is mostly a comforting lie and how idempotency keys give you the real thing anyway. You can draw the outbox pattern and say what problem it solves. You have personally killed a worker mid-job and watched the system heal.
 

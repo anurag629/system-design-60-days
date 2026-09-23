@@ -1,6 +1,6 @@
 # Week 1: ground truth
 
-This week runs Fri 2026-07-10 to Thu 2026-07-16.
+Day 1 ran on Fri 2026-07-10. After a break, the rest of the week runs Wed 2026-09-23 to Mon 2026-09-28.
 You start from zero. No prior system design assumed.
 
 ## What system design actually is
@@ -11,32 +11,32 @@ That question has two halves. The second half, "what computers are actually capa
 
 So week 1 is about building an intuition for speed and size. Nothing more.
 
-## What you should be able to do by Thursday night
+## What you should be able to do by the end of day 7
 
 Someone describes an app. Within five minutes, on paper, you can say roughly how many requests per second it gets, roughly how much data it stores per year, and roughly where it will get slow first. You'll be off by some amount, and that's fine. Being right within 10x is the entire skill. Most beginners are off by 1000x because they never try.
 
 ## Days
 
-### Day 1 (Fri): how slow is slow?
+### Day 1 (Fri Jul 10): how slow is slow?
 The storage hierarchy: CPU cache, RAM, SSD, network. Each tier is roughly 100x slower than the one above it. You'll measure this yourself with about 40 lines of Python.
 
-### Day 2 (Sat): estimation on a napkin
+### Day 2 (Wed Sep 23): estimation on a napkin
 Turning "500 million users" into "how many servers." Powers of ten, seconds in a day, bytes in a record. Lots of repetition until the arithmetic stops being scary.
 
-### Day 3 (Sun): what happens when you type a URL
+### Day 3 (Thu Sep 24): what happens when you type a URL
 DNS, TCP handshake, TLS, HTTP request, response. The classic interview question, but you'll actually watch it happen with real tools instead of reciting it.
 
-### Day 4 (Mon): latency vs throughput, and the queue
+### Day 4 (Fri Sep 25): latency vs throughput, and the queue
 Why a system at 90% capacity feels fine and a system at 99% capacity falls over. The single most useful mental model in all of performance work, and it's just a graph.
 
-### Day 5 (Tue): designing an API
+### Day 5 (Sat Sep 26): designing an API
 What a good endpoint looks like. Pagination, and why the obvious way to paginate breaks at scale. You'll build both ways and watch one of them die.
 
-### Day 6 (Wed): more than one server
+### Day 6 (Sun Sep 27): more than one server
 Load balancers, health checks, what "stateless" means and why everyone insists on it. You'll run three copies of an app behind a load balancer and kill one while it's serving traffic.
 
-### Day 7 (Thu): your first real design
-No new material. You design a URL shortener from scratch, write it up, and then we compare it against what you would have written on Monday.
+### Day 7 (Mon Sep 28): your first real design
+No new material. You design a URL shortener from scratch, write it up, and then we compare it against what you would have written on day 2.
 
 ## Reading for the week
 

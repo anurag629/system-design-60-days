@@ -1,6 +1,6 @@
 # Week 6: AI systems, the fun one 🤖
 
-Days 36 to 42.
+Days 36 to 42, Tue 2026-10-27 to Mon 2026-11-02.
 
 This is the week you came for, and here is the good news: you are ready for it now in a way you were not five weeks ago. Because serving an AI model is not some alien new discipline. It is distributed systems with a very expensive, very hungry component in the middle called a GPU. Everything you learned about latency, batching, caching, queues and tail latency now points straight at that GPU.
 
@@ -8,7 +8,7 @@ Let me say the thing people miss. An LLM is slow and costly in a specific, under
 
 The rest is familiar friends in new clothes. Vector search is just an index for "things that mean similar", the way a B-tree is an index for "things that sort near". RAG is cache-aside plus retrieval. Agents are a request that fans out into many requests, so tail latency is back to bite you. Semantic caching is caching where the key is a meaning instead of an exact string.
 
-## What you will be able to do by Sunday
+## What you will be able to do by the end of the week
 
 You can explain prefill versus decode and why the first token is slow but the rest stream fast. You can say what the KV cache is and why continuous batching was such a big deal. You can design a RAG system and name its three most common failure modes before you build it. You can do the token-cost maths for an AI feature and tell a PM roughly what it will cost per user per month, which is a superpower almost nobody has.
 

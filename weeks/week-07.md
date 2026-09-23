@@ -1,6 +1,6 @@
 # Week 7: production, or what happens after you ship 🛠️
 
-Days 43 to 49.
+Days 43 to 49, Tue 2026-11-03 to Mon 2026-11-09.
 
 Anyone can draw boxes and arrows. This week is about the difference between a design and a system that actually runs at 3 AM when something breaks and you are on call. This is the week that separates the people who "know system design" from the people companies actually pay well.
 
@@ -8,7 +8,7 @@ Think of it this way. In week 8 you will do mock interviews, and the candidates 
 
 None of this is glamorous. There are no clever algorithms here. It is observability, error budgets, rate limiting, isolation, security basics, and cost. It is the plumbing. But a house is mostly plumbing you never see, and you notice immediately when it is missing.
 
-## What you will be able to do by Sunday
+## What you will be able to do by the end of the week
 
 You can instrument a service so that when it misbehaves you can actually see why, using logs, metrics and traces. You can define an SLO and compute an error budget, and explain why 100% uptime is the wrong goal. You can implement a token bucket rate limiter, the exact thing standing between IRCTC and total collapse every tatkal morning. You can look at a design and estimate the monthly cloud bill, which turns architecture debates from opinion into arithmetic.
 

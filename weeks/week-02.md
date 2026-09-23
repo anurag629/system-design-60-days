@@ -1,6 +1,6 @@
 # Week 2: storage, or where does the data actually sit? 💾
 
-Days 8 to 14.
+Days 8 to 14, Tue 2026-09-29 to Mon 2026-10-05.
 
 Last week you learned how fast a computer is. This week you learn where your data lives and what it costs to put it there and get it back. Every "should we use Postgres or Mongo or Cassandra" argument you have ever heard is really an argument about the stuff in this week. Most people have that argument without knowing any of it. You will not.
 
@@ -8,7 +8,7 @@ Here is the honest truth. A database is not magic. It is a very clever program t
 
 We live inside Kleppmann's *Designing Data-Intensive Applications*, chapters 2, 3, 5 and 6, this whole week. Buy it if you have not. It is the one book worth the money.
 
-## What you will be able to do by Sunday
+## What you will be able to do by the end of the week
 
 Someone says "our reads got slow after we hit 50 million rows." You can list five possible causes in order of likelihood, and you can say which EXPLAIN output would confirm each one. You know why adding an index sped up your read but slowed down your writes. You can explain to a non-technical PM why "just make it consistent AND always available" is not a thing you can promise.
 
@@ -26,7 +26,7 @@ Day 12: replication. One leader, many followers, and the small lie in the middle
 
 Day 13: partitioning, also called sharding. Splitting one big table across many machines, hash vs range, and the classic disaster of the hot shard. Think one Kohli century sending all the traffic to one server. Lab: shard a dataset, create a hot shard on purpose, then fix it.
 
-Day 14: first real storage design. You design the database layer for something like Twitter or a URL shortener, on paper, timed. Then we compare it against what you would have drawn on Monday and you see how much moved.
+Day 14: first real storage design. You design the database layer for something like Twitter or a URL shortener, on paper, timed. Then we compare it against what you would have drawn on day 8 and you see how much moved.
 
 ## Core resources for the week 📚
 

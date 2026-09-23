@@ -1,6 +1,6 @@
 # System design in 60 days
 
-Start: 2026-07-10 · End: 2026-09-07 · 4 hours/day · ~240 hours total
+Start: 2026-07-10 · Restarted at day 2 on 2026-09-23 · End: 2026-11-20 · 4 hours/day · ~240 hours total
 
 ## The bet
 
@@ -52,7 +52,7 @@ Postgres (Neon or local), Redis (Upstash or local), Node/TypeScript or Python, D
 
 ## Files
 
-- `weeks/`: full detail for each week, written the Sunday before
+- `weeks/`: full detail for each week, written the day before each week starts
 - `days/`: the day's material and exercises
 - `labs/`: your code
 - `notes/`: your reading notes

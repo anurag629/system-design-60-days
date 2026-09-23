@@ -58,7 +58,7 @@ github.com/anurag629/system-design-60-days
 
 ---
 
-## Day 2, 2026-07-11, estimation vs reality
+## Day 2, 2026-09-23, estimation vs reality
 
 - [ ] Read: powers of two, the nines, Alex Xu ch. 2, S3 + RDS pricing pages
 - [ ] Drill: P1-P6 predictions written down **before** running the lab; P7-P10
