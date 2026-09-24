@@ -11,12 +11,12 @@ Four hours a day, from the first latency number to a full capstone design. Build
 {: .fs-6 .fw-300 }
 
 <div class="today-card" markdown="1">
-**Today, Wed 2026-09-23: [Day 2, estimation vs reality](days/day-02.md)**
+**Today, Thu 2026-09-24: [Day 3, what happens when you type a URL](days/day-03.md)**
 
-Predict six numbers about a million-row database, then measure all six. Start with the reading block, and keep the laptop closed until your predictions are on paper.
+Time every step of one HTTPS request (DNS, TCP, TLS, first byte) and count the round trips. Day 2 not finished yet? [Do that first](days/day-02.md).
 </div>
 
-[Start today's day](days/day-02.md){: .btn .btn-primary .mr-2 }
+[Start today's day](days/day-03.md){: .btn .btn-primary .mr-2 }
 [See the progress log](progress.md){: .btn }
 
 ---
@@ -42,6 +42,7 @@ Day pages show up in the sidebar under their week as they get written. Each day 
 |---|---|---|---|
 | [Day 1](days/day-01.md) | Fri Jul 10 | How slow is slow? | [Results](labs/day-01-latency/RESULTS.md) |
 | [Day 2](days/day-02.md) | Wed Sep 23 | Estimation vs reality | [Results](labs/day-02-estimation/RESULTS.md) |
+| [Day 3](days/day-03.md) | Thu Sep 24 | What happens when you type a URL | [Results](labs/day-03-url/RESULTS.md) |
 
 ## The daily loop
 

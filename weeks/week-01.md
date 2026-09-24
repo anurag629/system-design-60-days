@@ -29,7 +29,7 @@ The storage hierarchy: CPU cache, RAM, SSD, network. Each tier is roughly 100x s
 ### [Day 2 (Wed Sep 23): estimation on a napkin](../days/day-02.md)
 Turning "500 million users" into "how many servers." Powers of ten, seconds in a day, bytes in a record. Lots of repetition until the arithmetic stops being scary.
 
-### Day 3 (Thu Sep 24): what happens when you type a URL
+### [Day 3 (Thu Sep 24): what happens when you type a URL](../days/day-03.md)
 DNS, TCP handshake, TLS, HTTP request, response. The classic interview question, but you'll actually watch it happen with real tools instead of reciting it.
 
 ### Day 4 (Fri Sep 25): latency vs throughput, and the queue

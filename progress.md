@@ -86,3 +86,19 @@ Most wrong on
 The fsync number
 
 Can't explain yet
+
+---
+
+## Day 3, 2026-09-24, what happens when you type a URL
+
+- [ ] Read: howdns.works, HPBN handshake sections, what-happens-when (skim)
+- [ ] Drill: D1-D5 on paper, in `notes/day-03-drills.md`
+- [ ] Build: `labs/day-03-url/RESULTS.md`
+- [ ] Stretch: the extra round trip
+- [ ] Write: both posts
+
+Virginia, cold vs reused (ms)
+
+Round trips before first byte
+
+Can't explain yet

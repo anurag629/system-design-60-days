@@ -4,6 +4,7 @@
 - { url: "/weeks/week-01.html", title: "Week 1: ground truth" }
 - { url: "/days/day-01.html",   title: "Day 1: how slow is slow?" }
 - { url: "/days/day-02.html",   title: "Day 2: estimation vs reality" }
+- { url: "/days/day-03.html",   title: "Day 3: what happens when you type a URL" }
 - { url: "/weeks/week-02.html", title: "Week 2: storage" }
 - { url: "/weeks/week-03.html", title: "Week 3: caching and the CDN" }
 - { url: "/weeks/week-04.html", title: "Week 4: async, queues and the log" }
