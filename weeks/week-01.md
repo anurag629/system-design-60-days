@@ -32,7 +32,7 @@ Turning "500 million users" into "how many servers." Powers of ten, seconds in a
 ### [Day 3 (Thu Sep 24): what happens when you type a URL](../days/day-03.md)
 DNS, TCP handshake, TLS, HTTP request, response. The classic interview question, but you'll actually watch it happen with real tools instead of reciting it.
 
-### Day 4 (Fri Sep 25): latency vs throughput, and the queue
+### [Day 4 (Fri Sep 25): latency vs throughput, and the queue](../days/day-04.md)
 Why a system at 90% capacity feels fine and a system at 99% capacity falls over. The single most useful mental model in all of performance work, and it's just a graph.
 
 ### Day 5 (Sat Sep 26): designing an API

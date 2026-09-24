@@ -117,7 +117,7 @@ Now: is 10,000 requests per second a lot? For a single modest server doing simpl
 
 **D5.** A user in Mumbai loads a page. The server is in Virginia, and the round trip between them is about 250ms. The server itself takes 200ms to build the response. The page then makes 3 more requests, one after another, each needing a fresh round trip. Roughly how long until the page is done? What's the single biggest thing you'd change?
 
-Write your answers in `notes/day-01-drills.md` first. Then check the bottom of this file. The gap between what you guessed and what's true is the actual lesson, and it disappears if you peek.
+Write your answers in `notes/day-01-drills.md` first. Then check the Solutions section at the bottom of this page. The gap between what you guessed and what's true is the actual lesson, and it disappears if you peek.
 
 ---
 
@@ -203,24 +203,28 @@ If you did the histogram stretch goal, attach it. A real chart from your own mac
 
 Voice rules. No 🧵 emoji. No "Let that sink in." No "Here's what I learned 👇". Just say the thing. Every tweet should contain a number.
 
+Finished example posts, written with the reference run's numbers, are on the [Day 1 posts](../shares/day-01-posts.md) page.
+
 ---
 
-## End-of-day report
+## End of day: log it 📝
 
-Send me three things:
+Add a Day 1 entry to your progress log with three things:
 
-1. What you completed, and what you skipped. Skipping is fine and expected. Lying about it wastes both our time, because I build tomorrow from this.
+1. What you completed, and what you skipped. Skipping is fine and expected. Just be honest about it, because future you plans from this log.
 2. The number that surprised you, from the lab.
-3. One thing you still can't explain to yourself. This is the most valuable of the three. It tells me where to aim tomorrow.
+3. One thing you still can't explain to yourself. This is the most valuable of the three. Take it to the next day's reading, or to a friend, or back to the lab.
+
+Then compare your work with the Solutions below.
 
 ---
 
-## Drill answers
+## Solutions 🔑
 
-Only open this after you've written your own. Seriously.
+Open these only after you've done the day. Reading answers first feels like learning and isn't.
 
 <details markdown="1">
-<summary>Click to expand</summary>
+<summary>Drill answers, D1 to D5</summary>
 
 **D1.** 500M × 40 = 20 billion messages/day. 20 × 10⁹ / 10⁵ seconds = **200,000 messages per second.**
 
@@ -239,5 +243,81 @@ This is the lesson that makes today worth it. Beginners optimize the code. The r
 The percentile question from the reading works out the same way. If one call has a 1% chance of being slow, the chance that a page making 10 independent calls has *at least one* slow call is 1 − (0.99)¹⁰ ≈ **9.6%.**
 
 So a service everyone describes as "p99 = 100ms, we're fine" produces a slow experience for nearly one in ten page loads. This is why large companies obsess over p99.9 and p99.99 on internal services. The tail doesn't stay in the tail. Fan-out drags it into the middle.
+
+</details>
+
+<details markdown="1">
+<summary>Lab solution: the four TODOs</summary>
+
+The full working file is [`labs/day-01-latency/solution.py`](https://github.com/anurag629/system-design-60-days/blob/main/labs/day-01-latency/solution.py).
+
+TODO 1, the measured RAM loop. It's the baseline loop with one change, `total += mv[i]` instead of `sink += 1`, so the difference between the two is the memory read:
+
+```python
+total = 0
+start = time.perf_counter_ns()
+for i in indices:
+    total += mv[i]
+measured_ns = (time.perf_counter_ns() - start) / N
+```
+
+TODO 2, one random 4 KB read from the uncached file:
+
+```python
+def one_read():
+    offset = random.randrange(max_offset)
+    os.pread(fd, BLOCK, offset)
+samples = timed(one_read, 2000)
+```
+
+TODO 3, a one-byte ping over localhost:
+
+```python
+def ping():
+    sock.sendall(b"x")
+    sock.recv(1)
+
+samples = timed(ping, 5000)
+```
+
+TODO 4, a TCP connect to an IP that was resolved once, up front:
+
+```python
+def connect():
+    s = socket.create_connection((ip, port), timeout=NET_TIMEOUT)
+    s.close()
+
+try:
+    samples = timed(connect, NET_SAMPLES, warmup=NET_WARMUP)
+except (socket.error, OSError) as e:
+    print(f"  {host:<36} (no response: {e})")
+    continue
+```
+
+</details>
+
+<details markdown="1">
+<summary>Reference run, and what each number means</summary>
+
+The author's run, Apple Silicon laptop, macOS, from India. The full write-up is in [Day 1 lab results](../labs/day-01-latency/RESULTS.md).
+
+| What | Canonical | Reference run (p50) |
+|---|---|---|
+| RAM random read | 100 ns | 177 ns |
+| SSD random 4 KB read | 16 µs | 84.7 µs |
+| Localhost TCP round trip | n/a | 19.5 µs |
+| Round trip to Mumbai | n/a | 54.2 ms |
+| Round trip to Virginia | n/a | 295.6 ms |
+| Round trip to São Paulo | n/a | 417.9 ms |
+
+RAM came out slower than the canonical 100 ns. Random reads across 200 MB miss every CPU cache, and they usually miss the TLB too (the small cache of recent address translations), so each read also pays for a lookup in the page tables. The baseline subtraction is approximate as well. Anything from 60 to 200 ns is a healthy result.
+
+The SSD came out 5x slower than the canonical number, and that's normal for this test. It reads one block at a time with caching switched off, the least flattering way to use an NVMe drive. Fast SSDs earn their headline numbers by keeping dozens of requests in flight at once. If you got under 5 µs, you measured the page cache, not the disk.
+
+Localhost beat the SSD. That surprises nearly everyone. "The network is slow" really means "distance is slow," and loopback has no distance. What's left is just kernel work.
+
+The internet rows depend entirely on where you are. What should hold anywhere is the ratio: one round trip to another continent costs as much as a few million RAM reads. That ratio is the reason caches, CDNs and read replicas exist.
+
+The p99 of the localhost row was about 3x its p50, a worse ratio than the São Paulo row. That spread comes from the OS scheduler waking up threads, not from the network. Tail latency shows up even when there's no network involved.
 
 </details>

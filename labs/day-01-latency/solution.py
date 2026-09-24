@@ -1,4 +1,6 @@
 """
+Day 1 lab, SOLUTION. All four TODOs filled in. Try measure.py first.
+
 Day 1 lab: measure the storage hierarchy on your own machine.
 
 Run it:      python3 measure.py
@@ -121,7 +123,10 @@ def measure_ram():
     # Then the line below subtracts the baseline and gives you the real number.
     # -------------------------------------------------------------------------
     total = 0
-    measured_ns = 0.0  # <-- replace this
+    start = time.perf_counter_ns()
+    for i in indices:
+        total += mv[i]
+    measured_ns = (time.perf_counter_ns() - start) / N
 
     if measured_ns == 0.0:
         print("  (did you fill in TODO 1?)")
@@ -230,7 +235,10 @@ def measure_ssd():
         # a ~30,000ns disk read, that's a rounding error. Knowing WHEN you can
         # ignore overhead is as useful as knowing how to subtract it.
         # ---------------------------------------------------------------------
-        samples = []  # <-- replace this
+        def one_read():
+            offset = random.randrange(max_offset)
+            os.pread(fd, BLOCK, offset)
+        samples = timed(one_read, 2000)
 
         if not samples:
             print("  (no samples, did you fill in TODO 2?)")
@@ -291,11 +299,11 @@ def measure_localhost():
     sock.setsockopt(socket.IPPROTO_TCP, socket.TCP_NODELAY, 1)
 
     try:
-        # TODO 3 --------------------------------------------------------------
-        # Write `ping()`: sock.sendall(b"x") then sock.recv(1).
-        # Run it through the helper:  samples = timed(ping, 5000)
-        # ---------------------------------------------------------------------
-        samples = []  # <-- replace this
+        def ping():
+            sock.sendall(b"x")
+            sock.recv(1)
+
+        samples = timed(ping, 5000)
 
         if not samples:
             print("  (no samples, did you fill in TODO 3?)")
@@ -370,22 +378,14 @@ def measure_internet():
             print(f"  {host:<36} (DNS failed, skipping)")
             continue
 
-        # TODO 4 --------------------------------------------------------------
-        # Write `connect()`, which opens a TCP connection to the IP and closes it:
-        #     s = socket.create_connection((ip, port), timeout=NET_TIMEOUT)
-        #     s.close()
-        #
-        # Then time it, and skip hosts that don't answer:
-        #     try:
-        #         samples = timed(connect, NET_SAMPLES, warmup=NET_WARMUP)
-        #     except (socket.error, OSError) as e:
-        #         print(f"  {host:<36} (no response: {e})")
-        #         continue
-        # ---------------------------------------------------------------------
-        samples = []  # <-- replace this
+        def connect():
+            s = socket.create_connection((ip, port), timeout=NET_TIMEOUT)
+            s.close()
 
-        if not samples:
-            print(f"  {host:<36} (fill in TODO 4)")
+        try:
+            samples = timed(connect, NET_SAMPLES, warmup=NET_WARMUP)
+        except (socket.error, OSError) as e:
+            print(f"  {host:<36} (no response: {e})")
             continue
 
         p50 = report(f"{note:<20} {ip:<16}", samples, "ms")

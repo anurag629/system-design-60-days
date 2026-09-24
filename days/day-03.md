@@ -16,9 +16,9 @@ This is the most famous interview question in the business. Most people answer i
 
 ## Before you start ⏪
 
-Day 2 comes first. If your Day 2 predictions, lab and report aren't done yet, finish those before opening this. Day 3 doesn't need anything from Day 2's lab, but it does lean hard on the habit Day 2 builds: write the number down before you measure it.
+Day 2 comes first. If your Day 2 predictions, lab and log aren't done yet, finish those before opening this. Day 3 doesn't need anything from Day 2's lab, but it does lean hard on the habit Day 2 builds: write the number down before you measure it.
 
-You need one number from Day 1 today: your round trip to Virginia was about 296 ms. Keep it next to you.
+You need one number from Day 1 today: your round trip to Virginia (`us-east-1`). If you don't have it, the reference run from India measured about 296 ms. Keep it next to you.
 
 ---
 
@@ -123,7 +123,7 @@ Standard library only. It takes about a minute to run, mostly waiting on São Pa
 
 ### Predict first
 
-Fill in `PREDICTIONS` at the top of the file. Use the story above and your Day 1 Virginia number (about 296 ms).
+Fill in `PREDICTIONS` at the top of the file. Use the story above and your Day 1 Virginia number (or 296 ms, the reference run's).
 
 - Q1. How many round trips happen before the first byte of a brand new HTTPS request, not counting DNS?
 - Q2. How many milliseconds does a brand new request to Virginia take, from starting the DNS lookup to the first byte?
@@ -222,28 +222,28 @@ Your angle today: everyone can recite what happens when you type a URL. You time
 
 The shape: "I timed every step of one HTTPS request from India. DNS took X, TCP took Y, TLS took Z. Only one of the round trips carried the thing I wanted. Reusing the connection made the same request N times faster." If you did the stretch, that's an even better post. "There was a round trip in my request that shouldn't have been there. Here's the 1984 algorithm that put it there."
 
-Drafts go in `shares/day-03-linkedin.md` and `shares/day-03-twitter.md`. Your words. Lead with the number that surprised you, and attach the round trip table as a screenshot.
+Example posts, written with the reference run's numbers, are on the [Day 3 posts](../shares/day-03-posts.md) page. Swap in your numbers and your words. Lead with the number that surprised you, and attach the round trip table as a screenshot. Drafts go in `shares/`.
 
 ---
 
-## End-of-day report 📝
+## End of day: log it 📝
 
-Send me these three:
+Add a Day 3 entry to your progress log with three things:
 
 1. What you completed, and what you skipped.
 2. Your cold vs reused request to Virginia, in ms, and how many round trips your machine counted before the first byte.
 3. One thing you still can't explain. If the stretch left you confused, that's a perfectly good answer.
 
-Day 4 is latency vs throughput, and the queue: why a system at 90% busy feels fine and at 99% falls over. I'll write it after your report.
+Then compare your work with the Solutions below. Day 4 is latency vs throughput, and the queue: why a system at 90% busy feels fine and at 99% falls over.
 
 ---
 
-## Drill answers 🔑
+## Solutions 🔑
 
-Open only after writing yours.
+Open these only after you've done the day. Reading answers first feels like learning and isn't.
 
 <details markdown="1">
-<summary>D1 through D5</summary>
+<summary>Drill answers, D1 to D5</summary>
 
 D1. TCP 1 + TLS 1.3 1 + HTTP 1 = 3 round trips × 250 ms = 750 ms.
 
@@ -275,5 +275,76 @@ At the end of the TLS 1.3 handshake, your laptop sends a small "Finished" messag
 Its famous partner in crime is delayed ACK, where the receiver waits up to a few hundred milliseconds before acknowledging, hoping to piggyback the ACK on a reply. When a server does that, the same bug costs you a round trip plus that delay. Here the AWS server replies straight away (it sends a session ticket that carries the ACK), so you only lose the one round trip.
 
 `TCP_NODELAY` turns Nagle off for that socket. curl, browsers, and most HTTP libraries set it by default for exactly this reason, which is why curl didn't show the extra trip. The general lesson is bigger than this one flag: a reasonable default, written decades before HTTPS existed, can quietly cost you a whole round trip. On a 250 ms link, that's a 33% slower first request, and no profiler of your own code will ever show it.
+
+</details>
+
+<details markdown="1">
+<summary>Lab solution: the four TODOs</summary>
+
+The full working file is [`labs/day-03-url/solution.py`](https://github.com/anurag629/system-design-60-days/blob/main/labs/day-03-url/solution.py). It includes the stretch line, commented out.
+
+TODO 1, DNS:
+
+```python
+start = time.perf_counter()
+ip = socket.getaddrinfo(host, PORT, socket.AF_INET,
+                        socket.SOCK_STREAM)[0][4][0]
+t["dns"] = time.perf_counter() - start
+```
+
+TODO 2, the TCP handshake, connecting to the IP so no second DNS lookup sneaks in:
+
+```python
+start = time.perf_counter()
+raw = socket.create_connection((ip, PORT), timeout=TIMEOUT)
+t["tcp"] = time.perf_counter() - start
+```
+
+TODO 3, the TLS handshake:
+
+```python
+start = time.perf_counter()
+conn = CTX.wrap_socket(raw, server_hostname=host)
+t["tls"] = time.perf_counter() - start
+```
+
+TODO 4, send the request and wait for the first byte:
+
+```python
+start = time.perf_counter()
+conn.sendall(request_bytes(host))
+first = conn.recv(1)
+t["ttfb"] = time.perf_counter() - start
+```
+
+</details>
+
+<details markdown="1">
+<summary>Reference run, and what each number means</summary>
+
+Apple Silicon laptop, macOS. One honest caveat: this run went through a VPN, so every packet made a detour first, and the milliseconds are bigger than a direct connection from India would give. The round trip counts don't depend on distance, and they're the part that matters.
+
+```
+                  DNS      TCP      TLS     TTFB      COLD   REUSED   all in ms
+  Mumbai          3.3    327.6    339.9    655.4    1326.2    336.5
+  Virginia        2.1    274.1    286.4    551.5    1114.1    279.9
+  Sao Paulo       1.8    360.2    376.0    724.7    1462.7    370.0
+
+  TLS version negotiated: TLSv1.3.   Server answered: HTTP/1.1 301 Moved Permanently
+
+  Mumbai     TCP 1.0  +  TLS 1.0  +  HTTP 2.0  =  4.0 round trips before the first byte
+  Virginia   TCP 1.0  +  TLS 1.0  +  HTTP 2.0  =  4.0 round trips before the first byte
+  Sao Paulo  TCP 1.0  +  TLS 1.0  +  HTTP 2.0  =  4.0 round trips before the first byte
+```
+
+Q1, round trips before the first byte: theory says 3 (TCP 1, TLS 1.3 1, HTTP 1). The lab measures 4, because of Nagle's algorithm (see the stretch explanation below). With the stretch line added, Virginia measured TCP 1.0 + TLS 1.1 + HTTP 1.0 = 3.1.
+
+Q2, a cold request to Virginia: about 4 round trips plus DNS. With a 296 ms round trip that's around 1,200 ms, 900 ms if you've fixed Nagle. The server's own thinking time is tiny: the reused request (280 ms) is almost exactly one TCP round trip (274 ms), so the server took about 6 ms.
+
+Q3, a reused request: one round trip, 280 ms. 4x faster than the cold one, with nothing changed on the server.
+
+Q4, a repeat DNS lookup: about 1 to 3 ms. The first-ever lookup of a name is typically tens to hundreds of milliseconds, and after that the OS cache answers. This run's DNS column shows cached lookups because the names had been looked up minutes earlier. `dig` showed a TTL of 60 seconds on these records.
+
+The VPN is visible in the data, which is a lesson of its own: Mumbai came out slower than Virginia, although Mumbai is far closer to India. Every packet was going to the VPN server first. If your nearest region isn't your fastest, something is in the path.
 
 </details>

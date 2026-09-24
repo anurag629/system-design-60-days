@@ -1,12 +1,12 @@
 # System design in 60 days
 
-Read it as a site: https://anurag629.github.io/system-design-60-days/
+A free, hands-on system design course. 60 days, 4 hours a day, about 240 hours in total. Reading, drills, a lab with starter code, full solutions, and example posts for every day.
 
-Start: 2026-07-10 · Restarted at day 2 on 2026-09-23 · End: 2026-11-20 · 4 hours/day · ~240 hours total
+Read it as a site: https://anurag629.github.io/system-design-60-days/
 
 ## The bet
 
-Most people "learn system design" by watching videos about designing Twitter, then freeze in an interview because they memorized an answer instead of a method. This plan is built the other way around: you build small, broken, real systems, break them harder, then measure what happened. Theory shows up when you need it to explain a number you just saw.
+Most people "learn system design" by watching videos about designing Twitter, then freeze in an interview because they memorized an answer instead of a method. This course is built the other way around: you build small, broken, real systems, break them harder, then measure what happened. Theory shows up when you need it to explain a number you just saw.
 
 The AI-era part isn't a bolt-on week at the end. Serving models, RAG retrieval, agent orchestration, and token economics are just distributed systems with unusual cost curves and unusually bad tail latency. Weeks 1-5 earn you the vocabulary. Week 6 spends it.
 
@@ -21,14 +21,13 @@ The AI-era part isn't a bolt-on week at the end. Serving models, RAG retrieval, 
 
 The Write block is not optional and not vanity. Explaining a thing you half-understand to strangers is the fastest way to find the hole in your understanding. Ship it even when it's ugly.
 
-## Reporting back
+## Following along
 
-At the end of each day, tell me:
-1. What you completed (and what you skipped)
-2. The number that surprised you in the lab
-3. One thing you couldn't explain to yourself
-
-I adjust the next day based on that. If you're crushing it, I make it harder. If a concept didn't land, we re-approach from a different angle instead of moving on.
+1. Fork this repo and clone your fork. Labs run on your own machine, Python standard library only.
+2. Each day, work through the day page on the site in order. Write your predictions down before running any lab.
+3. Fill in the TODOs in the lab's starter file. Stuck? Each lab folder has a `solution.py`, and each day page ends with a Solutions section: drill answers, the TODO code, and a reference run with every number explained.
+4. Write your posts. Each day has example posts written with the reference run's numbers.
+5. Keep a progress log: what you finished, the number that surprised you, and one thing you can't explain yet.
 
 ## The eight weeks
 
@@ -54,9 +53,9 @@ Postgres (Neon or local), Redis (Upstash or local), Node/TypeScript or Python, D
 
 ## Files
 
-- `weeks/`: full detail for each week, written the day before each week starts
-- `days/`: the day's material and exercises
-- `labs/`: your code
-- `notes/`: your reading notes
-- `shares/`: your LinkedIn and Twitter drafts
-- `progress.md`: the log
+- `days/`: one page per day, with reading, drills, the lab brief, and solutions
+- `weeks/`: the overview for each week
+- `labs/`: one folder per lab, with a starter file (TODOs), `solution.py`, and a `RESULTS.md` template
+- `notes/`: drill answer templates
+- `shares/`: example LinkedIn and X posts for each day
+- `progress.md`: the author's own progress log

@@ -14,18 +14,18 @@ Day 1 was about how fast a computer is. Today is about how much stuff costs: byt
 
 ---
 
-## Welcome back, quick recap first ☕ (5 min)
+## Quick recap of Day 1 ☕ (5 min)
 
-It has been a while since Day 1, so here is what you measured on this laptop. You need two of these numbers today, so keep them handy.
+You need two of your Day 1 numbers today, so dig them out of your Day 1 results. If you don't have your own yet, use the reference machine's:
 
-| What | Your number |
+| What | Reference run |
 |---|---|
 | RAM random read | 177 ns |
 | SSD random 4 KB read | 84.7 µs |
 | Localhost round trip | 19.5 µs |
 | Round trip to Mumbai | 54.2 ms |
 
-And the lesson that came with them: the page cache (the copy of recently used file data the operating system keeps in RAM) lied to you. Your first SSD number was 1.83 µs because you were really reading RAM. Hold on to that suspicion. Today a different layer tries the same trick.
+And the lesson that came with them: the page cache (the copy of recently used file data the operating system keeps in RAM) lies. The first version of the Day 1 lab reported an SSD read of 1.83 µs because it was really reading RAM. Hold on to that suspicion. Today a different layer tries the same trick.
 
 ---
 
@@ -94,7 +94,7 @@ That's the same compounding you met on Day 1, when tail latency got worse as you
 
 ### Think about this while you read (20 min)
 
-On Day 1 you estimated a messaging app creates about 4 TB of new messages per day. Using the two prices you just looked up, what does one year of that cost on S3? What would it cost on RDS? The ratio between those two numbers is the whole reason tiered storage exists: hot data (read often) goes on expensive fast storage, and cold data (rarely read) goes on cheap slow storage. P10 in the drill makes you do this properly.
+Day 1's drill D3 worked out that a messaging app creates about 4 TB of new messages per day. Using the two prices you just looked up, what does one year of that cost on S3? What would it cost on RDS? The ratio between those two numbers is the whole reason tiered storage exists: hot data (read often) goes on expensive fast storage, and cold data (rarely read) goes on cheap slow storage. P10 in the drill makes you do this properly.
 
 ---
 
@@ -123,7 +123,7 @@ P1. How many megabytes will the database file be? The naive answer is 1M × (8 +
 
 P2. You insert all 1M rows inside one single transaction. How many seconds does it take?
 
-P3. You insert the same rows with one transaction per row, so the database has to fsync after every single row. How many rows per second can it manage? Here's a hint. Day 1 measured a 4 KB SSD read at 84.7 µs. A durable write has to wait for the drive to confirm the data is truly stored, which is more work than a read. Start from that number and reason.
+P3. You insert the same rows with one transaction per row, so the database has to fsync after every single row. How many rows per second can it manage? Here's a hint. On Day 1 you measured a 4 KB SSD read (the reference machine got 84.7 µs). A durable write has to wait for the drive to confirm the data is truly stored, which is more work than a read. Start from that number and reason.
 
 P4. How much bigger does the file get when you add an index on `user_id`? Give it as a percentage.
 
@@ -198,7 +198,7 @@ The index will make the lookup faster by some factor. Predict the factor before 
 
 [`labs/day-02-estimation/RESULTS.md`](../labs/day-02-estimation/RESULTS.md) has a skeleton waiting for you. Paste the scoreboard the script prints. Then write one sentence for each of the six predictions: were you high or low, by how much, and why do you now think that happened?
 
-Being wrong is the point. On Day 1 you were 2x off on D3 and it carried straight into D4. That isn't failure. That's calibration. An estimator who is never surprised has stopped estimating and started reciting.
+Being wrong is the point. A 2x miss on Day 1's D3 carries straight into D4, and that's exactly how estimates go wrong in real design reviews. Finding your misses isn't failure. It's calibration. An estimator who is never surprised has stopped estimating and started reciting.
 
 ---
 
@@ -208,27 +208,27 @@ Your angle today is prediction versus reality. It's a strong one because almost 
 
 The hook writes itself once you have the numbers: "I predicted my database would insert N rows per second. It did M. Here's the thing I forgot about."
 
-Drafts go in `shares/day-02-linkedin.md` and `shares/day-02-twitter.md`. Write them yourself today. On Day 1 I drafted the posts so you could see the shape. Today you have a real finding of your own, and it will read better in your voice than in mine.
+Example posts, written with the reference run's numbers, are on the [Day 2 posts](../shares/day-02-posts.md) page. Use them for shape, then write yours with your own numbers and your own wrong guesses. Drafts go in `shares/`.
 
 Two rules. Lead with the number you got wrong, not the one you got right. And attach a screenshot of the scoreboard, because a table with a "30x too HIGH" column in it is the kind of thing people stop scrolling for.
 
 ---
 
-## End-of-day report 📝
+## End of day: log it 📝
 
-Send me these three:
+Add a Day 2 entry to your progress log with three things:
 
-1. Which of the six predictions were you closest on, and which one were you most wrong on?
-2. The fsync number. Say it out loud to me, in microseconds per commit, for both the real fsync and the one that lies.
+1. Which of the six predictions you were closest on, and which one you were most wrong on.
+2. The fsync number, in microseconds per commit, for both the real fsync and the one that lies.
 3. One thing you still can't explain.
 
-Day 3 is what actually happens when you type a URL. We'll use `tcpdump` to watch the packets behind the round trips you measured on Day 1. I'll write it after your report, so if something today didn't land, Day 3 comes at it from a different side first.
+Then compare your work with the Solutions below. Day 3 is what actually happens when you type a URL, and you'll watch the packets behind the round trips you measured on Day 1.
 
 ---
 
-## Drill answers 🔑
+## Solutions 🔑
 
-Open these only after writing yours. P1 through P6 aren't here on purpose, because the lab tells you those. That's the whole exercise.
+Open these only after you've done the day. Reading answers first feels like learning and isn't. P1 to P6 have no single right answer, because they depend on your machine. The reference run below shows one machine's numbers and explains each one.
 
 <details markdown="1">
 <summary>P7 through P10</summary>
@@ -246,5 +246,97 @@ Now the part people miss. If your hit rate drops from 90% to 80%, database load 
 P10. The data piles up, so in month 12 you're storing about 12 months of it. 4 TB/day × 365 = 1,460 TB ≈ 1.46 PB by year end. 1,460,000 GB × $0.023 ≈ $33,600 for the twelfth month alone. Across the whole year you're storing about half that much on average, so the year costs somewhere around $200,000.
 
 That's S3, the cheap tier. RDS gp3 storage is roughly 5x the price per GB (check the number you wrote down), so the same data would cost about a million dollars a year. And it won't fit anyway, because a single RDS Postgres instance tops out at 64 TB. Now you know why nothing keeps everything hot forever, and why "just put it all in Postgres" stops being an answer around the terabyte mark.
+
+</details>
+
+<details markdown="1">
+<summary>Lab solution: the four TODOs</summary>
+
+The full working file is [`labs/day-02-estimation/solution.py`](https://github.com/anurag629/system-design-60-days/blob/main/labs/day-02-estimation/solution.py).
+
+TODO 1, time the bulk insert, one transaction around all million rows:
+
+```python
+start = time.perf_counter()
+conn.executemany("INSERT INTO messages VALUES (?, ?, ?, ?)", rows(N_ROWS))
+conn.commit()
+elapsed = time.perf_counter() - start
+```
+
+TODO 2, the same one-commit-per-row loop under three durability settings:
+
+```python
+configs = [
+    ("real durability   (fullfsync=1)", dict(synchronous="FULL", fullfsync=1)),
+    ("plain fsync       (fullfsync=0)", dict(synchronous="FULL", fullfsync=0)),
+    ("no durability     (sync=OFF)   ", dict(synchronous="OFF",  fullfsync=0)),
+]
+for label, kw in configs:
+    conn = fresh_db(**kw)
+    elapsed = _commit_loop(conn, data)
+    conn.close()
+    results[label] = DURABLE_SAMPLE / elapsed
+```
+
+TODO 3, the lookup with no index:
+
+```python
+start = time.perf_counter()
+conn.execute(q, (target,)).fetchone()
+scan_ms = (time.perf_counter() - start) * 1000
+```
+
+TODO 4, the same lookup with the index, best of five:
+
+```python
+best = float("inf")
+for _ in range(5):
+    start = time.perf_counter()
+    conn.execute(q, (target,)).fetchone()
+    best = min(best, (time.perf_counter() - start) * 1000)
+indexed_ms = best
+```
+
+</details>
+
+<details markdown="1">
+<summary>Reference run for P1 to P6, and what each number means</summary>
+
+Apple Silicon laptop, macOS, Python 3. Your numbers will differ, especially P3, which depends on your drive.
+
+```
+[1+2] Bulk insert: 1,000,000 rows in ONE transaction
+  inserted in 1.22s   (820,273 rows/sec)
+  naive estimate (just add up the field sizes):   213.6 MB
+  actual file size on disk:                       217.6 MB
+  overhead factor: 1.02x  (228.1 bytes per row)
+
+[1b] two INTEGER columns. naive: 8 + 8 = 16 bytes per row.
+  naive estimate:     15.3 MB
+  actual:             10.5 MB   (11.1 bytes per row)
+
+[3] Durable insert: 10,000 rows, ONE transaction each
+  real durability   (fullfsync=1)       3,501 rows/sec        286 us per commit
+  plain fsync       (fullfsync=0)      18,376 rows/sec         54 us per commit
+  no durability     (sync=OFF)         99,795 rows/sec         10 us per commit
+
+[4+5+6] Index
+  file before index:    217.6 MB
+  file after index:     228.1 MB   (+4.8%)
+  lookup, full scan:    50.63 ms   (51 ns per row examined)
+  lookup, indexed:      0.003 ms  (14,637x faster)
+```
+
+P1, file size: 218 MB, just 2% over the naive 214 MB. Two effects cancel out. Every row carries a small header, and rows sit in 4 KB pages that are never quite full, which pushes the size up. But SQLite stores integers in as few bytes as the value needs (a `user_id` under 10,000 takes 2 bytes, not 8), which pulls it down. The narrow table shows the second effect winning: 11 bytes per row against a naive 16.
+
+P2, bulk insert: about 1.2 seconds, around 800,000 rows per second. Most people guess far too high, because they picture a million disk writes. There's one fsync, at commit. Everything else is memory work and sequential writes, which SSDs are great at.
+
+P3, durable rows per second: about 3,500, so 286 µs per commit. Each commit waits for the drive to confirm the data is stored for real. Batching is 234x faster. The plain-fsync row is 5x faster than the honest one because on macOS a plain `fsync()` returns once the drive has the data in its own cache, before it's safe. On Linux, plain fsync does the real thing.
+
+P4, index size: +4.8%. The index stores only `user_id` plus a pointer to each row, about 10 bytes per row against 228 for the row itself. Indexes on narrow columns are cheap in space. Their real cost is on writes, since every insert now updates two structures.
+
+P5, full scan: about 50 ms, 51 ns per row. That's fast because the whole table was sitting in the OS page cache, in RAM. Run the same scan against a cold cache and it could be many times slower. Notice the planner said SCAN.
+
+P6, indexed lookup: 0.003 ms, 14,000 times faster than the scan. The planner said SEARCH, and COVERING INDEX, meaning the index alone answered the query and SQLite never touched the table. A B-tree lookup is a handful of page reads instead of a million row checks. Week 2 opens that B-tree up.
 
 </details>

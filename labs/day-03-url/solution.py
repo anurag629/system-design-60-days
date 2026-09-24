@@ -1,4 +1,7 @@
 """
+Day 3 lab, SOLUTION. All four TODOs filled in, stretch line included but
+commented out. Try anatomy.py first. PREDICTIONS are example guesses.
+
 Day 3 lab: take one HTTPS request apart and time every piece of it.
 
 Run it:      python3 anatomy.py
@@ -26,19 +29,19 @@ PREDICTIONS = {
     # Q1: for a brand new HTTPS request, how many network round trips happen
     #     before the first byte of the response arrives? Don't count DNS.
     #     Count TCP, TLS and the HTTP request itself. A whole number.
-    "round_trips_before_first_byte": None,
+    "round_trips_before_first_byte": 3,
 
     # Q2: milliseconds for one brand new HTTPS request to Virginia, from
     #     "start DNS lookup" to "first byte of the response". Use your Day 1
     #     round trip to Virginia. (The reference run from India got ~296 ms.)
-    "cold_request_ms_virginia": None,
+    "cold_request_ms_virginia": 1000,
 
     # Q3: milliseconds for a SECOND request to Virginia, sent over the same
     #     connection that is already open (no new DNS, TCP or TLS).
-    "reused_request_ms_virginia": None,
+    "reused_request_ms_virginia": 300,
 
     # Q4: milliseconds for a DNS lookup of a name you looked up a second ago.
-    "dns_repeat_ms": None,
+    "dns_repeat_ms": 1,
 }
 
 # ---------------------------------------------------------------------------
@@ -116,7 +119,10 @@ def cold_request(host):
     #                           socket.SOCK_STREAM)[0][4][0]
     #   t["dns"] = time.perf_counter() - start
     # -------------------------------------------------------------------------
-    ip = None  # <-- replace this block
+    start = time.perf_counter()
+    ip = socket.getaddrinfo(host, PORT, socket.AF_INET,
+                            socket.SOCK_STREAM)[0][4][0]
+    t["dns"] = time.perf_counter() - start
 
     if ip is None:
         return None
@@ -131,10 +137,13 @@ def cold_request(host):
     #   raw = socket.create_connection((ip, PORT), timeout=TIMEOUT)
     #   t["tcp"] = time.perf_counter() - start
     # -------------------------------------------------------------------------
-    raw = None  # <-- replace this block
+    start = time.perf_counter()
+    raw = socket.create_connection((ip, PORT), timeout=TIMEOUT)
+    t["tcp"] = time.perf_counter() - start
 
     # STRETCH (only after your first full run, see the day page) -------------
-    # One line goes here. Don't add it until the day page tells you to.
+    # Uncomment to switch off Nagle's algorithm and lose the extra round trip:
+    # raw.setsockopt(socket.IPPROTO_TCP, socket.TCP_NODELAY, 1)
     # -------------------------------------------------------------------------
 
     # TODO 3 ------------------------------------------------------------------
@@ -147,7 +156,9 @@ def cold_request(host):
     #   conn = CTX.wrap_socket(raw, server_hostname=host)
     #   t["tls"] = time.perf_counter() - start
     # -------------------------------------------------------------------------
-    conn = None  # <-- replace this block
+    start = time.perf_counter()
+    conn = CTX.wrap_socket(raw, server_hostname=host)
+    t["tls"] = time.perf_counter() - start
 
     # TODO 4 ------------------------------------------------------------------
     # HTTP: send the request and wait for the FIRST byte of the answer. Time
@@ -158,7 +169,10 @@ def cold_request(host):
     #   first = conn.recv(1)
     #   t["ttfb"] = time.perf_counter() - start
     # -------------------------------------------------------------------------
-    first = None  # <-- replace this block
+    start = time.perf_counter()
+    conn.sendall(request_bytes(host))
+    first = conn.recv(1)
+    t["ttfb"] = time.perf_counter() - start
 
     if raw is None or conn is None or first is None:
         return None

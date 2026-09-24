@@ -1,11 +1,11 @@
 ---
-title: "Progress log"
+title: "Author's progress log"
 nav_order: 2
 ---
 
-# Progress log
+# Author's progress log
 
-Format: one entry per day. Fill it in at the end of the Write block.
+The author's own log, one entry per day, mistakes included. Keep your own the same way in your fork: what you finished, the number that surprised you, and one thing you can't explain yet.
 
 ---
 
@@ -100,5 +100,18 @@ Can't explain yet
 Virginia, cold vs reused (ms)
 
 Round trips before first byte
+
+Can't explain yet
+
+---
+
+## Day 4, 2026-09-25, latency, throughput and the queue
+
+- [ ] Read: Slimmon, Brooker, Little's Law
+- [ ] Drill: D1-D5 on paper, in `notes/day-04-drills.md`
+- [ ] Build: `labs/day-04-queues/RESULTS.md`
+- [ ] Write: both posts
+
+Average latency at 90% and 99% busy, and with two servers
 
 Can't explain yet
