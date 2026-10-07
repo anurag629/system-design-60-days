@@ -11,7 +11,7 @@ A free, hands-on system design course, four hours a day. You build small, broken
 {: .fs-6 .fw-300 }
 
 [Start at Day 1](days/day-01.md){: .btn .btn-primary .mr-2 }
-[Latest: Day 5](days/day-05.md){: .btn .mr-2 }
+[Latest: Day 6](days/day-06.md){: .btn .mr-2 }
 [How to follow along](#how-to-follow-along){: .btn }
 
 ---
@@ -46,6 +46,7 @@ New days are published as they're written. Each one shows up in the sidebar unde
 | [Day 3](days/day-03.md) | What happens when you type a URL, counted in round trips | [Template](labs/day-03-url/RESULTS.md) | [Posts](shares/day-03-posts.md) |
 | [Day 4](days/day-04.md) | Latency, throughput and the queue | [Template](labs/day-04-queues/RESULTS.md) | [Posts](shares/day-04-posts.md) |
 | [Day 5](days/day-05.md) | Designing an API: offset vs cursor pagination | [Template](labs/day-05-pagination/RESULTS.md) | [Posts](shares/day-05-posts.md) |
+| [Day 6](days/day-06.md) | More than one server: load balancing and failure | [Template](labs/day-06-load-balancer/RESULTS.md) | [Posts](shares/day-06-posts.md) |
 
 ## The daily loop
 

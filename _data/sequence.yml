@@ -7,6 +7,7 @@
 - { url: "/days/day-03.html",   title: "Day 3: what happens when you type a URL" }
 - { url: "/days/day-04.html",   title: "Day 4: latency, throughput and the queue" }
 - { url: "/days/day-05.html",   title: "Day 5: designing an API" }
+- { url: "/days/day-06.html",   title: "Day 6: more than one server" }
 - { url: "/weeks/week-02.html", title: "Week 2: storage" }
 - { url: "/weeks/week-03.html", title: "Week 3: caching and the CDN" }
 - { url: "/weeks/week-04.html", title: "Week 4: async, queues and the log" }

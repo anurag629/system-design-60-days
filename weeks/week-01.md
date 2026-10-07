@@ -38,7 +38,7 @@ Why a system at 90% capacity feels fine and a system at 99% capacity falls over.
 ### [Day 5 (Sat Sep 26): designing an API](../days/day-05.md)
 What a good endpoint looks like. Pagination, and why the obvious way to paginate breaks at scale. You'll build both ways and watch one of them die.
 
-### Day 6 (Sun Sep 27): more than one server
+### [Day 6 (Sun Sep 27): more than one server](../days/day-06.md)
 Load balancers, health checks, what "stateless" means and why everyone insists on it. You'll run three copies of an app behind a load balancer and kill one while it's serving traffic.
 
 ### Day 7 (Mon Sep 28): your first real design
