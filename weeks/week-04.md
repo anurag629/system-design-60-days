@@ -1,6 +1,7 @@
 ---
 title: "Week 4: async, queues and the log"
 nav_order: 6
+has_children: true
 ---
 
 # Week 4: async, queues and the log 📨

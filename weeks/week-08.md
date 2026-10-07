@@ -1,6 +1,7 @@
 ---
 title: "Week 8: putting it all together"
 nav_order: 10
+has_children: true
 ---
 
 # Week 8: putting it all together 🎯

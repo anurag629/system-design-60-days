@@ -1,6 +1,7 @@
 ---
 title: "Week 2: storage"
 nav_order: 4
+has_children: true
 ---
 
 # Week 2: storage, or where does the data actually sit? 💾
@@ -19,7 +20,7 @@ Someone says "our reads got slow after we hit 50 million rows." You can list fiv
 
 ## The days 🗓️
 
-Day 8: how a row actually sits on disk. Pages, heap files, and why a database reads 8 kilobytes even when you asked for 8 bytes. Row stores vs column stores, and when each one wins. Lab: crack open a real SQLite file and read the page header with your own code.
+[Day 8: how a row actually sits on disk](../days/day-08.md). Pages, heap files, and why a database reads 8 kilobytes even when you asked for 8 bytes. Row stores vs column stores, and when each one wins. Lab: crack open a real SQLite file and read the page header with your own code.
 
 Day 9: the two great families, B-tree vs LSM-tree. Postgres and MySQL are B-trees. Cassandra, RocksDB and friends are LSM-trees. One is built for reads, one for writes, and knowing which is which is a genuine interview filter. Lab: measure write amplification on both.
 

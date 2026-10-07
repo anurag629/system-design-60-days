@@ -10,6 +10,7 @@
 - { url: "/days/day-06.html",   title: "Day 6: more than one server" }
 - { url: "/days/day-07.html",   title: "Day 7: your first real design" }
 - { url: "/weeks/week-02.html", title: "Week 2: storage" }
+- { url: "/days/day-08.html",   title: "Day 8: how a row sits on disk" }
 - { url: "/weeks/week-03.html", title: "Week 3: caching and the CDN" }
 - { url: "/weeks/week-04.html", title: "Week 4: async, queues and the log" }
 - { url: "/weeks/week-05.html", title: "Week 5: distributed systems" }

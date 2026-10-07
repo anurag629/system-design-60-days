@@ -11,7 +11,7 @@ A free, hands-on system design course. Sixty days of work, each day about four h
 {: .fs-6 .fw-300 }
 
 [Start at Day 1](days/day-01.md){: .btn .btn-primary .mr-2 }
-[Latest: Day 7](days/day-07.md){: .btn .mr-2 }
+[Latest: Day 8](days/day-08.md){: .btn .mr-2 }
 [Track your progress](tracker.md){: .btn .mr-2 }
 [How to follow along](#how-to-follow-along){: .btn }
 
@@ -49,6 +49,7 @@ New days are published as they're written. Each one shows up in the sidebar unde
 | [Day 5](days/day-05.md) | Designing an API: offset vs cursor pagination | [Template](labs/day-05-pagination/RESULTS.md) | [Posts](shares/day-05-posts.md) |
 | [Day 6](days/day-06.md) | More than one server: load balancing and failure | [Template](labs/day-06-load-balancer/RESULTS.md) | [Posts](shares/day-06-posts.md) |
 | [Day 7](days/day-07.md) | Your first real design: a URL shortener | [Design template](labs/day-07-url-shortener/DESIGN.md) | [Posts](shares/day-07-posts.md) |
+| [Day 8](days/day-08.md) | How a row sits on disk: pages, row vs column stores | [Template](labs/day-08-pages/RESULTS.md) | [Posts](shares/day-08-posts.md) |
 
 ## The loop for each day
 

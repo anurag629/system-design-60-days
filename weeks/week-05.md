@@ -1,6 +1,7 @@
 ---
 title: "Week 5: distributed systems"
 nav_order: 7
+has_children: true
 ---
 
 # Week 5: distributed systems, the real deal 🌍

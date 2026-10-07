@@ -1,6 +1,7 @@
 ---
 title: "Week 3: caching and the CDN"
 nav_order: 5
+has_children: true
 ---
 
 # Week 3: caching and the CDN, or how to be fast by being lazy 🚀

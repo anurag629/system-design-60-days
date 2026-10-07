@@ -1,6 +1,7 @@
 ---
 title: "Week 7: production"
 nav_order: 9
+has_children: true
 ---
 
 # Week 7: production, or what happens after you ship 🛠️

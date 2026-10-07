@@ -1,6 +1,7 @@
 ---
 title: "Week 6: AI systems"
 nav_order: 8
+has_children: true
 ---
 
 # Week 6: AI systems, the fun one 🤖
