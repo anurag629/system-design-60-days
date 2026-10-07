@@ -5,7 +5,7 @@ nav_order: 7
 
 # Week 5: distributed systems, the real deal 🌍
 
-Days 29 to 35, Tue 2026-10-20 to Mon 2026-10-26.
+Days 29 to 35.
 
 This is the hard week. I am telling you now so you do not panic midweek when your brain hurts. Everybody's brain hurts this week. If it did not, the week would be lying to you.
 

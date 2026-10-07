@@ -5,7 +5,7 @@ nav_order: 2
 has_children: true
 ---
 
-# Day 2, Wednesday 2026-09-23
+# Day 2
 ## Estimation, and the moment reality disagrees with you 📏
 
 Today's one idea: an estimate you never check is just a guess wearing a nice shirt. You will estimate six things on paper, then measure all six, and the gap between the two will teach you more than either number alone.

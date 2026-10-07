@@ -5,7 +5,7 @@ nav_order: 3
 has_children: true
 ---
 
-# Day 3, Thursday 2026-09-24
+# Day 3
 ## What happens when you type a URL, counted in round trips 🌐
 
 Today's one idea: loading a web page is a chain of conversations, and every conversation costs at least one round trip. Once you count the round trips, you can predict how slow a page will be before anyone writes a line of code.

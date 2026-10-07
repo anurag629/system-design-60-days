@@ -5,7 +5,7 @@ nav_order: 9
 
 # Week 7: production, or what happens after you ship 🛠️
 
-Days 43 to 49, Tue 2026-11-03 to Mon 2026-11-09.
+Days 43 to 49.
 
 Anyone can draw boxes and arrows. This week is about the difference between a design and a system that actually runs at 3 AM when something breaks and you are on call. This is the week that separates the people who "know system design" from the people companies actually pay well.
 

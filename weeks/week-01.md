@@ -6,8 +6,7 @@ has_children: true
 
 # Week 1: ground truth
 
-Day 1 ran on Fri 2026-07-10. After a break, the rest of the week runs Wed 2026-09-23 to Mon 2026-09-28.
-You start from zero. No prior system design assumed.
+Seven days of work, at whatever pace suits you. You start from zero, no prior system design assumed.
 
 ## What system design actually is
 
@@ -23,25 +22,25 @@ Someone describes an app. Within five minutes, on paper, you can say roughly how
 
 ## Days
 
-### [Day 1 (Fri Jul 10): how slow is slow?](../days/day-01.md)
+### [Day 1: how slow is slow?](../days/day-01.md)
 The storage hierarchy: CPU cache, RAM, SSD, network. Each tier is roughly 100x slower than the one above it. You'll measure this yourself with about 40 lines of Python.
 
-### [Day 2 (Wed Sep 23): estimation on a napkin](../days/day-02.md)
+### [Day 2: estimation on a napkin](../days/day-02.md)
 Turning "500 million users" into "how many servers." Powers of ten, seconds in a day, bytes in a record. Lots of repetition until the arithmetic stops being scary.
 
-### [Day 3 (Thu Sep 24): what happens when you type a URL](../days/day-03.md)
+### [Day 3: what happens when you type a URL](../days/day-03.md)
 DNS, TCP handshake, TLS, HTTP request, response. The classic interview question, but you'll actually watch it happen with real tools instead of reciting it.
 
-### [Day 4 (Fri Sep 25): latency vs throughput, and the queue](../days/day-04.md)
+### [Day 4: latency vs throughput, and the queue](../days/day-04.md)
 Why a system at 90% capacity feels fine and a system at 99% capacity falls over. The single most useful mental model in all of performance work, and it's just a graph.
 
-### [Day 5 (Sat Sep 26): designing an API](../days/day-05.md)
+### [Day 5: designing an API](../days/day-05.md)
 What a good endpoint looks like. Pagination, and why the obvious way to paginate breaks at scale. You'll build both ways and watch one of them die.
 
-### [Day 6 (Sun Sep 27): more than one server](../days/day-06.md)
+### [Day 6: more than one server](../days/day-06.md)
 Load balancers, health checks, what "stateless" means and why everyone insists on it. You'll run three copies of an app behind a load balancer and kill one while it's serving traffic.
 
-### Day 7 (Mon Sep 28): your first real design
+### Day 7: your first real design
 No new material. You design a URL shortener from scratch, write it up, and then we compare it against what you would have written on day 2.
 
 ## Reading for the week

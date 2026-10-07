@@ -5,7 +5,7 @@ nav_order: 8
 
 # Week 6: AI systems, the fun one 🤖
 
-Days 36 to 42, Tue 2026-10-27 to Mon 2026-11-02.
+Days 36 to 42.
 
 This is the week you came for, and here is the good news: you are ready for it now in a way you were not five weeks ago. Because serving an AI model is not some alien new discipline. It is distributed systems with a very expensive, very hungry component in the middle called a GPU. Everything you learned about latency, batching, caching, queues and tail latency now points straight at that GPU.
 

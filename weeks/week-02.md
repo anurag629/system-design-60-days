@@ -5,7 +5,7 @@ nav_order: 4
 
 # Week 2: storage, or where does the data actually sit? 💾
 
-Days 8 to 14, Tue 2026-09-29 to Mon 2026-10-05.
+Days 8 to 14.
 
 Last week you learned how fast a computer is. This week you learn where your data lives and what it costs to put it there and get it back. Every "should we use Postgres or Mongo or Cassandra" argument you have ever heard is really an argument about the stuff in this week. Most people have that argument without knowing any of it. You will not.
 

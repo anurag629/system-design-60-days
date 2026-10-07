@@ -7,7 +7,7 @@ nav_order: 1
 
 # Day 2 results: prediction vs reality
 
-Measured 2026-09-23. Apple Silicon laptop, macOS, Python 3, `estimate.py`.
+Measured on Apple Silicon laptop, macOS, Python 3, `estimate.py`.
 
 ## Scoreboard
 

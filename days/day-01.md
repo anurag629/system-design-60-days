@@ -5,7 +5,7 @@ nav_order: 1
 has_children: true
 ---
 
-# Day 1, Friday 2026-07-10
+# Day 1
 ## How slow is slow?
 
 Today's one idea: a computer is a stack of storage tiers, and each tier down is roughly 100 times slower than the one above it. Almost every performance decision in system design is you noticing that some data is on the wrong tier.
@@ -173,7 +173,7 @@ Your angle: **you measured it instead of memorizing it.**
 
 Rough shape, rewrite it in your own words:
 
-> I'm starting 60 days of system design, 4 hours a day. Day 1.
+> I'm starting 60 days of system design. Day 1.
 >
 > Everyone shares Jeff Dean's latency numbers. I've seen that table a hundred times and never once checked whether it was true on my own machine.
 >

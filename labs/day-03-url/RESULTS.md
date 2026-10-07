@@ -7,7 +7,7 @@ nav_order: 1
 
 # Day 3 results: one HTTPS request, taken apart
 
-Measured 2026-09-24. Apple Silicon laptop, macOS, Python 3, `anatomy.py`. VPN off: yes / no.
+Measured on Apple Silicon laptop, macOS, Python 3, `anatomy.py`. VPN off: yes / no.
 
 ## The table
 

@@ -11,7 +11,7 @@ These are the author's own Day 1 posts, written with the reference machine's num
 
 ## LinkedIn
 
-I started 60 days of system design today. Four hours a day. Day 1 was supposed to
+I started 60 days of system design. Day 1 was supposed to
 be the easy one: learn the latency numbers.
 
 Instead I found out my laptop's network is faster than its disk.

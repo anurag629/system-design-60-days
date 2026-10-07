@@ -1,8 +1,8 @@
 # System design in 60 days
 
-A free, hands-on system design course. 60 days, 4 hours a day, about 240 hours in total. Reading, drills, a lab with starter code, full solutions, and example posts for every day.
+A free, hands-on system design course. Sixty days of work, each about four hours, done at whatever pace suits you. Reading, drills, a lab with starter code, full solutions, and example posts for every day.
 
-Read it as a site: https://anurag629.github.io/system-design-60-days/
+Read it as a site: https://anurag629.github.io/system-design-60-days/ . The site tracks your progress in your browser, block by block, and resets with one button.
 
 ## The bet
 
@@ -10,7 +10,7 @@ Most people "learn system design" by watching videos about designing Twitter, th
 
 The AI-era part isn't a bolt-on week at the end. Serving models, RAG retrieval, agent orchestration, and token economics are just distributed systems with unusual cost curves and unusually bad tail latency. Weeks 1-5 earn you the vocabulary. Week 6 spends it.
 
-## Daily loop (4 hours)
+## The loop for each day (about 4 hours)
 
 | Block | Time | What |
 |---|---|---|

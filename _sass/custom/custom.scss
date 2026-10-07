@@ -34,3 +34,117 @@
   border-radius: 4px;
   margin-bottom: 1.5rem;
 }
+
+// ---- progress tracking (localStorage, see assets/js/progress.js) ----
+
+.sd-day-progress {
+  margin-top: 2.5rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid $border-color;
+  border-radius: 6px;
+  background-color: $grey-lt-000;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem 1.25rem;
+
+  &.is-complete {
+    border-color: $link-color;
+  }
+
+  label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    cursor: pointer;
+    margin: 0;
+  }
+
+  input { margin: 0; }
+}
+
+.sd-day-progress-label {
+  flex-basis: 100%;
+  font-weight: 600;
+}
+
+.sd-day-count {
+  margin-left: 0.4rem;
+  font-weight: 400;
+  color: $grey-dk-000;
+}
+
+.sd-bar {
+  height: 10px;
+  background-color: $grey-lt-100;
+  border-radius: 999px;
+  overflow: hidden;
+  margin: 0.75rem 0 0.4rem;
+}
+
+.sd-bar-fill {
+  height: 100%;
+  width: 0;
+  background-color: $link-color;
+  transition: width 0.25s ease;
+}
+
+.sd-count {
+  color: $grey-dk-000;
+  margin: 0.25rem 0 1rem;
+}
+
+.sd-reset {
+  font: inherit;
+  cursor: pointer;
+  padding: 0.4rem 0.9rem;
+  border: 1px solid $border-color;
+  border-radius: 6px;
+  background: transparent;
+  color: inherit;
+
+  &:hover { background-color: $grey-lt-000; }
+}
+
+#sd-tracker {
+  .sd-week {
+    margin-top: 1.75rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .sd-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.4rem 1rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid $border-color;
+  }
+
+  .sd-row.is-complete .sd-row-title {
+    color: $grey-dk-000;
+  }
+
+  .sd-row-title {
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  .sd-row-blocks {
+    display: inline-flex;
+    gap: 0.85rem;
+  }
+
+  .sd-row-blocks label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    cursor: pointer;
+    font-size: 0.8em;
+    color: $grey-dk-000;
+    margin: 0;
+  }
+
+  .sd-row-blocks input { margin: 0; }
+}

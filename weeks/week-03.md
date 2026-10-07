@@ -5,7 +5,7 @@ nav_order: 5
 
 # Week 3: caching and the CDN, or how to be fast by being lazy 🚀
 
-Days 15 to 21, Tue 2026-10-06 to Mon 2026-10-12.
+Days 15 to 21.
 
 Caching is the most loved and most feared idea in system design. Loved because it is the single easiest way to make a slow thing fast. Feared because, as the old joke goes, there are only two hard problems in computer science: cache invalidation, naming things, and off-by-one errors. 😅
 

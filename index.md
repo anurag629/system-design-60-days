@@ -7,11 +7,12 @@ permalink: /
 # System design in 60 days
 {: .fs-9 }
 
-A free, hands-on system design course, four hours a day. You build small, broken, real systems, break them harder, then measure what happened. Every day has reading, drills, a lab with starter code, full solutions, and example posts so you can learn in public.
+A free, hands-on system design course. Sixty days of work, each day about four hours, done at whatever pace suits you, one a day or one a week. You build small, broken, real systems, break them harder, then measure what happened. Every day has reading, drills, a lab with starter code, full solutions, and example posts so you can learn in public.
 {: .fs-6 .fw-300 }
 
 [Start at Day 1](days/day-01.md){: .btn .btn-primary .mr-2 }
 [Latest: Day 6](days/day-06.md){: .btn .mr-2 }
+[Track your progress](tracker.md){: .btn .mr-2 }
 [How to follow along](#how-to-follow-along){: .btn }
 
 ---
@@ -48,7 +49,9 @@ New days are published as they're written. Each one shows up in the sidebar unde
 | [Day 5](days/day-05.md) | Designing an API: offset vs cursor pagination | [Template](labs/day-05-pagination/RESULTS.md) | [Posts](shares/day-05-posts.md) |
 | [Day 6](days/day-06.md) | More than one server: load balancing and failure | [Template](labs/day-06-load-balancer/RESULTS.md) | [Posts](shares/day-06-posts.md) |
 
-## The daily loop
+## The loop for each day
+
+Each day is four blocks, about four hours in total. Go at your own pace.
 
 | Block | Time | What |
 |---|---|---|
@@ -57,7 +60,7 @@ New days are published as they're written. Each one shows up in the sidebar unde
 | Build | 100 min | The lab. Predict first, fill in the TODOs, run it, explain the numbers |
 | Write | 30 min | One LinkedIn post and one X thread about what you found |
 
-The Write block isn't optional and isn't vanity. Explaining a thing you half understand to strangers is the fastest way to find the hole in your understanding.
+The four blocks are the four boxes you tick on the [progress tracker](tracker.md). The Write block isn't optional and isn't vanity. Explaining a thing you half understand to strangers is the fastest way to find the hole in your understanding.
 
 ## How to follow along
 
@@ -65,15 +68,10 @@ The Write block isn't optional and isn't vanity. Explaining a thing you half und
 2. Each day, read the day page top to bottom and do the blocks in order. Write your predictions down before you run anything. Every lab refuses to run until you do.
 3. Fill in the TODOs in the lab's starter file, run it, and fill in that lab's `RESULTS.md`. If you get stuck, each lab folder has a `solution.py`, and each day page ends with a Solutions section: drill answers, the TODO code, and a reference run with an explanation of every number.
 4. Write your posts. The example posts for each day are written with the reference run's numbers. Use them for shape, then write your own with your numbers.
-5. Keep a progress log. The author's own log is [here](progress.md). Start yours by copying this into `progress.md` in your fork:
+5. Tick off the blocks on the [progress tracker](tracker.md) as you go. It saves in your browser, on your device, so it remembers where you are between visits, and it resets with one button. Alongside it, keep a short reflective log for the surprises. The author's own log is [here](progress.md). Start yours by copying this into `progress.md` in your fork:
 
 ```markdown
-## Day N, YYYY-MM-DD, topic
-
-- [ ] Read
-- [ ] Drill
-- [ ] Build
-- [ ] Write
+## Day N: topic
 
 The number that surprised me:
 

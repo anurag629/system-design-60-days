@@ -5,7 +5,7 @@ nav_order: 6
 has_children: true
 ---
 
-# Day 6, Sunday 2026-09-27
+# Day 6
 ## More than one server, and killing one while it serves traffic 🔀
 
 Today's one idea: putting a load balancer in front of a few servers is the easy part. The real work is what happens when one of those servers dies at 2 am. Whether your users even notice comes down to two things: does the balancer find out the server is dead, and does it try somebody else. Today you build the whole thing and kill a server on purpose to watch both.

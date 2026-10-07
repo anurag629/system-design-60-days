@@ -2,4 +2,15 @@
 layout: default
 ---
 {{ content }}
+{%- if page.url contains "/days/" -%}
+  {%- assign dayid = page.url | split: "/" | last | split: "." | first -%}
+<div class="sd-day-progress" data-day="{{ dayid }}">
+  <span class="sd-day-progress-label">Mark your progress for this day <span class="sd-day-count"></span></span>
+  <label><input type="checkbox" data-day="{{ dayid }}" data-block="read"> Read</label>
+  <label><input type="checkbox" data-day="{{ dayid }}" data-block="drill"> Drill</label>
+  <label><input type="checkbox" data-day="{{ dayid }}" data-block="build"> Build</label>
+  <label><input type="checkbox" data-day="{{ dayid }}" data-block="write"> Write</label>
+</div>
+{%- endif -%}
 {% include pager.html %}
+<script src="{{ '/assets/js/progress.js' | relative_url }}" defer></script>

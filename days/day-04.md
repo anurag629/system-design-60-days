@@ -5,7 +5,7 @@ nav_order: 4
 has_children: true
 ---
 
-# Day 4, Friday 2026-09-25
+# Day 4
 ## Latency, throughput, and the queue that eats your server 🚦
 
 Today's one idea: a server doesn't get gradually slower as it gets busier. It stays fine, then fine, then fine, then falls off a cliff somewhere past 90%. The cause is the queue in front of it, and the math behind it fits on a chai napkin.

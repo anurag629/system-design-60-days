@@ -7,7 +7,7 @@ nav_order: 1
 
 # Day 1 results: the storage hierarchy on my machine
 
-Measured 2026-07-10. Apple Silicon laptop, macOS, Python 3, `measure.py`.
+Measured on Apple Silicon laptop, macOS, Python 3, `measure.py`.
 
 ## The table
 

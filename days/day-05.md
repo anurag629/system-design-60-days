@@ -5,7 +5,7 @@ nav_order: 5
 has_children: true
 ---
 
-# Day 5, Saturday 2026-09-26
+# Day 5
 ## Designing an API, and why "page 5000" quietly disappeared from the web 📄
 
 Today's one idea: the obvious way to paginate, `LIMIT 20 OFFSET 100000`, gets slower on every single page, because the database has to count past everything it skips. The fix is one line of SQL, and once you see it you will notice that infinite scroll everywhere already uses it.
@@ -187,7 +187,7 @@ D2. Without a key, the server sees two separate "charge ₹500" requests and cha
 D3. One clean answer:
 - Place an order: `POST /orders`, returns 201.
 - Fetch one order: `GET /orders/42`, returns 200, or 404 if it does not exist.
-- A restaurant's orders today: `GET /restaurants/9/orders?date=2026-09-26&limit=20`, returns 200.
+- A restaurant's orders for a given day: `GET /restaurants/9/orders?date=<the day>&limit=20`, returns 200.
 - Mark delivered: `POST /orders/42/deliver`, or `PATCH /orders/42` with `{"status": "delivered"}`, returns 200.
 The exact paths are a matter of taste. What is not a matter of taste: creating returns 201, missing returns 404, and the write endpoints should be safe to retry.
 

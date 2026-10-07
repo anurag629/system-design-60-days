@@ -9,7 +9,7 @@ The author's own log, one entry per day, mistakes included. Keep your own the sa
 
 ---
 
-## Day 1, 2026-07-10, latency numbers ✅
+## Day 1: latency numbers ✅
 
 - [x] Read: DDIA ch. 1 + interactive latency table
 - [x] Drill: D1-D5 answered before checking
@@ -63,7 +63,7 @@ github.com/anurag629/system-design-60-days
 
 ---
 
-## Day 2, 2026-09-23, estimation vs reality
+## Day 2: estimation vs reality
 
 - [ ] Read: powers of two, the nines, Alex Xu ch. 2, S3 + RDS pricing pages
 - [ ] Drill: P1-P6 predictions written down **before** running the lab; P7-P10
@@ -89,7 +89,7 @@ Can't explain yet
 
 ---
 
-## Day 3, 2026-09-24, what happens when you type a URL
+## Day 3: what happens when you type a URL
 
 - [ ] Read: howdns.works, HPBN handshake sections, what-happens-when (skim)
 - [ ] Drill: D1-D5 on paper, in `notes/day-03-drills.md`
@@ -105,7 +105,7 @@ Can't explain yet
 
 ---
 
-## Day 4, 2026-09-25, latency, throughput and the queue
+## Day 4: latency, throughput and the queue
 
 - [ ] Read: Slimmon, Brooker, Little's Law
 - [ ] Drill: D1-D5 on paper, in `notes/day-04-drills.md`

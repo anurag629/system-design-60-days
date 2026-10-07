@@ -5,7 +5,7 @@ nav_order: 6
 
 # Week 4: async, queues and the log 📨
 
-Days 22 to 28, Tue 2026-10-13 to Mon 2026-10-19.
+Days 22 to 28.
 
 So far everything you built was synchronous. Request comes in, you do the work, you send the answer, the caller waits. Simple and honest. But some work is too slow, too spiky, or too important to lose, and for that you need to break the chain. The caller drops the job in a queue and walks away. Someone else picks it up later. This one move, doing work later instead of now, is behind a huge amount of real-world architecture.
 
