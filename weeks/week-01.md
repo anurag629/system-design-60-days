@@ -35,7 +35,7 @@ DNS, TCP handshake, TLS, HTTP request, response. The classic interview question,
 ### [Day 4 (Fri Sep 25): latency vs throughput, and the queue](../days/day-04.md)
 Why a system at 90% capacity feels fine and a system at 99% capacity falls over. The single most useful mental model in all of performance work, and it's just a graph.
 
-### Day 5 (Sat Sep 26): designing an API
+### [Day 5 (Sat Sep 26): designing an API](../days/day-05.md)
 What a good endpoint looks like. Pagination, and why the obvious way to paginate breaks at scale. You'll build both ways and watch one of them die.
 
 ### Day 6 (Sun Sep 27): more than one server
