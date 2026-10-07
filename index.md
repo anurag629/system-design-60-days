@@ -11,7 +11,7 @@ A free, hands-on system design course. Sixty days of work, each day about four h
 {: .fs-6 .fw-300 }
 
 [Start at Day 1](days/day-01.md){: .btn .btn-primary .mr-2 }
-[Latest: Day 6](days/day-06.md){: .btn .mr-2 }
+[Latest: Day 7](days/day-07.md){: .btn .mr-2 }
 [Track your progress](tracker.md){: .btn .mr-2 }
 [How to follow along](#how-to-follow-along){: .btn }
 
@@ -42,12 +42,13 @@ New days are published as they're written. Each one shows up in the sidebar unde
 
 | Day | Topic | Lab | Posts |
 |---|---|---|---|
-| [Day 1](days/day-01.md) | How slow is slow? Measure the storage hierarchy | [Author's results](labs/day-01-latency/RESULTS.md) | [Posts](shares/day-01-posts.md) |
+| [Day 1](days/day-01.md) | How slow is slow? Measure the storage hierarchy | [Results](labs/day-01-latency/RESULTS.md) | [Posts](shares/day-01-posts.md) |
 | [Day 2](days/day-02.md) | Estimation vs reality, a million-row database | [Template](labs/day-02-estimation/RESULTS.md) | [Posts](shares/day-02-posts.md) |
 | [Day 3](days/day-03.md) | What happens when you type a URL, counted in round trips | [Template](labs/day-03-url/RESULTS.md) | [Posts](shares/day-03-posts.md) |
 | [Day 4](days/day-04.md) | Latency, throughput and the queue | [Template](labs/day-04-queues/RESULTS.md) | [Posts](shares/day-04-posts.md) |
 | [Day 5](days/day-05.md) | Designing an API: offset vs cursor pagination | [Template](labs/day-05-pagination/RESULTS.md) | [Posts](shares/day-05-posts.md) |
 | [Day 6](days/day-06.md) | More than one server: load balancing and failure | [Template](labs/day-06-load-balancer/RESULTS.md) | [Posts](shares/day-06-posts.md) |
+| [Day 7](days/day-07.md) | Your first real design: a URL shortener | [Design template](labs/day-07-url-shortener/DESIGN.md) | [Posts](shares/day-07-posts.md) |
 
 ## The loop for each day
 
@@ -68,7 +69,7 @@ The four blocks are the four boxes you tick on the [progress tracker](tracker.md
 2. Each day, read the day page top to bottom and do the blocks in order. Write your predictions down before you run anything. Every lab refuses to run until you do.
 3. Fill in the TODOs in the lab's starter file, run it, and fill in that lab's `RESULTS.md`. If you get stuck, each lab folder has a `solution.py`, and each day page ends with a Solutions section: drill answers, the TODO code, and a reference run with an explanation of every number.
 4. Write your posts. The example posts for each day are written with the reference run's numbers. Use them for shape, then write your own with your numbers.
-5. Tick off the blocks on the [progress tracker](tracker.md) as you go. It saves in your browser, on your device, so it remembers where you are between visits, and it resets with one button. Alongside it, keep a short reflective log for the surprises. The author's own log is [here](progress.md). Start yours by copying this into `progress.md` in your fork:
+5. Tick off the blocks on the [progress tracker](tracker.md) as you go. It saves in your browser, on your device, so it remembers where you are between visits, and it resets with one button. Alongside it, keep a short reflective log in your fork, a few lines per day:
 
 ```markdown
 ## Day N: topic

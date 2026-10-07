@@ -58,4 +58,3 @@ Postgres (Neon or local), Redis (Upstash or local), Node/TypeScript or Python, D
 - `labs/`: one folder per lab, with a starter file (TODOs), `solution.py`, and a `RESULTS.md` template
 - `notes/`: drill answer templates
 - `shares/`: example LinkedIn and X posts for each day
-- `progress.md`: the author's own progress log

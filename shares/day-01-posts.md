@@ -7,7 +7,7 @@ nav_order: 3
 
 # Day 1 posts: LinkedIn and X
 
-These are the author's own Day 1 posts, written with the reference machine's numbers. Use them for shape, then write yours with your numbers and your surprise. Attach a screenshot of your terminal output. The ratios block at the bottom of the script output is the most shareable thing you produce today.
+Example Day 1 posts, written with the reference machine's numbers. Use them for shape, then write yours with your numbers and your surprise. Attach a screenshot of your terminal output. The ratios block at the bottom of the script output is the most shareable thing you produce today.
 
 ## LinkedIn
 

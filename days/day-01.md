@@ -299,7 +299,7 @@ except (socket.error, OSError) as e:
 <details markdown="1">
 <summary>Reference run, and what each number means</summary>
 
-The author's run, Apple Silicon laptop, macOS, from India. The full write-up is in [Day 1 lab results](../labs/day-01-latency/RESULTS.md).
+The reference run, Apple Silicon laptop, macOS. The full write-up is in [Day 1 lab results](../labs/day-01-latency/RESULTS.md).
 
 | What | Canonical | Reference run (p50) |
 |---|---|---|

@@ -40,7 +40,7 @@ What a good endpoint looks like. Pagination, and why the obvious way to paginate
 ### [Day 6: more than one server](../days/day-06.md)
 Load balancers, health checks, what "stateless" means and why everyone insists on it. You'll run three copies of an app behind a load balancer and kill one while it's serving traffic.
 
-### Day 7: your first real design
+### [Day 7: your first real design](../days/day-07.md)
 No new material. You design a URL shortener from scratch, write it up, and then we compare it against what you would have written on day 2.
 
 ## Reading for the week

@@ -100,7 +100,7 @@ Day 1's drill D3 worked out that a messaging app creates about 4 TB of new messa
 
 ## Block 2: drill (40 min) ✍️
 
-Paper first, no laptop. Then copy your answers into [`notes/day-02-estimates.md`](../notes/day-02-estimates.md) (the template is already there) and into the prediction table in [`progress.md`](../progress.md).
+Paper first, no laptop. Then copy your answers into [`notes/day-02-estimates.md`](../notes/day-02-estimates.md) (the template is already there).
 
 The first six are the ones today's lab checks. Do not skip this, and do not peek at the lab output first. The whole exercise depends on you committing to a number before you find out. Estimating after you've seen the answer is like doing a DRS review after watching the replay. Not allowed.
 
