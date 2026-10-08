@@ -20,19 +20,19 @@ You can instrument a service so that when it misbehaves you can actually see why
 
 ## The days 🗓️
 
-Day 43: observability. Logs, metrics and traces, and the difference between them. The RED method for requests and the USE method for resources. Lab: instrument a small service and expose real metrics you can watch move.
+[Day 43](../days/day-43.md): observability. Logs, metrics and traces, and the difference between them. The RED method for requests and the USE method for resources. Lab: instrument a small service and expose real metrics you can watch move.
 
-Day 44: SLOs and error budgets. What "three nines" costs you in real downtime, and why chasing 100% makes your system slower and your team miserable. Lab: compute an SLO and an error budget from a stream of request data.
+[Day 44](../days/day-44.md): SLOs and error budgets. What "three nines" costs you in real downtime, and why chasing 100% makes your system slower and your team miserable. Lab: compute an SLO and an error budget from a stream of request data.
 
-Day 45: rate limiting and load shedding. Token bucket, leaky bucket, and gracefully saying "no" before you fall over. This is the IRCTC tatkal problem in its purest form. 🚆 Lab: implement token bucket and leaky bucket and watch them protect a service under a flood.
+[Day 45](../days/day-45.md): rate limiting and load shedding. Token bucket, leaky bucket, and gracefully saying "no" before you fall over. This is the IRCTC tatkal problem in its purest form. 🚆 Lab: implement token bucket and leaky bucket and watch them protect a service under a flood.
 
-Day 46: multi-tenancy and isolation. The noisy neighbour problem, where one greedy customer degrades everyone else, and the quotas and fairness that stop it. Lab: simulate a noisy neighbour, then add per-tenant quotas.
+[Day 46](../days/day-46.md): multi-tenancy and isolation. The noisy neighbour problem, where one greedy customer degrades everyone else, and the quotas and fairness that stop it. Lab: simulate a noisy neighbour, then add per-tenant quotas.
 
-Day 47: security boundaries, the parts that touch design. Authentication vs authorisation, where secrets live, and signing requests so they cannot be forged. Not a full security course, just what every design must get right. Lab: sign and verify a request with HMAC, and see how a tampered request gets caught.
+[Day 47](../days/day-47.md): security boundaries, the parts that touch design. Authentication vs authorisation, where secrets live, and signing requests so they cannot be forged. Not a full security course, just what every design must get right. Lab: sign and verify a request with HMAC, and see how a tampered request gets caught.
 
-Day 48: cost and capacity planning. Reading a cloud bill, right-sizing, and the arithmetic that tells you whether your design is affordable before you build it. Lab: build a small cost model for a real-ish system.
+[Day 48](../days/day-48.md): cost and capacity planning. Reading a cloud bill, right-sizing, and the arithmetic that tells you whether your design is affordable before you build it. Lab: build a small cost model for a real-ish system.
 
-Day 49: production design. You design a multi-tenant SaaS or an on-call-friendly system, timed, with observability and cost baked in from the start, then a retro.
+[Day 49](../days/day-49.md): production design. You design a multi-tenant SaaS or an on-call-friendly system, timed, with observability and cost baked in from the start, then a retro.
 
 ## Core resources for the week 📚
 

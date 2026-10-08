@@ -50,4 +50,11 @@
 - { url: "/days/day-41.html",   title: "Day 41: serving concerns, caching, limiting and fallback" }
 - { url: "/days/day-42.html",   title: "Day 42: designing a production AI chat system" }
 - { url: "/weeks/week-07.html", title: "Week 7: production" }
+- { url: "/days/day-43.html",   title: "Day 43: observability" }
+- { url: "/days/day-44.html",   title: "Day 44: SLOs and error budgets" }
+- { url: "/days/day-45.html",   title: "Day 45: rate limiting" }
+- { url: "/days/day-46.html",   title: "Day 46: multi-tenancy and isolation" }
+- { url: "/days/day-47.html",   title: "Day 47: security boundaries" }
+- { url: "/days/day-48.html",   title: "Day 48: cost and capacity planning" }
+- { url: "/days/day-49.html",   title: "Day 49: designing a multi-tenant SaaS" }
 - { url: "/weeks/week-08.html", title: "Week 8: putting it all together" }

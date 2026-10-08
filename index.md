@@ -11,7 +11,7 @@ A free, hands-on system design course. Sixty days of work, each day about four h
 {: .fs-6 .fw-300 }
 
 [Start at Day 1](days/day-01.md){: .btn .btn-primary .mr-2 }
-[Latest: Day 42](days/day-42.md){: .btn .mr-2 }
+[Latest: Day 49](days/day-49.md){: .btn .mr-2 }
 [Track your progress](tracker.md){: .btn .mr-2 }
 [How to follow along](#how-to-follow-along){: .btn }
 
@@ -84,6 +84,13 @@ New days are published as they're written. Each one shows up in the sidebar unde
 | [Day 40](days/day-40.md) | Agents, and why the token bill explodes | [Template](labs/day-40-agents/RESULTS.md) | [Posts](shares/day-40-posts.md) |
 | [Day 41](days/day-41.md) | Serving: caching, limiting and fallback | [Template](labs/day-41-serving/RESULTS.md) | [Posts](shares/day-41-posts.md) |
 | [Day 42](days/day-42.md) | Designing a production AI chat system | [Design template](labs/day-42-ai-chat/DESIGN.md) | [Posts](shares/day-42-posts.md) |
+| [Day 43](days/day-43.md) | Observability: logs, metrics, traces | [Template](labs/day-43-observability/RESULTS.md) | [Posts](shares/day-43-posts.md) |
+| [Day 44](days/day-44.md) | SLOs and error budgets | [Template](labs/day-44-slos/RESULTS.md) | [Posts](shares/day-44-posts.md) |
+| [Day 45](days/day-45.md) | Rate limiting: token, leaky, windows | [Template](labs/day-45-rate-limiting/RESULTS.md) | [Posts](shares/day-45-posts.md) |
+| [Day 46](days/day-46.md) | Multi-tenancy and the noisy neighbour | [Template](labs/day-46-multitenancy/RESULTS.md) | [Posts](shares/day-46-posts.md) |
+| [Day 47](days/day-47.md) | Security boundaries: signing, authz, IDOR | [Template](labs/day-47-security/RESULTS.md) | [Posts](shares/day-47-posts.md) |
+| [Day 48](days/day-48.md) | Cost and capacity planning | [Template](labs/day-48-cost/RESULTS.md) | [Posts](shares/day-48-posts.md) |
+| [Day 49](days/day-49.md) | Designing a multi-tenant SaaS | [Design template](labs/day-49-saas/DESIGN.md) | [Posts](shares/day-49-posts.md) |
 
 ## The loop for each day
 
