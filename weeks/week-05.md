@@ -20,19 +20,19 @@ You can state CAP correctly, which most people cannot, and explain why it is a c
 
 ## The days 🗓️
 
-Day 29: failure and time. The eight fallacies of distributed computing, partial failure, and why "just check if the other server is alive" is a genuinely hard question. Lab: simulate clock skew between two nodes and watch it cause a bug.
+[Day 29](../days/day-29.md): failure and time. The eight fallacies of distributed computing, partial failure, and why "just check if the other server is alive" is a genuinely hard question. Lab: simulate clock skew between two nodes and watch it cause a bug.
 
-Day 30: CAP for real, and its grown-up cousin PACELC. The famous "pick two" is a cartoon. The truth is more interesting and more useful. Reading-heavy day. Lab: partition a toy two-node store and feel the tradeoff.
+[Day 30](../days/day-30.md): CAP for real, and its grown-up cousin PACELC. The famous "pick two" is a cartoon. The truth is more interesting and more useful. Reading-heavy day. Lab: partition a toy two-node store and feel the tradeoff.
 
-Day 31: replication and quorums, Dynamo style. How Amazon's cart stayed available through failures by letting copies disagree and healing later. R plus W greater than N, read repair, and eventual consistency. Lab: a quorum read and write simulator.
+[Day 31](../days/day-31.md): replication and quorums, Dynamo style. How Amazon's cart stayed available through failures by letting copies disagree and healing later. R plus W greater than N, read repair, and eventual consistency. Lab: a quorum read and write simulator.
 
-Day 32: consensus and Raft. How a group of machines agrees on a single value even when some of them crash. Leader election and log replication, step by step. Lab: walk through the Raft states, using the visualisation, and reason about a split vote.
+[Day 32](../days/day-32.md): consensus and Raft. How a group of machines agrees on a single value even when some of them crash. Leader election and log replication, step by step. Lab: walk through the Raft states, using the visualisation, and reason about a split vote.
 
-Day 33: logical clocks. Since real clocks lie, we invent logical ones. Lamport timestamps and vector clocks, and how they capture "this happened before that" without trusting any wall clock. Lab: implement vector clocks and detect two events that were truly concurrent.
+[Day 33](../days/day-33.md): logical clocks. Since real clocks lie, we invent logical ones. Lamport timestamps and vector clocks, and how they capture "this happened before that" without trusting any wall clock. Lab: implement vector clocks and detect two events that were truly concurrent.
 
-Day 34: paper day. Read Dynamo, skim Bigtable and Spanner, and write a one-page summary of each in plain language. This is the day the whole week clicks into place.
+[Day 34](../days/day-34.md): paper day. Read Dynamo, skim Bigtable and Spanner, and write a one-page summary of each in plain language. This is the day the whole week clicks into place.
 
-Day 35: distributed design. You design a distributed key-value store, or the sync engine behind something like Google Docs, timed, then a retro.
+[Day 35](../days/day-35.md): distributed design. You design a distributed key-value store, or the sync engine behind something like Google Docs, timed, then a retro.
 
 ## Core resources for the week 📚
 

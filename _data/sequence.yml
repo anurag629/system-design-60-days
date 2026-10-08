@@ -34,6 +34,13 @@
 - { url: "/days/day-27.html",   title: "Day 27: backpressure and load shedding" }
 - { url: "/days/day-28.html",   title: "Day 28: designing a notification system" }
 - { url: "/weeks/week-05.html", title: "Week 5: distributed systems" }
+- { url: "/days/day-29.html",   title: "Day 29: failure, time, and the eight fallacies" }
+- { url: "/days/day-30.html",   title: "Day 30: CAP, for real, and PACELC" }
+- { url: "/days/day-31.html",   title: "Day 31: replication and quorums" }
+- { url: "/days/day-32.html",   title: "Day 32: consensus and Raft" }
+- { url: "/days/day-33.html",   title: "Day 33: logical clocks" }
+- { url: "/days/day-34.html",   title: "Day 34: the papers" }
+- { url: "/days/day-35.html",   title: "Day 35: designing a distributed key-value store" }
 - { url: "/weeks/week-06.html", title: "Week 6: AI systems" }
 - { url: "/weeks/week-07.html", title: "Week 7: production" }
 - { url: "/weeks/week-08.html", title: "Week 8: putting it all together" }

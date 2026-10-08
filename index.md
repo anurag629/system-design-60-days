@@ -11,7 +11,7 @@ A free, hands-on system design course. Sixty days of work, each day about four h
 {: .fs-6 .fw-300 }
 
 [Start at Day 1](days/day-01.md){: .btn .btn-primary .mr-2 }
-[Latest: Day 28](days/day-28.md){: .btn .mr-2 }
+[Latest: Day 35](days/day-35.md){: .btn .mr-2 }
 [Track your progress](tracker.md){: .btn .mr-2 }
 [How to follow along](#how-to-follow-along){: .btn }
 
@@ -70,6 +70,13 @@ New days are published as they're written. Each one shows up in the sidebar unde
 | [Day 26](days/day-26.md) | The outbox pattern | [Template](labs/day-26-outbox/RESULTS.md) | [Posts](shares/day-26-posts.md) |
 | [Day 27](days/day-27.md) | Backpressure and load shedding | [Template](labs/day-27-backpressure/RESULTS.md) | [Posts](shares/day-27-posts.md) |
 | [Day 28](days/day-28.md) | Designing a notification system | [Design template](labs/day-28-notifications/DESIGN.md) | [Posts](shares/day-28-posts.md) |
+| [Day 29](days/day-29.md) | Failure, time, and the eight fallacies | [Template](labs/day-29-clocks/RESULTS.md) | [Posts](shares/day-29-posts.md) |
+| [Day 30](days/day-30.md) | CAP, for real, and PACELC | [Template](labs/day-30-cap/RESULTS.md) | [Posts](shares/day-30-posts.md) |
+| [Day 31](days/day-31.md) | Replication and quorums | [Template](labs/day-31-quorums/RESULTS.md) | [Posts](shares/day-31-posts.md) |
+| [Day 32](days/day-32.md) | Consensus and Raft | [Template](labs/day-32-raft/RESULTS.md) | [Posts](shares/day-32-posts.md) |
+| [Day 33](days/day-33.md) | Logical clocks | [Template](labs/day-33-logical-clocks/RESULTS.md) | [Posts](shares/day-33-posts.md) |
+| [Day 34](days/day-34.md) | The papers: Dynamo, Bigtable, Spanner | [Summaries](labs/day-34-papers/SUMMARIES.md) | [Posts](shares/day-34-posts.md) |
+| [Day 35](days/day-35.md) | Designing a distributed key-value store | [Design template](labs/day-35-kv-store/DESIGN.md) | [Posts](shares/day-35-posts.md) |
 
 ## The loop for each day
 
