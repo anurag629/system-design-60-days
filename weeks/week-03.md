@@ -20,19 +20,19 @@ You can explain cache-aside, read-through, write-through and write-back and say 
 
 ## The days 🗓️
 
-Day 15: why cache, and the four patterns. Cache-aside is the default and you should know it cold. Lab: bolt a cache-aside layer onto last week's database and watch the read latency fall off a cliff.
+[Day 15](../days/day-15.md): why cache, and the four patterns. Cache-aside is the default and you should know it cold. Lab: bolt a cache-aside layer onto last week's database and watch the read latency fall off a cliff.
 
-Day 16: eviction and the working set. Your cache is smaller than your data, so what do you throw out? LRU, LFU, and the hit-rate-versus-size curve that decides your Redis bill. Lab: implement LRU yourself, then plot hit rate against cache size.
+[Day 16](../days/day-16.md): eviction and the working set. Your cache is smaller than your data, so what do you throw out? LRU, LFU, and the hit-rate-versus-size curve that decides your Redis bill. Lab: implement LRU yourself, then plot hit rate against cache size.
 
-Day 17: the thundering herd, also called a cache stampede. One popular key expires, ten thousand requests all miss at the same instant, and they all hammer the database together. Think IRCTC at 10 AM when tatkal opens. 🚆 Lab: reproduce a stampede, then fix it with a lock and with early recomputation.
+[Day 17](../days/day-17.md): the thundering herd, also called a cache stampede. One popular key expires, ten thousand requests all miss at the same instant, and they all hammer the database together. Think IRCTC at 10 AM when tatkal opens. 🚆 Lab: reproduce a stampede, then fix it with a lock and with early recomputation.
 
-Day 18: hot keys and the celebrity problem. When Virat Kohli tweets, one key in one shard gets a million reads a second while the rest sit idle. Lab: send Zipf-distributed load and watch a single key melt one shard.
+[Day 18](../days/day-18.md): hot keys and the celebrity problem. When Virat Kohli tweets, one key in one shard gets a million reads a second while the rest sit idle. Lab: send Zipf-distributed load and watch a single key melt one shard.
 
-Day 19: Redis internals. Single threaded on purpose, rich data structures, and how it survives a restart. Also pipelining, which is last week's batching lesson wearing a Redis costume. Lab: benchmark simple ops and measure what pipelining buys you.
+[Day 19](../days/day-19.md): Redis internals. Single threaded on purpose, rich data structures, and how it survives a restart. Also pipelining, which is last week's batching lesson wearing a Redis costume. Lab: benchmark simple ops and measure what pipelining buys you.
 
-Day 20: the CDN and cache invalidation. TTLs, purges, and the lovely stale-while-revalidate trick that serves slightly old content instantly while quietly fetching fresh. Lab: read real cache headers and watch edge behaviour.
+[Day 20](../days/day-20.md): the CDN and cache invalidation. TTLs, purges, and the lovely stale-while-revalidate trick that serves slightly old content instantly while quietly fetching fresh. Lab: read real cache headers and watch edge behaviour.
 
-Day 21: caching design. You design something like a news feed or a rate limiter that leans on caching, timed, then a retro.
+[Day 21](../days/day-21.md): caching design. You design something like a news feed or a rate limiter that leans on caching, timed, then a retro.
 
 ## Core resources for the week 📚
 

@@ -11,7 +11,7 @@ A free, hands-on system design course. Sixty days of work, each day about four h
 {: .fs-6 .fw-300 }
 
 [Start at Day 1](days/day-01.md){: .btn .btn-primary .mr-2 }
-[Latest: Day 14](days/day-14.md){: .btn .mr-2 }
+[Latest: Day 21](days/day-21.md){: .btn .mr-2 }
 [Track your progress](tracker.md){: .btn .mr-2 }
 [How to follow along](#how-to-follow-along){: .btn }
 
@@ -56,6 +56,13 @@ New days are published as they're written. Each one shows up in the sidebar unde
 | [Day 12](days/day-12.md) | Replication and lag | [Template](labs/day-12-replication/RESULTS.md) | [Posts](shares/day-12-posts.md) |
 | [Day 13](days/day-13.md) | Partitioning and sharding: the hot shard | [Template](labs/day-13-sharding/RESULTS.md) | [Posts](shares/day-13-posts.md) |
 | [Day 14](days/day-14.md) | Designing a storage layer for a messaging app | [Design template](labs/day-14-storage-design/DESIGN.md) | [Posts](shares/day-14-posts.md) |
+| [Day 15](days/day-15.md) | Caching and the cache-aside pattern | [Template](labs/day-15-cache-aside/RESULTS.md) | [Posts](shares/day-15-posts.md) |
+| [Day 16](days/day-16.md) | Eviction and the working set (LRU) | [Template](labs/day-16-eviction/RESULTS.md) | [Posts](shares/day-16-posts.md) |
+| [Day 17](days/day-17.md) | The thundering herd | [Template](labs/day-17-stampede/RESULTS.md) | [Posts](shares/day-17-posts.md) |
+| [Day 18](days/day-18.md) | Hot keys and the celebrity problem | [Template](labs/day-18-hot-keys/RESULTS.md) | [Posts](shares/day-18-posts.md) |
+| [Day 19](days/day-19.md) | Redis internals and pipelining | [Template](labs/day-19-redis/RESULTS.md) | [Posts](shares/day-19-posts.md) |
+| [Day 20](days/day-20.md) | The CDN and cache invalidation | [Template](labs/day-20-cdn/RESULTS.md) | [Posts](shares/day-20-posts.md) |
+| [Day 21](days/day-21.md) | Designing a news feed | [Design template](labs/day-21-news-feed/DESIGN.md) | [Posts](shares/day-21-posts.md) |
 
 ## The loop for each day
 

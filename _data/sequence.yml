@@ -18,6 +18,13 @@
 - { url: "/days/day-13.html",   title: "Day 13: partitioning and sharding" }
 - { url: "/days/day-14.html",   title: "Day 14: designing a storage layer" }
 - { url: "/weeks/week-03.html", title: "Week 3: caching and the CDN" }
+- { url: "/days/day-15.html",   title: "Day 15: caching and the cache-aside pattern" }
+- { url: "/days/day-16.html",   title: "Day 16: eviction and the working set" }
+- { url: "/days/day-17.html",   title: "Day 17: the thundering herd" }
+- { url: "/days/day-18.html",   title: "Day 18: hot keys and the celebrity problem" }
+- { url: "/days/day-19.html",   title: "Day 19: Redis internals and pipelining" }
+- { url: "/days/day-20.html",   title: "Day 20: the CDN and cache invalidation" }
+- { url: "/days/day-21.html",   title: "Day 21: designing a news feed" }
 - { url: "/weeks/week-04.html", title: "Week 4: async, queues and the log" }
 - { url: "/weeks/week-05.html", title: "Week 5: distributed systems" }
 - { url: "/weeks/week-06.html", title: "Week 6: AI systems" }
