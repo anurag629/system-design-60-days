@@ -11,7 +11,7 @@ A free, hands-on system design course. Sixty days of work, each day about four h
 {: .fs-6 .fw-300 }
 
 [Start at Day 1](days/day-01.md){: .btn .btn-primary .mr-2 }
-[Latest: Day 8](days/day-08.md){: .btn .mr-2 }
+[Latest: Day 14](days/day-14.md){: .btn .mr-2 }
 [Track your progress](tracker.md){: .btn .mr-2 }
 [How to follow along](#how-to-follow-along){: .btn }
 
@@ -50,6 +50,12 @@ New days are published as they're written. Each one shows up in the sidebar unde
 | [Day 6](days/day-06.md) | More than one server: load balancing and failure | [Template](labs/day-06-load-balancer/RESULTS.md) | [Posts](shares/day-06-posts.md) |
 | [Day 7](days/day-07.md) | Your first real design: a URL shortener | [Design template](labs/day-07-url-shortener/DESIGN.md) | [Posts](shares/day-07-posts.md) |
 | [Day 8](days/day-08.md) | How a row sits on disk: pages, row vs column stores | [Template](labs/day-08-pages/RESULTS.md) | [Posts](shares/day-08-posts.md) |
+| [Day 9](days/day-09.md) | B-trees vs LSM trees: why one hates random writes | [Template](labs/day-09-btree-lsm/RESULTS.md) | [Posts](shares/day-09-posts.md) |
+| [Day 10](days/day-10.md) | Indexes in depth: composite, covering, and ignored | [Template](labs/day-10-indexes/RESULTS.md) | [Posts](shares/day-10-posts.md) |
+| [Day 11](days/day-11.md) | Transactions and the lost update | [Template](labs/day-11-transactions/RESULTS.md) | [Posts](shares/day-11-posts.md) |
+| [Day 12](days/day-12.md) | Replication and lag | [Template](labs/day-12-replication/RESULTS.md) | [Posts](shares/day-12-posts.md) |
+| [Day 13](days/day-13.md) | Partitioning and sharding: the hot shard | [Template](labs/day-13-sharding/RESULTS.md) | [Posts](shares/day-13-posts.md) |
+| [Day 14](days/day-14.md) | Designing a storage layer for a messaging app | [Design template](labs/day-14-storage-design/DESIGN.md) | [Posts](shares/day-14-posts.md) |
 
 ## The loop for each day
 

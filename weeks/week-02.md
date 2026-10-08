@@ -22,17 +22,17 @@ Someone says "our reads got slow after we hit 50 million rows." You can list fiv
 
 [Day 8: how a row actually sits on disk](../days/day-08.md). Pages, heap files, and why a database reads 8 kilobytes even when you asked for 8 bytes. Row stores vs column stores, and when each one wins. Lab: crack open a real SQLite file and read the page header with your own code.
 
-Day 9: the two great families, B-tree vs LSM-tree. Postgres and MySQL are B-trees. Cassandra, RocksDB and friends are LSM-trees. One is built for reads, one for writes, and knowing which is which is a genuine interview filter. Lab: measure write amplification on both.
+[Day 9](../days/day-09.md): the two great families, B-tree vs LSM-tree. Postgres and MySQL are B-trees. Cassandra, RocksDB and friends are LSM-trees. One is built for reads, one for writes, and knowing which is which is a genuine interview filter. Lab: measure write amplification on both.
 
-Day 10: indexes, properly this time. Composite indexes, covering indexes, and the very annoying day you learn your database decided to ignore the index you lovingly created. Lab: EXPLAIN ANALYZE experiments until the query planner stops surprising you.
+[Day 10](../days/day-10.md): indexes, properly this time. Composite indexes, covering indexes, and the very annoying day you learn your database decided to ignore the index you lovingly created. Lab: EXPLAIN ANALYZE experiments until the query planner stops surprising you.
 
-Day 11: transactions and isolation levels. Dirty reads, non-repeatable reads, phantom reads, and MVCC, which is how Postgres lets a hundred people read and write at once without holding hands. Lab: open two connections and reproduce each anomaly with your bare hands.
+[Day 11](../days/day-11.md): transactions and isolation levels. Dirty reads, non-repeatable reads, phantom reads, and MVCC, which is how Postgres lets a hundred people read and write at once without holding hands. Lab: open two connections and reproduce each anomaly with your bare hands.
 
-Day 12: replication. One leader, many followers, and the small lie in the middle called replication lag. This is why you sometimes post a comment, refresh, and it is gone for two seconds. Lab: simulate lag and watch a stale read happen.
+[Day 12](../days/day-12.md): replication. One leader, many followers, and the small lie in the middle called replication lag. This is why you sometimes post a comment, refresh, and it is gone for two seconds. Lab: simulate lag and watch a stale read happen.
 
-Day 13: partitioning, also called sharding. Splitting one big table across many machines, hash vs range, and the classic disaster of the hot shard. Think one Kohli century sending all the traffic to one server. Lab: shard a dataset, create a hot shard on purpose, then fix it.
+[Day 13](../days/day-13.md): partitioning, also called sharding. Splitting one big table across many machines, hash vs range, and the classic disaster of the hot shard. Think one Kohli century sending all the traffic to one server. Lab: shard a dataset, create a hot shard on purpose, then fix it.
 
-Day 14: first real storage design. You design the database layer for something like Twitter or a URL shortener, on paper, timed. Then we compare it against what you would have drawn on day 8 and you see how much moved.
+[Day 14](../days/day-14.md): first real storage design. You design the database layer for something like Twitter or a URL shortener, on paper, timed. Then we compare it against what you would have drawn on day 8 and you see how much moved.
 
 ## Core resources for the week 📚
 
