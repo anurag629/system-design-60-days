@@ -20,19 +20,19 @@ You can explain why a queue decouples a fast producer from a slow consumer, and 
 
 ## The days 🗓️
 
-Day 22: sync vs async, and why queues exist. Decoupling, buffering a spike, and the scary word backpressure. Lab: a producer and consumer with a bounded queue between them.
+[Day 22](../days/day-22.md): sync vs async, and why queues exist. Decoupling, buffering a spike, and the scary word backpressure. Lab: a producer and consumer with a bounded queue between them.
 
-Day 23: the log as a primitive. Append-only, offsets, and replay. The whole magic is that consumers remember their own position, so you can add a new consumer that re-reads all of history. Lab: build a tiny append-only log and a consumer that tracks its offset.
+[Day 23](../days/day-23.md): the log as a primitive. Append-only, offsets, and replay. The whole magic is that consumers remember their own position, so you can add a new consumer that re-reads all of history. Lab: build a tiny append-only log and a consumer that tracks its offset.
 
-Day 24: Kafka's actual design. Partitions for parallelism, consumer groups for sharing work, and the ordering guarantee that only holds inside one partition. Lab: a partitioned log with a consumer group splitting the load.
+[Day 24](../days/day-24.md): Kafka's actual design. Partitions for parallelism, consumer groups for sharing work, and the ordering guarantee that only holds inside one partition. Lab: a partitioned log with a consumer group splitting the load.
 
-Day 25: delivery semantics. At-least-once, at-most-once, and why exactly-once is more marketing than physics. The fix in practice is idempotency keys, the same idea that stops you getting charged twice when your UPI payment "fails" and you retry. 💸 Lab: crash a consumer, watch duplicates appear, then dedupe them cleanly.
+[Day 25](../days/day-25.md): delivery semantics. At-least-once, at-most-once, and why exactly-once is more marketing than physics. The fix in practice is idempotency keys, the same idea that stops you getting charged twice when your UPI payment "fails" and you retry. 💸 Lab: crash a consumer, watch duplicates appear, then dedupe them cleanly.
 
-Day 26: the outbox pattern and the dual-write problem. What goes wrong when you write to your database and publish to a queue as two separate steps, and one succeeds while the other fails. Lab: reproduce the inconsistency, then fix it with an outbox.
+[Day 26](../days/day-26.md): the outbox pattern and the dual-write problem. What goes wrong when you write to your database and publish to a queue as two separate steps, and one succeeds while the other fails. Lab: reproduce the inconsistency, then fix it with an outbox.
 
-Day 27: backpressure and rate control. When consumers fall behind, the queue grows, memory fills, and things get ugly. What do you drop, slow, or push back on? Lab: a deliberately slow consumer, a growing queue, and backpressure applied.
+[Day 27](../days/day-27.md): backpressure and rate control. When consumers fall behind, the queue grows, memory fills, and things get ugly. What do you drop, slow, or push back on? Lab: a deliberately slow consumer, a growing queue, and backpressure applied.
 
-Day 28: async design. You design a notification system or a payment pipeline, timed, then a retro.
+[Day 28](../days/day-28.md): async design. You design a notification system or a payment pipeline, timed, then a retro.
 
 ## Core resources for the week 📚
 

@@ -26,6 +26,13 @@
 - { url: "/days/day-20.html",   title: "Day 20: the CDN and cache invalidation" }
 - { url: "/days/day-21.html",   title: "Day 21: designing a news feed" }
 - { url: "/weeks/week-04.html", title: "Week 4: async, queues and the log" }
+- { url: "/days/day-22.html",   title: "Day 22: sync vs async, and why queues exist" }
+- { url: "/days/day-23.html",   title: "Day 23: the log as a primitive" }
+- { url: "/days/day-24.html",   title: "Day 24: Kafka, partitions and consumer groups" }
+- { url: "/days/day-25.html",   title: "Day 25: delivery semantics and idempotency" }
+- { url: "/days/day-26.html",   title: "Day 26: the outbox pattern" }
+- { url: "/days/day-27.html",   title: "Day 27: backpressure and load shedding" }
+- { url: "/days/day-28.html",   title: "Day 28: designing a notification system" }
 - { url: "/weeks/week-05.html", title: "Week 5: distributed systems" }
 - { url: "/weeks/week-06.html", title: "Week 6: AI systems" }
 - { url: "/weeks/week-07.html", title: "Week 7: production" }

@@ -11,7 +11,7 @@ A free, hands-on system design course. Sixty days of work, each day about four h
 {: .fs-6 .fw-300 }
 
 [Start at Day 1](days/day-01.md){: .btn .btn-primary .mr-2 }
-[Latest: Day 21](days/day-21.md){: .btn .mr-2 }
+[Latest: Day 28](days/day-28.md){: .btn .mr-2 }
 [Track your progress](tracker.md){: .btn .mr-2 }
 [How to follow along](#how-to-follow-along){: .btn }
 
@@ -63,6 +63,13 @@ New days are published as they're written. Each one shows up in the sidebar unde
 | [Day 19](days/day-19.md) | Redis internals and pipelining | [Template](labs/day-19-redis/RESULTS.md) | [Posts](shares/day-19-posts.md) |
 | [Day 20](days/day-20.md) | The CDN and cache invalidation | [Template](labs/day-20-cdn/RESULTS.md) | [Posts](shares/day-20-posts.md) |
 | [Day 21](days/day-21.md) | Designing a news feed | [Design template](labs/day-21-news-feed/DESIGN.md) | [Posts](shares/day-21-posts.md) |
+| [Day 22](days/day-22.md) | Sync vs async, and why queues exist | [Template](labs/day-22-queues/RESULTS.md) | [Posts](shares/day-22-posts.md) |
+| [Day 23](days/day-23.md) | The log as a primitive | [Template](labs/day-23-log/RESULTS.md) | [Posts](shares/day-23-posts.md) |
+| [Day 24](days/day-24.md) | Kafka, partitions and consumer groups | [Template](labs/day-24-partitions/RESULTS.md) | [Posts](shares/day-24-posts.md) |
+| [Day 25](days/day-25.md) | Delivery semantics and idempotency | [Template](labs/day-25-delivery/RESULTS.md) | [Posts](shares/day-25-posts.md) |
+| [Day 26](days/day-26.md) | The outbox pattern | [Template](labs/day-26-outbox/RESULTS.md) | [Posts](shares/day-26-posts.md) |
+| [Day 27](days/day-27.md) | Backpressure and load shedding | [Template](labs/day-27-backpressure/RESULTS.md) | [Posts](shares/day-27-posts.md) |
+| [Day 28](days/day-28.md) | Designing a notification system | [Design template](labs/day-28-notifications/DESIGN.md) | [Posts](shares/day-28-posts.md) |
 
 ## The loop for each day
 
