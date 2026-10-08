@@ -20,27 +20,27 @@ Walk into any system design interview and run it calmly: clarify the problem, es
 
 ## The days 🗓️
 
-Day 50: the framework. How to run a 45-minute design cleanly: requirements, scale estimate, API, high-level design, deep dives, then bottlenecks and failure. We practise the shape with no pressure.
+[Day 50](../days/day-50.md): the framework. How to run a 45-minute design cleanly: requirements, scale estimate, API, high-level design, deep dives, then bottlenecks and failure. We practise the shape with no pressure.
 
-Day 51: mock 1, design a URL shortener, end to end and timed. The classic. You have already built pieces of this, now assemble the whole thing under the clock.
+[Day 51](../days/day-51.md): mock 1, design a URL shortener, end to end and timed. The classic. You have already built pieces of this, now assemble the whole thing under the clock.
 
-Day 52: mock 2, design a chat system like WhatsApp. Fan-out, delivery, presence, and the scale of a billion users. 💬
+[Day 52](../days/day-52.md): mock 2, design a chat system like WhatsApp. Fan-out, delivery, presence, and the scale of a billion users. 💬
 
-Day 53: mock 3, design a rate limiter and a news feed. Two smaller ones, back to back, to build speed.
+[Day 53](../days/day-53.md): mock 3, design a rate limiter and a news feed. Two smaller ones, back to back, to build speed.
 
-Day 54: mock 4, design an AI system, a production RAG or chat product. This ties week 6 into everything else and is exactly the kind of question showing up in real interviews now.
+[Day 54](../days/day-54.md): mock 4, design an AI system, a production RAG or chat product. This ties week 6 into everything else and is exactly the kind of question showing up in real interviews now.
 
-Day 55: capstone kickoff. Pick one system you genuinely care about. Write the requirements and the architecture doc first, before any code.
+[Day 55](../days/day-55.md): capstone kickoff. Pick one system you genuinely care about. Write the requirements and the architecture doc first, before any code.
 
-Day 56: capstone build. Implement one real slice of it, the interesting part, not a toy.
+[Day 56](../days/day-56.md): capstone build. Implement one real slice of it, the interesting part, not a toy.
 
-Day 57: capstone load test. Point k6 or your own load generator at it, push until it breaks, and find the true bottleneck. Break your own thing before the world does.
+[Day 57](../days/day-57.md): capstone load test. Point k6 or your own load generator at it, push until it breaks, and find the true bottleneck. Break your own thing before the world does.
 
-Day 58: capstone writeup. Turn what you learned into a clean architecture document: the design, the tradeoffs, the numbers, the failure modes, the cost.
+[Day 58](../days/day-58.md): capstone writeup. Turn what you learned into a clean architecture document: the design, the tradeoffs, the numbers, the failure modes, the cost.
 
-Day 59: review and gaps. Look honestly at what is still shaky across all eight weeks and spend the day on targeted revision. You will know exactly where the weak spots are by now.
+[Day 59](../days/day-59.md): review and gaps. Look honestly at what is still shaky across all eight weeks and spend the day on targeted revision. You will know exactly where the weak spots are by now.
 
-Day 60: the finish. Present the capstone to yourself out loud as if to an interviewer, then a proper retrospective on the whole 60 days, and a plan for what comes next. 🏁
+[Day 60](../days/day-60.md): the finish. Present the capstone to yourself out loud as if to an interviewer, then a proper retrospective on the whole 60 days, and a plan for what comes next. 🏁
 
 ## Core resources for the week 📚
 

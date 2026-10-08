@@ -11,7 +11,7 @@ A free, hands-on system design course. Sixty days of work, each day about four h
 {: .fs-6 .fw-300 }
 
 [Start at Day 1](days/day-01.md){: .btn .btn-primary .mr-2 }
-[Latest: Day 49](days/day-49.md){: .btn .mr-2 }
+[Latest: Day 60](days/day-60.md){: .btn .mr-2 }
 [Track your progress](tracker.md){: .btn .mr-2 }
 [How to follow along](#how-to-follow-along){: .btn }
 
@@ -91,6 +91,17 @@ New days are published as they're written. Each one shows up in the sidebar unde
 | [Day 47](days/day-47.md) | Security boundaries: signing, authz, IDOR | [Template](labs/day-47-security/RESULTS.md) | [Posts](shares/day-47-posts.md) |
 | [Day 48](days/day-48.md) | Cost and capacity planning | [Template](labs/day-48-cost/RESULTS.md) | [Posts](shares/day-48-posts.md) |
 | [Day 49](days/day-49.md) | Designing a multi-tenant SaaS | [Design template](labs/day-49-saas/DESIGN.md) | [Posts](shares/day-49-posts.md) |
+| [Day 50](days/day-50.md) | The framework: how to run a 45-minute design | [Framework sheet](labs/day-50-framework/FRAMEWORK.md) | [Posts](shares/day-50-posts.md) |
+| [Day 51](days/day-51.md) | Mock: a URL shortener, timed | [Mock brief](labs/day-51-mock-url-shortener/MOCK.md) | [Posts](shares/day-51-posts.md) |
+| [Day 52](days/day-52.md) | Mock: a chat system like WhatsApp | [Mock brief](labs/day-52-mock-chat/MOCK.md) | [Posts](shares/day-52-posts.md) |
+| [Day 53](days/day-53.md) | Mock: a rate limiter and a news feed | [Mock briefs](labs/day-53-mock-ratelimiter-feed/MOCK.md) | [Posts](shares/day-53-posts.md) |
+| [Day 54](days/day-54.md) | Mock: a production AI system | [Mock brief](labs/day-54-mock-ai/MOCK.md) | [Posts](shares/day-54-posts.md) |
+| [Day 55](days/day-55.md) | Capstone kickoff: design before code | [Design doc](labs/day-55-capstone-kickoff/REQUIREMENTS.md) | [Posts](shares/day-55-posts.md) |
+| [Day 56](days/day-56.md) | Capstone build: one real slice | [Service + guide](labs/day-56-capstone-build/BUILD.md) | [Posts](shares/day-56-posts.md) |
+| [Day 57](days/day-57.md) | Capstone load test: find the knee | [Load generator](labs/day-57-capstone-loadtest/LOADTEST.md) | [Posts](shares/day-57-posts.md) |
+| [Day 58](days/day-58.md) | Capstone writeup: the architecture doc | [Doc template](labs/day-58-capstone-writeup/ARCHITECTURE.md) | [Posts](shares/day-58-posts.md) |
+| [Day 59](days/day-59.md) | Review and gaps: close the weak spots | [Review grid](labs/day-59-review-gaps/REVIEW.md) | [Posts](shares/day-59-posts.md) |
+| [Day 60](days/day-60.md) | The finish: present, reflect, what next | [Finish](labs/day-60-finish/FINISH.md) | [Posts](shares/day-60-posts.md) |
 
 ## The loop for each day
 

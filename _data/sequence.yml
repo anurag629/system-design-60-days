@@ -58,3 +58,14 @@
 - { url: "/days/day-48.html",   title: "Day 48: cost and capacity planning" }
 - { url: "/days/day-49.html",   title: "Day 49: designing a multi-tenant SaaS" }
 - { url: "/weeks/week-08.html", title: "Week 8: putting it all together" }
+- { url: "/days/day-50.html",   title: "Day 50: the framework" }
+- { url: "/days/day-51.html",   title: "Day 51: mock, a URL shortener" }
+- { url: "/days/day-52.html",   title: "Day 52: mock, a chat system" }
+- { url: "/days/day-53.html",   title: "Day 53: mock, a rate limiter and a news feed" }
+- { url: "/days/day-54.html",   title: "Day 54: mock, an AI system" }
+- { url: "/days/day-55.html",   title: "Day 55: capstone kickoff" }
+- { url: "/days/day-56.html",   title: "Day 56: capstone build" }
+- { url: "/days/day-57.html",   title: "Day 57: capstone load test" }
+- { url: "/days/day-58.html",   title: "Day 58: capstone writeup" }
+- { url: "/days/day-59.html",   title: "Day 59: review and gaps" }
+- { url: "/days/day-60.html",   title: "Day 60: the finish" }
