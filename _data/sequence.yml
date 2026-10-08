@@ -42,5 +42,12 @@
 - { url: "/days/day-34.html",   title: "Day 34: the papers" }
 - { url: "/days/day-35.html",   title: "Day 35: designing a distributed key-value store" }
 - { url: "/weeks/week-06.html", title: "Week 6: AI systems" }
+- { url: "/days/day-36.html",   title: "Day 36: how LLM inference actually works" }
+- { url: "/days/day-37.html",   title: "Day 37: the KV cache and continuous batching" }
+- { url: "/days/day-38.html",   title: "Day 38: vector search and embeddings" }
+- { url: "/days/day-39.html",   title: "Day 39: RAG, and why it mostly fails at retrieval" }
+- { url: "/days/day-40.html",   title: "Day 40: agents, and why the token bill explodes" }
+- { url: "/days/day-41.html",   title: "Day 41: serving concerns, caching, limiting and fallback" }
+- { url: "/days/day-42.html",   title: "Day 42: designing a production AI chat system" }
 - { url: "/weeks/week-07.html", title: "Week 7: production" }
 - { url: "/weeks/week-08.html", title: "Week 8: putting it all together" }

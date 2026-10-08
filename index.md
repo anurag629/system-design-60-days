@@ -11,7 +11,7 @@ A free, hands-on system design course. Sixty days of work, each day about four h
 {: .fs-6 .fw-300 }
 
 [Start at Day 1](days/day-01.md){: .btn .btn-primary .mr-2 }
-[Latest: Day 35](days/day-35.md){: .btn .mr-2 }
+[Latest: Day 42](days/day-42.md){: .btn .mr-2 }
 [Track your progress](tracker.md){: .btn .mr-2 }
 [How to follow along](#how-to-follow-along){: .btn }
 
@@ -77,6 +77,13 @@ New days are published as they're written. Each one shows up in the sidebar unde
 | [Day 33](days/day-33.md) | Logical clocks | [Template](labs/day-33-logical-clocks/RESULTS.md) | [Posts](shares/day-33-posts.md) |
 | [Day 34](days/day-34.md) | The papers: Dynamo, Bigtable, Spanner | [Summaries](labs/day-34-papers/SUMMARIES.md) | [Posts](shares/day-34-posts.md) |
 | [Day 35](days/day-35.md) | Designing a distributed key-value store | [Design template](labs/day-35-kv-store/DESIGN.md) | [Posts](shares/day-35-posts.md) |
+| [Day 36](days/day-36.md) | How LLM inference works: prefill, decode, memory-bound | [Template](labs/day-36-inference/RESULTS.md) | [Posts](shares/day-36-posts.md) |
+| [Day 37](days/day-37.md) | The KV cache and continuous batching | [Template](labs/day-37-batching/RESULTS.md) | [Posts](shares/day-37-posts.md) |
+| [Day 38](days/day-38.md) | Vector search and embeddings | [Template](labs/day-38-vector-search/RESULTS.md) | [Posts](shares/day-38-posts.md) |
+| [Day 39](days/day-39.md) | RAG, and why it fails at retrieval | [Template](labs/day-39-rag/RESULTS.md) | [Posts](shares/day-39-posts.md) |
+| [Day 40](days/day-40.md) | Agents, and why the token bill explodes | [Template](labs/day-40-agents/RESULTS.md) | [Posts](shares/day-40-posts.md) |
+| [Day 41](days/day-41.md) | Serving: caching, limiting and fallback | [Template](labs/day-41-serving/RESULTS.md) | [Posts](shares/day-41-posts.md) |
+| [Day 42](days/day-42.md) | Designing a production AI chat system | [Design template](labs/day-42-ai-chat/DESIGN.md) | [Posts](shares/day-42-posts.md) |
 
 ## The loop for each day
 

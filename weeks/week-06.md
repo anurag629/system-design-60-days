@@ -20,19 +20,19 @@ You can explain prefill versus decode and why the first token is slow but the re
 
 ## The days 🗓️
 
-Day 36: how LLM inference actually works. Tokens, prefill vs decode, and why it is memory-bound not compute-bound. Lab: hit a real model API and measure tokens per second, and how latency grows with output length.
+[Day 36](../days/day-36.md): how LLM inference actually works. Tokens, prefill vs decode, and why it is memory-bound not compute-bound. Lab: hit a real model API and measure tokens per second, and how latency grows with output length.
 
-Day 37: the KV cache and continuous batching, the vLLM insight. This is a virtual-memory paper wearing an AI hat, and it is genuinely clever. Lab: measure throughput with and without batching and see the difference for yourself.
+[Day 37](../days/day-37.md): the KV cache and continuous batching, the vLLM insight. This is a virtual-memory paper wearing an AI hat, and it is genuinely clever. Lab: measure throughput with and without batching and see the difference for yourself.
 
-Day 38: vector search and embeddings. Approximate nearest neighbour, HNSW, and the recall-versus-latency dial you get to turn. Lab: build a tiny vector index and measure how recall trades off against speed.
+[Day 38](../days/day-38.md): vector search and embeddings. Approximate nearest neighbour, HNSW, and the recall-versus-latency dial you get to turn. Lab: build a tiny vector index and measure how recall trades off against speed.
 
-Day 39: RAG architecture. Chunking, retrieval, reranking, and the failure modes that make RAG demos great and RAG products frustrating. Lab: build a minimal RAG, break it on purpose, and measure retrieval quality.
+[Day 39](../days/day-39.md): RAG architecture. Chunking, retrieval, reranking, and the failure modes that make RAG demos great and RAG products frustrating. Lab: build a minimal RAG, break it on purpose, and measure retrieval quality.
 
-Day 40: agents and orchestration. Tool calls, the reasoning loop, context window management, and cost that balloons because one user request becomes twenty model calls. Lab: a small agent loop, with the token cost of every step printed so you feel it.
+[Day 40](../days/day-40.md): agents and orchestration. Tool calls, the reasoning loop, context window management, and cost that balloons because one user request becomes twenty model calls. Lab: a small agent loop, with the token cost of every step printed so you feel it.
 
-Day 41: serving concerns. Semantic caching, token-based rate limiting, model gateways, and fallback when your primary model is down or slow. Lab: a semantic cache plus a token bucket in front of an LLM endpoint.
+[Day 41](../days/day-41.md): serving concerns. Semantic caching, token-based rate limiting, model gateways, and fallback when your primary model is down or slow. Lab: a semantic cache plus a token bucket in front of an LLM endpoint.
 
-Day 42: AI system design. You design a production AI chat product or a RAG system at real scale, timed, then a retro.
+[Day 42](../days/day-42.md): AI system design. You design a production AI chat product or a RAG system at real scale, timed, then a retro.
 
 ## Core resources for the week 📚
 
