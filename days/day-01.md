@@ -6,7 +6,7 @@ has_children: true
 ---
 
 # Day 1
-## How slow is slow?
+## How slow is slow? 🐢
 
 Today's one idea: a computer is a stack of storage tiers, and each tier down is roughly 100 times slower than the one above it. Almost every performance decision in system design is you noticing that some data is on the wrong tier.
 
@@ -16,7 +16,7 @@ Nothing today assumes prior knowledge. If a term is new, it's explained.
 
 ## Block 1: read (50 min)
 
-### What to read and watch today
+### What to read and watch today 📚
 
 Read these three, and stop there. The list is short on purpose.
 - [The interactive latency table](https://colin-scott.github.io/personal_website/research/interactive_latency.html), set to 2026. You measure against it in the lab, so open it first.
@@ -83,7 +83,7 @@ Hold this question while you read: if a single web page makes 10 calls to a back
 
 ---
 
-## Block 2: drill (40 min)
+## Block 2: drill (40 min) ✍️
 
 Paper and pen. No laptop, no calculator. The point is to get comfortable being approximately right, fast.
 
@@ -121,7 +121,7 @@ Write your answers in `notes/day-01-drills.md` first. Then check the Solutions s
 
 ---
 
-## Block 3: build (100 min)
+## Block 3: build (100 min) 🔧
 
 You're going to measure the storage hierarchy on your own machine. Python, because we're measuring things that take microseconds and milliseconds, and Python's overhead of ~50ns per operation doesn't meaningfully pollute those. (It *would* pollute a CPU cache measurement, which is exactly why we're skipping that tier today. Honesty about what your tools can and can't measure is part of the craft.)
 
@@ -161,7 +161,7 @@ Run the network measurement 500 times and plot a histogram of the results. You'l
 
 ---
 
-## Block 4: write (30 min)
+## Block 4: write (30 min) 📣
 
 Thirty minutes. Draft, light edit, publish. Do not spend an hour making it perfect. Nobody is grading you and the compounding comes from consistency.
 
