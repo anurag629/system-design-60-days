@@ -29,6 +29,13 @@ The Write block is not optional and not vanity. Explaining a thing you half-unde
 4. Write your posts. Each day has example posts written with the reference run's numbers.
 5. Keep a progress log: what you finished, the number that surprised you, and one thing you can't explain yet.
 
+## Community
+
+You don't have to do this alone. The [CODERCOPS Discord](https://discord.gg/wkq8h3VWr3) has a place for this roadmap.
+
+- That progress log from step 5 can live there: run `/checkin` once a day and pick **System Design in 60 Days**. A bot keeps a log thread with your name on it and tracks your streak.
+- Ask questions in your log thread, and run `/streaks` to see how everyone else is doing.
+
 ## The eight weeks
 
 Week 1 is ground truth. Latency numbers, back of the envelope estimation, HTTP/TCP/TLS, DNS, API design, load balancing. You end the week able to estimate any system's shape in 5 minutes on a napkin.
